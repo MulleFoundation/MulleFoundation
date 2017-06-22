@@ -1,0 +1,78 @@
+digraph settings
+{
+   node [shape="record"];
+
+   "mulle-buffer";
+   "mulle-container";
+   "mulle-sprintf";
+   "mulle-objc-runtime";
+   "mulle-utf";
+
+   { rank = same; "cityhash", "expat", "icu", "POSIX" };
+   { rank = same; "mulle-objc-runtime", "mulle-buffer", "mulle-utf", "mulle-sprintf", "mulle-container" };
+
+   POSIX                          [ style=filled fillcolor="lightgray" color = "black" ];
+   cityhash                       [ style=filled fillcolor="lightgray" color = "black" ];
+   expat                          [ style=filled fillcolor="lightgray" color = "black" ];
+   icu                            [ style=filled fillcolor="lightgray" color = "black" ];
+
+   "mulle-container" -> cityhash;
+
+   { rank = same; "MulleObjCKVCFoundation"; "MulleObjCExpatFoundation"; "MulleObjCICUFoundation" }
+   { rank = same; "MulleObjCOSFoundation( POSIX)"; }
+   { rank = same; "MulleObjCOSFoundation( BSD)"; }
+   { rank = same; "MulleObjCOSFoundation( Darwin)", "MulleObjCOSFoundation( Linux)"; }
+
+   MulleObjC                         [ fontcolor = "purple"];
+   MulleObjCStandardFoundation       [ color = "purple" fontcolor = "purple" ];
+   MulleObjCOSFoundation             [ color = "purple" fontcolor = "purple" ];
+   MulleObjCInetFoundation           [ color = "purple" fontcolor = "purple" ];
+   "MulleObjCOSFoundation( Linux)"   [ color = "purple" fontcolor = "purple" ];
+   "MulleObjCOSFoundation( Darwin)"  [ color = "purple" fontcolor = "purple" ];
+   "MulleObjCOSFoundation( BSD)"     [ color = "purple" fontcolor = "purple" ];
+   "MulleObjCOSFoundation( POSIX)"   [ color = "purple" fontcolor = "purple" ];
+   MulleObjCExpatFoundation  [ color = "purple" fontcolor = "purple" ];
+   MulleObjCKVCFoundation    [ color = "purple" fontcolor = "purple" ];
+   MulleObjCICUFoundation    [ color = "purple" fontcolor = "purple" ];
+
+   "OS X: Foundation"        [ color = "purple" fontcolor = "purple" shape = "note" ];
+   "Linux: Foundation"       [ color = "purple" fontcolor = "purple" shape = "note" ];
+
+ 	MulleObjC -> "mulle-objc-runtime";
+   MulleObjC -> "mulle-container";
+   MulleObjCStandardFoundation -> MulleObjC;
+   MulleObjCStandardFoundation -> "mulle-container";
+ 	MulleObjCStandardFoundation -> "mulle-utf";
+   MulleObjCStandardFoundation -> "mulle-sprintf";
+   MulleObjCStandardFoundation -> "mulle-buffer";
+   MulleObjCInetFoundation -> MulleObjCStandardFoundation;
+   MulleObjCKVCFoundation -> MulleObjCStandardFoundation;
+   MulleObjCKVCFoundation -> "mulle-objc-runtime";
+   MulleObjCExpatFoundation -> MulleObjCStandardFoundation;
+   MulleObjCExpatFoundation -> expat;
+   MulleObjCICUFoundation -> MulleObjCStandardFoundation;
+   MulleObjCICUFoundation -> icu;
+   "MulleObjCOSFoundation"  -> MulleObjCInetFoundation;
+
+   "MulleObjCOSFoundation( POSIX)"  -> MulleObjCOSFoundation;
+   "MulleObjCOSFoundation( POSIX)"  -> POSIX;
+   "MulleObjCOSFoundation( BSD)"    -> "MulleObjCOSFoundation( POSIX)";
+   "MulleObjCOSFoundation( Darwin)" -> "MulleObjCOSFoundation( BSD)";
+   "MulleObjCOSFoundation( Linux)"  -> "MulleObjCOSFoundation( POSIX)";
+
+   "Linux: Foundation" -> "MulleObjCOSFoundation( Linux)";
+   "Linux: Foundation" -> MulleObjCExpatFoundation;
+   "Linux: Foundation" -> MulleObjCICUFoundation;
+   "OS X: Foundation" -> "MulleObjCOSFoundation( Darwin)";
+   "OS X: Foundation" -> MulleObjCExpatFoundation;
+   "OS X: Foundation" -> MulleObjCKVCFoundation;
+   "OS X: Foundation" -> MulleObjCICUFoundation;
+
+ 	subgraph legend {
+    label = "Legend";
+    key [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+			       <tr><td align="right"><font color="#000000">black text:</font></td><td>C</td></tr>
+			       <tr><td align="right"><font color="#a020f0">purple text:</font></td><td>Objective C</td></tr>
+			      </table>>]
+ 	}
+}

@@ -1,0 +1,18 @@
+set( SOURCES
+src/Foundation.m
+src/MulleObjCLoader+Foundation.m
+)
+
+
+set( PUBLIC_HEADERS
+src/Foundation.h
+src/FoundationSetup.h
+src/FoundationStandalone.inc
+src/NSDebug.h
+src/NSObjCRuntime.h
+src/MulleObjCLoader+Foundation.h
+)
+
+include_directories(
+src
+)
