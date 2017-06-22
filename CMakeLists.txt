@@ -57,7 +57,7 @@ message( STATUS "OBJC_DEPENDENCY_NAMES is ${OBJC_DEPENDENCY_NAMES}")
 # runs in build dir
 add_custom_command( TARGET Foundation
    POST_BUILD
-   COMMAND ${DEPENDENCIES_DIR}/bin/mulle-objc-create-dependencies-inc -v -t
+   COMMAND ${DEPENDENCIES_DIR}/bin/mulle-objc-create-dependencies-inc -v
            -o ${CMAKE_SOURCE_DIR}/src/dependencies.inc -
            ${OBJC_DEPENDENCY_NAMES}
 )
