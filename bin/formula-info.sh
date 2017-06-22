@@ -3,8 +3,8 @@
 # formula operations.
 #
 PROJECT="MulleFoundation"      # your project/repository name
-DESC="MulleFoundation is ..."
-# LANGUAGE="c"             # c,cpp, objc, bash ...
+DESC="💎 The Foundation library for mulle-objc"
+LANGUAGE="objc"             # c,cpp, objc, bash ...
 # NAME="${PROJECT}"        # formula filename without .rb extension
 
 #
