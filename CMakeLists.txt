@@ -84,7 +84,7 @@ RESOURCE "${RESOURCES}"
    install( TARGETS Foundation DESTINATION "Frameworks")
 else()
    install( TARGETS Foundation DESTINATION "lib")
-   install( FILES ${PUBLIC_HEADERS} "depenendencies.inc" "CMakeDependencies.txt" DESTINATION "include/Foundation")
+   install( FILES ${PUBLIC_HEADERS} DESTINATION "include/Foundation")
    install( FILES ${RESOURCES} DESTINATION "share/Foundation")
 endif()
 
