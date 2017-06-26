@@ -11,6 +11,14 @@ Fork      |  Build Status | Release Version
 [Community](https://github.com/mulle-objc/MulleFoundation/tree/release) | [![Build Status](https://travis-ci.org/mulle-objc/MulleFoundation.svg)](https://travis-ci.org/mulle-objc/MulleFoundation) | ![Community tag](https://img.shields.io/github/tag/mulle-objc/MulleFoundation.svg) [![Build Status](https://travis-ci.org/mulle-objc/MulleFoundation.svg?branch=release)](https://travis-ci.org/mulle-objc/MulleFoundation)
 -->
 
+## What's so different ?
+
+* It is based on the **mulle-objc-runtime**
+* The MulleFoundation can be linked statically
+* It runs on OS X and Linux (Ubuntu) and FreeBSD, portable Objective-C
+* "Everything Faster than Everything Else"
+
+
 ## Constituent Libraries
 
 ![Libraries](https://raw.githubusercontent.com/mulle-nat/MulleFoundation/release/dox/MulleFoundation-dependencies.png)
@@ -23,15 +31,6 @@ Fork      |  Build Status | Release Version
 [MulleObjCKVCFoundation](//github.com/mulle-nat/MulleObjCKVCFoundation) | [![Build Status](https://travis-ci.org/mulle-nat/MulleObjCKVCFoundation.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjCKVCFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-nat/MulleObjCKVCFoundation.svg) [![Build Status](https://travis-ci.org/mulle-nat/MulleObjCKVCFoundation.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjCKVCFoundation)
 [MulleObjCStandardFoundation](//github.com/mulle-nat/MulleObjCStandardFoundation) | [![Build Status](https://travis-ci.org/mulle-nat/MulleObjCStandardFoundation.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjCStandardFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-nat/MulleObjCStandardFoundation.svg) [![Build Status](https://travis-ci.org/mulle-nat/MulleObjCStandardFoundation.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjCStandardFoundation)
 [MulleObjC](//github.com/mulle-nat/MulleObjC) | [![Build Status](https://travis-ci.org/mulle-nat/MulleObjC.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjC) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-nat/MulleObjC.svg) [![Build Status](https://travis-ci.org/mulle-nat/MulleObjC.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjC)
-
-
-
-## What's so different ?
-
-* It is based on the **mulle-objc-runtime**
-* The MulleFoundation can be linked statically
-* It runs on OS X and Linux (Ubuntu) and FreeBSD, portable Objective-C
-* "Everything Faster than Everything Else"
 
 
 ## Install

@@ -8,9 +8,12 @@ digraph settings
    "mulle-objc-runtime";
    "mulle-utf";
 
-   { rank = same; "cityhash", "expat", "icu", "POSIX" };
+   { rank = same; "cityhash", "expat", "icu", "POSIX", "Linux", "BSD", "Darwin" };
    { rank = same; "mulle-objc-runtime", "mulle-buffer", "mulle-utf", "mulle-sprintf", "mulle-container" };
 
+   Darwin                         [ style=filled fillcolor="lightgray" color = "black" ];
+   Linux                          [ style=filled fillcolor="lightgray" color = "black" ];
+   BSD                            [ style=filled fillcolor="lightgray" color = "black" ];
    POSIX                          [ style=filled fillcolor="lightgray" color = "black" ];
    cityhash                       [ style=filled fillcolor="lightgray" color = "black" ];
    expat                          [ style=filled fillcolor="lightgray" color = "black" ];
@@ -54,8 +57,11 @@ digraph settings
    MulleObjCICUFoundation -> icu;
    "MulleObjCOSFoundation"  -> MulleObjCInetFoundation;
 
-   "MulleObjCOSFoundation( POSIX)"  -> MulleObjCOSFoundation;
+   "MulleObjCOSFoundation( BSD)"    -> BSD;
+   "MulleObjCOSFoundation( Darwin)" -> Darwin;
+   "MulleObjCOSFoundation( Linux)"  -> Linux;
    "MulleObjCOSFoundation( POSIX)"  -> POSIX;
+   "MulleObjCOSFoundation( POSIX)"  -> MulleObjCOSFoundation;
    "MulleObjCOSFoundation( BSD)"    -> "MulleObjCOSFoundation( POSIX)";
    "MulleObjCOSFoundation( Darwin)" -> "MulleObjCOSFoundation( BSD)";
    "MulleObjCOSFoundation( Linux)"  -> "MulleObjCOSFoundation( POSIX)";
