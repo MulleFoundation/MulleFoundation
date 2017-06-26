@@ -11,4 +11,3 @@ before_install:
 
 script:
    - mulle-install -vv -V  --prefix /tmp
-   - mulle-test -v -V

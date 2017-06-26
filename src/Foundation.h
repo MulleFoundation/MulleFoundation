@@ -27,7 +27,7 @@
 
 
 #if TRACE_INCLUDE
-# pragma message( "Using Foundation (MulleObjC)")
+# pragma message( "Using the MulleFoundation")
 #endif
 
 //

@@ -1,7 +1,9 @@
 # requirements
-
-include( ${DEPENDENCIES_DIR}/include/MulleObjCStandardFoundation/CMakeDependencies.txt)
-
+if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCStandardFoundation/CMakeDependencies.txt)
+   include( ${DEPENDENCIES_DIR}/include/MulleObjCStandardFoundation/CMakeDependencies.txt)
+else()
+   message( FATAL_ERROR "MulleObjCStandardFoundation is missing. You must `mulle-bootstrap` first." )
+endif()
 
 # optionals, try to include base ones first
 
