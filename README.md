@@ -11,6 +11,21 @@ Fork      |  Build Status | Release Version
 [Community](https://github.com/mulle-objc/MulleFoundation/tree/release) | [![Build Status](https://travis-ci.org/mulle-objc/MulleFoundation.svg)](https://travis-ci.org/mulle-objc/MulleFoundation) | ![Community tag](https://img.shields.io/github/tag/mulle-objc/MulleFoundation.svg) [![Build Status](https://travis-ci.org/mulle-objc/MulleFoundation.svg?branch=release)](https://travis-ci.org/mulle-objc/MulleFoundation)
 -->
 
+## Constituent Libraries
+
+![Libraries](https://raw.githubusercontent.com/mulle-nat/MulleFoundation/release/dox/MulleFoundation-dependencies.png)
+
+  Name         | Build Status | Release Version
+---------------|--------------|---------------------------------
+[MulleObjCOSFoundation](//github.com/mulle-nat/MulleObjCOSFoundation) | [![Build Status](https://travis-ci.org/mulle-nat/MulleObjCOSFoundation.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjCOSFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-nat/MulleObjCOSFoundation.svg) [![Build Status](https://travis-ci.org/mulle-nat/MulleObjCOSFoundation.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjCOSFoundation)
+[MulleObjCExpatFoundation](//github.com/mulle-nat/MulleObjCExpatFoundation)  | [![Build Status](https://travis-ci.org/mulle-nat/MulleObjCExpatFoundation.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjCExpatFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-nat/MulleObjCExpatFoundation.svg) [![Build Status](https://travis-ci.org/mulle-nat/MulleObjCExpatFoundation.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjCExpatFoundation)
+[MulleObjCInetFoundation](//github.com/mulle-nat/MulleObjCInetFoundation) | [![Build Status](https://travis-ci.org/mulle-nat/MulleObjCInetFoundation.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjCInetFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-nat/MulleObjCInetFoundation.svg) [![Build Status](https://travis-ci.org/mulle-nat/MulleObjCInetFoundation.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjCInetFoundation)
+[MulleObjCKVCFoundation](//github.com/mulle-nat/MulleObjCKVCFoundation) | [![Build Status](https://travis-ci.org/mulle-nat/MulleObjCKVCFoundation.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjCKVCFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-nat/MulleObjCKVCFoundation.svg) [![Build Status](https://travis-ci.org/mulle-nat/MulleObjCKVCFoundation.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjCKVCFoundation)
+[MulleObjCStandardFoundation](//github.com/mulle-nat/MulleObjCStandardFoundation) | [![Build Status](https://travis-ci.org/mulle-nat/MulleObjCStandardFoundation.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjCStandardFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-nat/MulleObjCStandardFoundation.svg) [![Build Status](https://travis-ci.org/mulle-nat/MulleObjCStandardFoundation.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjCStandardFoundation)
+[MulleObjC](//github.com/mulle-nat/MulleObjC) | [![Build Status](https://travis-ci.org/mulle-nat/MulleObjC.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjC) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-nat/MulleObjC.svg) [![Build Status](https://travis-ci.org/mulle-nat/MulleObjC.svg?branch=release)](https://travis-ci.org/mulle-nat/MulleObjC)
+
+
+
 ## What's so different ?
 
 * It is based on the **mulle-objc-runtime**
