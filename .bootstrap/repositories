@@ -2,5 +2,5 @@ ${MULLE_FOUNDATION_REPOSITORIES:-https://github.com/mulle-nat}/MulleObjCStandard
 ${MULLE_FOUNDATION_REPOSITORIES:-https://github.com/mulle-nat}/MulleObjCInetFoundation;;${MULLE_OBJC_OS_FOUNDATION_BRANCH:-release}
 ${MULLE_FOUNDATION_REPOSITORIES:-https://github.com/mulle-nat}/MulleObjCOSFoundation;;${MULLE_OBJC_OS_FOUNDATION_BRANCH:-release}
 ${MULLE_FOUNDATION_REPOSITORIES:-https://github.com/mulle-nat}/MulleObjCExpatFoundation;;${MULLE_OBJC_EXPAT_FOUNDATION_BRANCH:-release}
-${MULLE_FOUNDATION_REPOSITORIES:-https://github.com/mulle-nat}/MulleObjCDecimalFoundation;;${MULLE_OBJC_DECIMAL_FOUNDATION_BRANCH:-release}
+# ${MULLE_FOUNDATION_REPOSITORIES:-https://github.com/mulle-nat}/MulleObjCDecimalFoundation;;${MULLE_OBJC_DECIMAL_FOUNDATION_BRANCH:-release}
 ${MULLE_FOUNDATION_REPOSITORIES:-https://github.com/mulle-nat}/MulleObjCKVCFoundation;;${MULLE_OBJC_KVC_FOUNDATION_BRANCH:-release}
