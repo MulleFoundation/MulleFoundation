@@ -3,17 +3,6 @@ cmake_minimum_required (VERSION 3.0)
 project( Foundation C)
 
 
-# need expat
-#
-# https://stackoverflow.com/questions/10860366/how-do-i-link-expat-into-a-project
-#
-include( FindEXPAT)
-find_package(EXPAT 2.0 REQUIRED)
-
-#include( FindICU)
-#find_package(ICU 4.4 REQUIRED)
-
-
 set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/mulle-configuration/cmake)
 message( STATUS "CMAKE_MODULE_PATH is ${CMAKE_MODULE_PATH}")
 message( STATUS "CMAKE_BUILD_TYPE is ${CMAKE_BUILD_TYPE}")

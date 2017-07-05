@@ -6,7 +6,9 @@ else()
 endif()
 
 # optionals, try to include base ones first
-
+#
+# should code this as a loop
+#
 if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCInetFoundation/CMakeDependencies.txt)
    include( ${DEPENDENCIES_DIR}/include/MulleObjCInetFoundation/CMakeDependencies.txt)
 endif()
@@ -50,6 +52,9 @@ endif()
 
 
 # optionals, in order as above
+#
+# should code this as a loop
+#
 
 if( NOT MULLE_OBJC_INET_FOUNDATION_LIBRARY)
    find_library( MULLE_OBJC_INET_FOUNDATION_LIBRARY NAMES MulleObjCInetFoundation)
