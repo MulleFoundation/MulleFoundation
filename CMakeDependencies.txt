@@ -1,213 +1,69 @@
-# requirements
-if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCStandardFoundation/CMakeDependencies.txt)
-   include( ${DEPENDENCIES_DIR}/include/MulleObjCStandardFoundation/CMakeDependencies.txt)
-else()
-   message( FATAL_ERROR "MulleObjCStandardFoundation is missing. You must `mulle-bootstrap` first." )
-endif()
+if( NOT __MULLE_FOUNDATION_CMAKE_DEPENDENCIES_TXT__)
+   set( __MULLE_FOUNDATION_CMAKE_DEPENDENCIES_TXT__ ON)
 
-# optionals, try to include base ones first
-#
-# should code this as a loop
-#
-if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCInetFoundation/CMakeDependencies.txt)
-   include( ${DEPENDENCIES_DIR}/include/MulleObjCInetFoundation/CMakeDependencies.txt)
-endif()
-if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCOSFoundation/CMakeDependencies.txt)
-   include( ${DEPENDENCIES_DIR}/include/MulleObjCOSFoundation/CMakeDependencies.txt)
-endif()
-if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCAresFoundation/CMakeDependencies.txt)
-   include( ${DEPENDENCIES_DIR}/include/MulleObjCAresFoundation/CMakeDependencies.txt)
-endif()
-if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCCurlFoundation/CMakeDependencies.txt)
-   include( ${DEPENDENCIES_DIR}/include/MulleObjCCurlFoundation/CMakeDependencies.txt)
-endif()
-if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCDecimalFoundation/CMakeDependencies.txt)
-   include( ${DEPENDENCIES_DIR}/include/MulleObjCDecimalFoundation/CMakeDependencies.txt)
-endif()
-if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCExpatFoundation/CMakeDependencies.txt)
-   include( ${DEPENDENCIES_DIR}/include/MulleObjCExpatFoundation/CMakeDependencies.txt)
-endif()
-if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCICUFoundation/CMakeDependencies.txt)
-   include( ${DEPENDENCIES_DIR}/include/MulleObjCICUFoundation/CMakeDependencies.txt)
-endif()
-if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCKVCFoundation/CMakeDependencies.txt)
-   include( ${DEPENDENCIES_DIR}/include/MulleObjCKVCFoundation/CMakeDependencies.txt)
-endif()
-if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCRegexFoundation/CMakeDependencies.txt)
-   include( ${DEPENDENCIES_DIR}/include/MulleObjCRegexFoundation/CMakeDependencies.txt)
-endif()
-
-
-# requirements
-
-if( NOT MULLE_OBJC_STANDARD_FOUNDATION_LIBRARY)
-   find_library( MULLE_OBJC_STANDARD_FOUNDATION_LIBRARY NAMES MulleObjCStandardFoundation)
-   message(STATUS "MULLE_OBJC_STANDARD_FOUNDATION_LIBRARY is ${MULLE_OBJC_STANDARD_FOUNDATION_LIBRARY}")
-   set( OBJC_DEPENDENCY_LIBRARIES
-${MULLE_OBJC_STANDARD_FOUNDATION_LIBRARY}
-${OBJC_DEPENDENCY_LIBRARIES}
-CACHE INTERNAL "need to cache this"
-)
-endif()
-
-
-# optionals, in order as above
-#
-# should code this as a loop
-#
-
-if( NOT MULLE_OBJC_INET_FOUNDATION_LIBRARY)
-   find_library( MULLE_OBJC_INET_FOUNDATION_LIBRARY NAMES MulleObjCInetFoundation)
-   message(STATUS "MULLE_OBJC_INET_FOUNDATION_LIBRARY is ${MULLE_OBJC_INET_FOUNDATION_LIBRARY}")
-   if( MULLE_OBJC_OS_FOUNDATION_LIBRARY)
-      set( OBJC_DEPENDENCY_LIBRARIES
-${MULLE_OBJC_INET_FOUNDATION_LIBRARY}
-${OBJC_DEPENDENCY_LIBRARIES}
-CACHE INTERNAL "need to cache this"
-)
-      set( OBJC_DEPENDENCY_NAMES
-MulleObjCInetFoundation
-${OBJC_DEPENDENCY_NAMES}
-CACHE INTERNAL "need to cache this too"
-)
+   #
+   # requirements: MulleObjCStandardFoundation
+   #
+   if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCStandardFoundation/CMakeDependencies.txt)
+      include( ${DEPENDENCIES_DIR}/include/MulleObjCStandardFoundation/CMakeDependencies.txt)
+   else()
+      message( FATAL_ERROR "MulleObjCStandardFoundation is missing. You must `mulle-bootstrap` first." )
    endif()
-endif()
 
-if( NOT MULLE_OBJC_OS_FOUNDATION_LIBRARY)
-   find_library( MULLE_OBJC_OS_FOUNDATION_LIBRARY NAMES MulleObjCOSFoundation)
-   message(STATUS "MULLE_OBJC_OS_FOUNDATION_LIBRARY is ${MULLE_OBJC_OS_FOUNDATION_LIBRARY}")
-   if( MULLE_OBJC_OS_FOUNDATION_LIBRARY)
-      set( OBJC_DEPENDENCY_LIBRARIES
-${MULLE_OBJC_OS_FOUNDATION_LIBRARY}
-${OBJC_DEPENDENCY_LIBRARIES}
-CACHE INTERNAL "need to cache this"
-)
-      set( OBJC_DEPENDENCY_NAMES
-MulleObjCInetFoundation
-${OBJC_DEPENDENCY_NAMES}
-CACHE INTERNAL "need to cache this too"
-)
+   #
+   # optionals:
+   #
+
+   # should code this as a loop
+   #
+   if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCInetFoundation/CMakeDependencies.txt)
+      include( ${DEPENDENCIES_DIR}/include/MulleObjCInetFoundation/CMakeDependencies.txt)
    endif()
-endif()
-
-if( NOT MULLE_OBJC_ARES_FOUNDATION_LIBRARY)
-   find_library( MULLE_OBJC_ARES_FOUNDATION_LIBRARY NAMES MulleObjCAresFoundation)
-   message(STATUS "MULLE_OBJC_ARES_FOUNDATION_LIBRARY is ${MULLE_OBJC_ARES_FOUNDATION_LIBRARY}")
-   if( MULLE_OBJC_ARES_FOUNDATION_LIBRARY)
-      set( OBJC_DEPENDENCY_LIBRARIES
-${MULLE_OBJC_ARES_FOUNDATION_LIBRARY}
-${OBJC_DEPENDENCY_LIBRARIES}
-CACHE INTERNAL "need to cache this"
-)
-      set( OBJC_DEPENDENCY_NAMES
-MulleObjCAresFoundation
-${OBJC_DEPENDENCY_NAMES}
-CACHE INTERNAL "need to cache this too"
-)
+   if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCOSFoundation/CMakeDependencies.txt)
+      include( ${DEPENDENCIES_DIR}/include/MulleObjCOSFoundation/CMakeDependencies.txt)
    endif()
-endif()
-
-if( NOT MULLE_OBJC_CURL_FOUNDATION_LIBRARY)
-   find_library( MULLE_OBJC_CURL_FOUNDATION_LIBRARY NAMES MulleObjCCurlFoundation)
-   message(STATUS "MULLE_OBJC_CURL_FOUNDATION_LIBRARY is ${MULLE_OBJC_CURL_FOUNDATION_LIBRARY}")
-   if( MULLE_OBJC_CURL_FOUNDATION_LIBRARY)
-      set( OBJC_DEPENDENCY_LIBRARIES
-${MULLE_OBJC_CURL_FOUNDATION_LIBRARY}
-${OBJC_DEPENDENCY_LIBRARIES}
-CACHE INTERNAL "need to cache this"
-)
-      set( OBJC_DEPENDENCY_NAMES
-MulleObjCCurlFoundation
-${OBJC_DEPENDENCY_NAMES}
-CACHE INTERNAL "need to cache this too"
-)
+   if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCAresFoundation/CMakeDependencies.txt)
+      include( ${DEPENDENCIES_DIR}/include/MulleObjCAresFoundation/CMakeDependencies.txt)
    endif()
-endif()
-
-if( NOT MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY)
-   find_library( MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY NAMES MulleObjCDecimalFoundation)
-   message(STATUS "MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY is ${MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY}")
-   if( MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY)
-      set( OBJC_DEPENDENCY_LIBRARIES
-${MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY}
-${OBJC_DEPENDENCY_LIBRARIES}
-CACHE INTERNAL "need to cache this"
-)
-      set( OBJC_DEPENDENCY_NAMES
-MulleObjCDecimalFoundation
-${OBJC_DEPENDENCY_NAMES}
-CACHE INTERNAL "need to cache this too"
-)
+   if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCCurlFoundation/CMakeDependencies.txt)
+      include( ${DEPENDENCIES_DIR}/include/MulleObjCCurlFoundation/CMakeDependencies.txt)
    endif()
-endif()
-
-if( NOT MULLE_OBJC_EXPAT_FOUNDATION_LIBRARY)
-   find_library( MULLE_OBJC_EXPAT_FOUNDATION_LIBRARY NAMES MulleObjCExpatFoundation)
-   message(STATUS "MULLE_OBJC_EXPAT_FOUNDATION_LIBRARY is ${MULLE_OBJC_EXPAT_FOUNDATION_LIBRARY}")
-   if( MULLE_OBJC_EXPAT_FOUNDATION_LIBRARY)
-      set( OBJC_DEPENDENCY_LIBRARIES
-${MULLE_OBJC_EXPAT_FOUNDATION_LIBRARY}
-${OBJC_DEPENDENCY_LIBRARIES}
-CACHE INTERNAL "need to cache this"
-)
-      set( OBJC_DEPENDENCY_NAMES
-MulleObjCExpatFoundation
-${OBJC_DEPENDENCY_NAMES}
-CACHE INTERNAL "need to cache this too"
-)
+   if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCDecimalFoundation/CMakeDependencies.txt)
+      include( ${DEPENDENCIES_DIR}/include/MulleObjCDecimalFoundation/CMakeDependencies.txt)
    endif()
-endif()
-
-if( NOT MULLE_OBJC_ICU_FOUNDATION_LIBRARY)
-   find_library( MULLE_OBJC_ICU_FOUNDATION_LIBRARY NAMES MulleObjCICUFoundation)
-   message(STATUS "MULLE_OBJC_ICU_FOUNDATION_LIBRARY is ${MULLE_OBJC_ICU_FOUNDATION_LIBRARY}")
-   if( MULLE_OBJC_ICU_FOUNDATION_LIBRARY)
-      set( OBJC_DEPENDENCY_LIBRARIES
-${MULLE_OBJC_ICU_FOUNDATION_LIBRARY}
-${OBJC_DEPENDENCY_LIBRARIES}
-CACHE INTERNAL "need to cache this"
-)
-      set( OBJC_DEPENDENCY_NAMES
-MulleObjCICUFoundation
-${OBJC_DEPENDENCY_NAMES}
-CACHE INTERNAL "need to cache this too"
-)
+   if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCExpatFoundation/CMakeDependencies.txt)
+      include( ${DEPENDENCIES_DIR}/include/MulleObjCExpatFoundation/CMakeDependencies.txt)
    endif()
-endif()
-
-if( NOT MULLE_OBJC_KVC_FOUNDATION_LIBRARY)
-   find_library( MULLE_OBJC_KVC_FOUNDATION_LIBRARY NAMES MulleObjCKVCFoundation)
-   message(STATUS "MULLE_OBJC_KVC_FOUNDATION_LIBRARY is ${MULLE_OBJC_KVC_FOUNDATION_LIBRARY}")
-   if( MULLE_OBJC_KVC_FOUNDATION_LIBRARY)
-      set( OBJC_DEPENDENCY_LIBRARIES
-${MULLE_OBJC_KVC_FOUNDATION_LIBRARY}
-${OBJC_DEPENDENCY_LIBRARIES}
-CACHE INTERNAL "need to cache this"
-)
-      set( OBJC_DEPENDENCY_NAMES
-MulleObjCKVCFoundation
-${OBJC_DEPENDENCY_NAMES}
-CACHE INTERNAL "need to cache this too"
-)
+   if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCICUFoundation/CMakeDependencies.txt)
+      include( ${DEPENDENCIES_DIR}/include/MulleObjCICUFoundation/CMakeDependencies.txt)
    endif()
-endif()
-
-if( NOT MULLE_OBJC_REGEX_FOUNDATION_LIBRARY)
-   find_library( MULLE_OBJC_REGEX_FOUNDATION_LIBRARY NAMES MulleObjCRegexFoundation)
-   message(STATUS "MULLE_OBJC_REGEX_FOUNDATION_LIBRARY is ${MULLE_OBJC_REGEX_FOUNDATION_LIBRARY}")
-   if( MULLE_OBJC_REGEX_FOUNDATION_LIBRARY)
-      set( OBJC_DEPENDENCY_LIBRARIES
-${MULLE_OBJC_REGEX_FOUNDATION_LIBRARY}
-${OBJC_DEPENDENCY_LIBRARIES}
-CACHE INTERNAL "need to cache this"
-)
-      set( OBJC_DEPENDENCY_NAMES
-MulleObjCRegexFoundation
-${OBJC_DEPENDENCY_NAMES}
-CACHE INTERNAL "need to cache this too"
-)
+   if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCKVCFoundation/CMakeDependencies.txt)
+      include( ${DEPENDENCIES_DIR}/include/MulleObjCKVCFoundation/CMakeDependencies.txt)
    endif()
-endif()
+   if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCRegexFoundation/CMakeDependencies.txt)
+      include( ${DEPENDENCIES_DIR}/include/MulleObjCRegexFoundation/CMakeDependencies.txt)
+   endif()
 
-message( STATUS "# Included \"Foundation\" CMakeDependencies.txt")
+   set( CMAKE_FIND_FRAMEWORK LAST)
+
+   if( NOT MULLE_FOUNDATION_LIBRARY)
+      find_library( MULLE_FOUNDATION_LIBRARY NAMES Foundation)
+      message( STATUS "MULLE_FOUNDATION_LIBRARY is ${MULLE_FOUNDATION_LIBRARY}")
+      if( MULLE_FOUNDATION_LIBRARY)
+         set( OBJC_DEPENDENCY_LIBRARIES
+            ${MULLE_FOUNDATION_LIBRARY}
+            ${OBJC_DEPENDENCY_LIBRARIES}
+            CACHE INTERNAL "need to cache this"
+         )
+         set( OBJC_DEPENDENCY_NAMES
+            Foundation
+            ${OBJC_DEPENDENCY_NAMES}
+            CACHE INTERNAL "need to cache this too"
+         )
+      endif()
+   endif()
+
+   message( STATUS "# Included \"Foundation\" CMakeDependencies.txt")
+
+endif()
 

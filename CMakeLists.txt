@@ -15,9 +15,10 @@ else()
   include( Release)
 endif()
 
+set( MULLE_FOUNDATION_LIBRARY ON)
+include( CMakeDependencies.txt)
 
 include( CMakeSourcesAndHeaders.txt)
-include( CMakeDependencies.txt)
 
 
 # set BUILD_SHARED_LIBS to "ON" to create a shared library
