@@ -9,4 +9,5 @@
 
 #import "FoundationSetup.h"
 
-#include "FoundationStandalone.inc"
+#include "FoundationStartup.inc"
+

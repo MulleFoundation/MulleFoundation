@@ -1,8 +1,8 @@
-      { @selector( MulleObjCLoader), @selector( MulleObjCBSDFoundation) },      // 58bd58d3;MulleObjCLoader;578a7a2a;MulleObjCBSDFoundation
-      { @selector( MulleObjCLoader), @selector( MulleObjCDarwinFoundation) },      // 58bd58d3;MulleObjCLoader;bfc4e780;MulleObjCDarwinFoundation
-      { @selector( MulleObjCLoader), @selector( MulleObjCExpatFoundation) },      // 58bd58d3;MulleObjCLoader;3c626dbf;MulleObjCExpatFoundation
-      { @selector( MulleObjCLoader), @selector( MulleObjCInetFoundation) },      // 58bd58d3;MulleObjCLoader;307411f3;MulleObjCInetFoundation
-      { @selector( MulleObjCLoader), @selector( MulleObjCKVCFoundation) },      // 58bd58d3;MulleObjCLoader;c0454973;MulleObjCKVCFoundation
-      { @selector( MulleObjCLoader), @selector( MulleObjCOSBaseFoundation) },      // 58bd58d3;MulleObjCLoader;8aabd7dc;MulleObjCOSBaseFoundation
-      { @selector( MulleObjCLoader), @selector( MulleObjCPosixFoundation) },      // 58bd58d3;MulleObjCLoader;bf9cc404;MulleObjCPosixFoundation
-      { @selector( MulleObjCLoader), @selector( MulleObjCStandardFoundation) },      // 58bd58d3;MulleObjCLoader;efe3d73e;MulleObjCStandardFoundation
+      { @selector( MulleObjCLoader), @selector( MulleObjCBSDFoundation) },      // 47a9beb6;MulleObjCLoader;205c6909;MulleObjCBSDFoundation
+      { @selector( MulleObjCLoader), @selector( MulleObjCDarwinFoundation) },      // 47a9beb6;MulleObjCLoader;09cf212e;MulleObjCDarwinFoundation
+      { @selector( MulleObjCLoader), @selector( MulleObjCExpatFoundation) },      // 47a9beb6;MulleObjCLoader;e5f6fc77;MulleObjCExpatFoundation
+      { @selector( MulleObjCLoader), @selector( MulleObjCInetFoundation) },      // 47a9beb6;MulleObjCLoader;088ec1b3;MulleObjCInetFoundation
+      { @selector( MulleObjCLoader), @selector( MulleObjCKVCFoundation) },      // 47a9beb6;MulleObjCLoader;4f2544f7;MulleObjCKVCFoundation
+      { @selector( MulleObjCLoader), @selector( MulleObjCOSBaseFoundation) },      // 47a9beb6;MulleObjCLoader;bc81d222;MulleObjCOSBaseFoundation
+      { @selector( MulleObjCLoader), @selector( MulleObjCPosixFoundation) },      // 47a9beb6;MulleObjCLoader;66ba74e2;MulleObjCPosixFoundation
+      { @selector( MulleObjCLoader), @selector( MulleObjCStandardFoundation) },      // 47a9beb6;MulleObjCLoader;ed704a42;MulleObjCStandardFoundation

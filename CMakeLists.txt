@@ -2,8 +2,8 @@ cmake_minimum_required (VERSION 3.0)
 
 project( Foundation C)
 
-
 set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/mulle-configuration/cmake)
+
 message( STATUS "CMAKE_MODULE_PATH is ${CMAKE_MODULE_PATH}")
 message( STATUS "CMAKE_BUILD_TYPE is ${CMAKE_BUILD_TYPE}")
 
@@ -16,9 +16,20 @@ else()
 endif()
 
 set( MULLE_FOUNDATION_LIBRARY ON)
-include( CMakeDependencies.txt)
+set( MULLE_FOUNDATION_STARTUP_LIBRARY ON)
 
+include( CMakeDependencies.txt)
 include( CMakeSourcesAndHeaders.txt)
+
+
+include_directories( ${INCLUDE_DIRS})
+
+
+set( PUBLIC_HEADERS
+${PUBLIC_HEADERS}
+"CMakeDependencies.txt"
+"src/dependencies.inc"
+)
 
 
 # set BUILD_SHARED_LIBS to "ON" to create a shared library
@@ -27,13 +38,19 @@ add_library( Foundation
 ${SOURCES}
 ${PUBLIC_HEADERS}
 ${PRIVATE_HEADERS}
-CMakeDependencies.txt
 CMakeSourcesAndHeaders.txt
 )
+
+
+add_library( FoundationStartup
+${STARTUP_SOURCES}
+)
+
 
 target_link_libraries( Foundation
 ${BEGIN_ALL_LOAD}
 ${OBJC_DEPENDENCY_LIBRARIES}
+FoundationStartup
 ${C_DEPENDENCY_LIBRARIES}
 ${END_ALL_LOAD}
 ${OS_SPECIFIC_LIBARIES}
@@ -45,19 +62,25 @@ ${OS_SPECIFIC_LIBARIES}
 message( STATUS "OBJC_DEPENDENCY_NAMES is ${OBJC_DEPENDENCY_NAMES}")
 
 # runs in build dir
+
+if( MSVC)
+   find_program( CREATE_INC mulle-objc-create-dependencies-inc.bat ${DEPENDENCIES_DIR}/bin)
+else()
+   find_program( CREATE_INC mulle-objc-create-dependencies-inc ${DEPENDENCIES_DIR}/bin)
+endif()
+
+
 add_custom_command( TARGET Foundation
    POST_BUILD
-   COMMAND ${DEPENDENCIES_DIR}/bin/mulle-objc-create-dependencies-inc -v
-           -o ${CMAKE_SOURCE_DIR}/src/dependencies.inc -
-           ${OBJC_DEPENDENCY_NAMES}
+   COMMAND ${CREATE_INC}
+              -v
+              -o ${CMAKE_SOURCE_DIR}/src/dependencies.inc
+              Foundation
+              ${OBJC_DEPENDENCY_NAMES}
+   DEPENDS "$<TARGET_FILE:Foundation>"
+           "${OBJC_DEPENDENCY_LIBRARIES}"
+   VERBATIM
 )
-
-set( PUBLIC_HEADERS
-${PUBLIC_HEADERS}
-"CMakeDependencies.txt"
-"src/dependencies.inc"
-)
-
 
 
 if( APPLE AND BUILD_SHARED_LIBS)
@@ -73,7 +96,7 @@ RESOURCE "${RESOURCES}"
 )
    install( TARGETS Foundation DESTINATION "Frameworks")
 else()
-   install( TARGETS Foundation DESTINATION "lib")
+   install( TARGETS Foundation FoundationStartup DESTINATION "lib")
    install( FILES ${PUBLIC_HEADERS} DESTINATION "include/Foundation")
    install( FILES ${RESOURCES} DESTINATION "share/Foundation")
 endif()

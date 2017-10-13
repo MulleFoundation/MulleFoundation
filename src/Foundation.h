@@ -6,7 +6,7 @@
 //  Copyright © 2016 Mulle kybernetiK. All rights reserved.
 //
 
-#define FOUNDATION_VERSION   ((0 << 20) | (0 << 8) | 1)
+#define FOUNDATION_VERSION   ((0 << 20) | (12 << 8) | 1)
 
 // this specifies the "vendor" and also announces it
 // known values:
@@ -22,7 +22,7 @@
 // benefit of version checking at runtime!
 
 #define FOUNDATION_VERSION_MAJOR  0
-#define FOUNDATION_VERSION_MINOR  0
+#define FOUNDATION_VERSION_MINOR  12
 #define FOUNDATION_VERSION_PATCH  1
 
 

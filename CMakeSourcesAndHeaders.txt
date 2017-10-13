@@ -1,21 +1,22 @@
-set( SOURCES
-src/MulleObjCLoader+Foundation.m
+set( INCLUDE_DIRS
+src
 )
 
-set( STANDALONE_SOURCES
-src/Foundation.m
+set( SOURCES
+src/MulleObjCLoader+Foundation.m
 )
 
 
 set( PUBLIC_HEADERS
 src/Foundation.h
 src/FoundationSetup.h
-src/FoundationStandalone.inc
+src/FoundationStartup.inc
 src/NSDebug.h
 src/NSObjCRuntime.h
 src/MulleObjCLoader+Foundation.h
 )
 
-include_directories(
-src
+
+set( STARTUP_SOURCES
+src/FoundationStartup.m
 )

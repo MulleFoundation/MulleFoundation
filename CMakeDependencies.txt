@@ -1,13 +1,15 @@
 if( NOT __MULLE_FOUNDATION_CMAKE_DEPENDENCIES_TXT__)
    set( __MULLE_FOUNDATION_CMAKE_DEPENDENCIES_TXT__ ON)
 
+   message( STATUS "# Include \"Foundation\" CMakeDependencies.txt")
+
    #
    # requirements: MulleObjCStandardFoundation
    #
    if( EXISTS ${DEPENDENCIES_DIR}/include/MulleObjCStandardFoundation/CMakeDependencies.txt)
       include( ${DEPENDENCIES_DIR}/include/MulleObjCStandardFoundation/CMakeDependencies.txt)
    else()
-      message( FATAL_ERROR "MulleObjCStandardFoundation is missing. You must `mulle-bootstrap` first." )
+      message( FATAL_ERROR "MulleObjCStandardFoundation is missing (at ${DEPENDENCIES_DIR}/include/MulleObjCStandardFoundation/CMakeDependencies.txt). You must `mulle-bootstrap` first." )
    endif()
 
    #
@@ -63,7 +65,36 @@ if( NOT __MULLE_FOUNDATION_CMAKE_DEPENDENCIES_TXT__)
       endif()
    endif()
 
-   message( STATUS "# Included \"Foundation\" CMakeDependencies.txt")
+   #
+   # This library contains ___get_or_create_mulle_objc_universe and
+   # the startup code to create the universe
+   #
+   if( NOT MULLE_FOUNDATION_STARTUP_LIBRARY)
+      find_library( MULLE_FOUNDATION_STARTUP_LIBRARY NAMES FoundationStartup)
+      message(STATUS "MULLE_FOUNDATION_STARTUP_LIBRARY is ${MULLE_FOUNDATION_STARTUP_LIBRARY}")
+
+      # overwrite what came before
+      set( OBJC_STARTUP_LIBRARY
+         ${MULLE_FOUNDATION_STARTUP_LIBRARY}
+         CACHE INTERNAL "need to cache this"
+      )
+   endif()
+
+   if( MSVC)
+      set( MULLE_FOUNDATION_DEFINITIONS
+         ${MULLE_OBJC_STANDARD_FOUNDATION_DEFINITIONS}
+         ${MULLE_OBJC_INET_FOUNDATION_DEFINITIONS}
+         ${MULLE_OBJC_OS_FOUNDATION_DEFINITIONS}
+         ${MULLE_OBJC_CARES_FOUNDATION_DEFINITIONS}
+         ${MULLE_OBJC_CURL_FOUNDATION_DEFINITIONS}
+         ${MULLE_OBJC_DECIMAL_FOUNDATION_DEFINITIONS}
+         ${MULLE_OBJC_EXPAT_FOUNDATION_DEFINITIONS}
+         ${MULLE_OBJC_ICU_FOUNDATION_DEFINITIONS}
+         ${MULLE_OBJC_KVC_FOUNDATION_DEFINITIONS}
+         ${MULLE_OBJC_REGEX_FOUNDATION_DEFINITIONS}
+      )
+      list( REMOVE_DUPLICATES MULLE_FOUNDATION_DEFINITIONS)
+   endif()
 
 endif()
 
