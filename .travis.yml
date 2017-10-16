@@ -10,4 +10,4 @@ before_install:
 # but that's no good for us
 script:
    - CC= mulle-install -vv -V --prefix /tmp
-   - CC= mulle-test -v -V
+   - [ -d tests ] && CC= mulle-test -v -V
