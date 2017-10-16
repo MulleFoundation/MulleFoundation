@@ -20,4 +20,4 @@ static void   versionassert( struct _mulle_objc_universe *universe,
 # define FOUNDATION_VERSION_ASSERT   versionassert
 #endif
 
-#include <MulleObjCStandardFoundation/MulleObjCFoundationStandalone.inc>
+#include <MulleObjCStandardFoundation/MulleObjCStandardFoundationStartup.inc>

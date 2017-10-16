@@ -1,1 +1,1 @@
-#import <MulleObjCStandardFoundation/MulleObjCFoundationSetup.h>
+#import <MulleObjCStandardFoundation/MulleObjCStandardFoundationSetup.h>
