@@ -36,7 +36,15 @@ Fork      |  Build Status | Release Version
 ## Install
 
 See [mulle-foundation-developer](//github.com/mulle-nat/mulle-foundation-developer)
-for installation instructions.
+for installation instructions. In general you don't need to download the
+**MulleFoundation** manually. The developer tools will do this for you.
+
+If you want to hack on the **MulleFoundation** use the
+`mulle-foundation-clone` command supplied by **mulle-foundation-developer**.
+
+```
+mulle-foundation-clone
+```
 
 
 ## Acknowledgements
