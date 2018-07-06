@@ -1,0 +1,3 @@
+MulleObjCOSFoundation;tar;;e472d397-6450-40cf-8ba2-d00a52027e82;${MULLEOBJCOSFOUNDATION_URL:-https://github.com/MulleFoundation/MulleObjCOSFoundation/archive/${MULLEOBJCOSFOUNDATION_BRANCH:-latest}.tar.gz};;;;
+MulleObjCExpatFoundation;tar;no-require;11a100d2-5ca5-477d-9486-85310f9970b6;${MULLEOBJCEXPATFOUNDATION_URL:-https://github.com/MulleFoundation/MulleObjCExpatFoundation/archive/${MULLEOBJCEXPATFOUNDATION_BRANCH:-latest}.tar.gz};;;;
+MulleObjCKVCFoundation;tar;;8dd098f3-37b6-4c16-ba0f-915391e2e829;${MULLEOBJCKVCFOUNDATION_URL:-https://github.com/MulleFoundation/MulleObjCKVCFoundation/archive/${MULLEOBJCKVCFOUNDATION_BRANCH:-latest}.tar.gz};;;;

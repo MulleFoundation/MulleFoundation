@@ -1,103 +1,127 @@
-cmake_minimum_required (VERSION 3.0)
+cmake_minimum_required( VERSION 3.1)
 
-project( Foundation C)
+project( MulleFoundation C)
 
-set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/mulle-configuration/cmake)
 
-message( STATUS "CMAKE_MODULE_PATH is ${CMAKE_MODULE_PATH}")
-message( STATUS "CMAKE_BUILD_TYPE is ${CMAKE_BUILD_TYPE}")
+### mulle-sde environment
 
-set( MULLE_LANGUAGE "ObjC")
+# add cmake module paths to search path
+list( INSERT CMAKE_MODULE_PATH 0 "${PROJECT_SOURCE_DIR}/cmake/share")
+list( INSERT CMAKE_MODULE_PATH 0 "${PROJECT_SOURCE_DIR}/cmake")
 
-if( "${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
-  include( Debug)
-else()
-  include( Release)
-endif()
+include( Environment)
+
+
+### Files
+
+include( PreFiles OPTIONAL)
 
 set( MULLE_FOUNDATION_LIBRARY ON)
-set( MULLE_FOUNDATION_STARTUP_LIBRARY ON)
 
-include( CMakeDependencies.txt)
-include( CMakeSourcesAndHeaders.txt)
+#
+# Include all non underscored .cmake files in ./cmake
+#
+file( GLOB LOCAL_CMAKE_INCLUDES
+   "cmake/[A-Za-z0-9]*.cmake"
+)
+
+foreach( FILE ${LOCAL_CMAKE_INCLUDES} )
+   include( "${FILE}")
+endforeach()
 
 
 include_directories( ${INCLUDE_DIRS})
 
+include( PostFiles OPTIONAL)
 
-set( PUBLIC_HEADERS
-${PUBLIC_HEADERS}
-"CMakeDependencies.txt"
-"src/dependencies.inc"
+set( PROJECT_FILES
+   ${PROJECT_FILES}
+   ${SOURCES}
+   ${PUBLIC_HEADERS}
+   ${PRIVATE_HEADERS}
+   ${CMAKE_EDITABLE_FILES}
 )
 
+### Library
 
-# set BUILD_SHARED_LIBS to "ON" to create a shared library
+include( PreLibrary OPTIONAL)
 
-add_library( Foundation
-${SOURCES}
-${PUBLIC_HEADERS}
-${PRIVATE_HEADERS}
-CMakeSourcesAndHeaders.txt
+# ##################################
+# Mainly of interest for Objective-C
+# ##################################
+# Libraries are built in two stages:
+#
+# In the first step the PROJECT_FILES are compiled.
+# In the second step STAGE2_SOURCES are added.
+# This allows PostLibrary to run an analysis step over PROJECT_FILES and
+# generate files to be included by STAGE2_SOURCES. If there are no
+# STAGE2_SOURCES then this is just a more verbose way of doing it.
+# OBJC_LOADER_INC is the generated analysis step.
+#
+#
+add_library( "_1_MulleFoundation" OBJECT
+   ${PROJECT_FILES}
 )
 
-
-add_library( FoundationStartup
-${STARTUP_SOURCES}
+set( ALL_OBJECT_FILES
+   $<TARGET_OBJECTS:_1_MulleFoundation>
 )
 
+set_property( TARGET "_1_MulleFoundation" PROPERTY CXX_STANDARD 11)
 
-target_link_libraries( Foundation
-${BEGIN_ALL_LOAD}
-${OBJC_DEPENDENCY_LIBRARIES}
-FoundationStartup
-${C_DEPENDENCY_LIBRARIES}
-${END_ALL_LOAD}
-${OS_SPECIFIC_LIBARIES}
-)
-#${ICU_LIBRARIES}
-
-
-
-message( STATUS "OBJC_DEPENDENCY_NAMES is ${OBJC_DEPENDENCY_NAMES}")
-
-# runs in build dir
-
-if( MSVC)
-   find_program( CREATE_INC mulle-objc-create-dependencies-inc.bat ${DEPENDENCIES_DIR}/bin)
+if( STAGE2_SOURCES)
+   add_library( "_2_MulleFoundation" OBJECT
+      ${STAGE2_SOURCES}
+      ${STAGE2_HEADERS}
+   )
+   set( ALL_OBJECT_FILES
+      ${ALL_OBJECT_FILES}
+      $<TARGET_OBJECTS:_2_MulleFoundation>
+   )
+   set_property( TARGET "_2_MulleFoundation" PROPERTY CXX_STANDARD 11)
 else()
-   find_program( CREATE_INC mulle-objc-create-dependencies-inc ${DEPENDENCIES_DIR}/bin)
+   if( STAGE2_HEADERS)
+      message( FATAL_ERROR "No STAGE2_SOURCES found but STAGE2_HEADERS exist")
+   endif()
 endif()
 
 
-add_custom_command( TARGET Foundation
-   POST_BUILD
-   COMMAND ${CREATE_INC}
-              -v
-              -o ${CMAKE_SOURCE_DIR}/src/dependencies.inc
-              Foundation
-              ${OBJC_DEPENDENCY_NAMES}
-   DEPENDS "$<TARGET_FILE:Foundation>"
-           "${OBJC_DEPENDENCY_LIBRARIES}"
-   VERBATIM
+add_library( "MulleFoundation"
+   ${ALL_OBJECT_FILES}
 )
 
 
-if( APPLE AND BUILD_SHARED_LIBS)
-   set_target_properties( Foundation PROPERTIES
-FRAMEWORK TRUE
-FRAMEWORK_VERSION A
-# MACOSX_FRAMEWORK_IDENTIFIER "com.mulle-kybernetik.Foundation"
-# VERSION "0.0.0"
-# SOVERSION  "0.0.0"
-PUBLIC_HEADER "${PUBLIC_HEADERS}"
-PRIVATE_HEADER "${PRIVATE_HEADERS}"
-RESOURCE "${RESOURCES}"
-)
-   install( TARGETS Foundation DESTINATION "Frameworks")
-else()
-   install( TARGETS Foundation FoundationStartup DESTINATION "lib")
-   install( FILES ${PUBLIC_HEADERS} DESTINATION "include/Foundation")
-   install( FILES ${RESOURCES} DESTINATION "share/Foundation")
+set( INSTALL_LIBRARY_TARGETS "MulleFoundation")
+
+include( PostLibrary OPTIONAL)
+
+
+#
+# defined by cmake -DBUILD_SHARED_LIBS=ON
+#
+if( BUILD_SHARED_LIBS)
+   set( SHARED_LIBRARY_LIST
+      ${DEPENDENCY_LIBRARIES}
+      ${OPTIONAL_DEPENDENCY_LIBRARIES}
+      ${OS_SPECIFIC_LIBRARIES}
+   )
+
+   include( PostSharedLibrary OPTIONAL) # additional hook
+
+   target_link_libraries( MulleFoundation
+      ${SHARED_LIBRARY_LIST}
+   )
 endif()
 
+
+### Install
+
+include( PreInstall OPTIONAL)
+
+install( TARGETS ${INSTALL_LIBRARY_TARGETS} DESTINATION "lib")
+install( FILES ${PUBLIC_HEADERS}  DESTINATION "include/MulleFoundation")
+install( FILES ${PRIVATE_HEADERS} DESTINATION "include/MulleFoundation/private")
+
+install( FILES ${CMAKE_INCLUDES}  DESTINATION "include/MulleFoundation/cmake")
+
+include( PostInstall OPTIONAL)
