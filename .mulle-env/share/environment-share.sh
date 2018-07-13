@@ -12,7 +12,10 @@ export MULLE_MATCH_FIND_LOCATIONS="${PROJECT_SOURCE_DIR}:CMakeLists.txt:cmake"
 #
 #
 #
-export MULLE_SDE_INSTALLED_VERSION="0.24.5"
+export MULLE_SDE_INSTALLED_VERSION="0.26.0"
+
+
+# By default assume a project has source and a sourcetree in that order.
 
 
 # By default assume a project has source and a sourcetree in that order.

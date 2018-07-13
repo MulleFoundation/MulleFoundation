@@ -14,14 +14,11 @@ src/include-private.h
 )
 
 set( PUBLIC_HEADERS
-src/FoundationSetup.h
-src/Foundation.h
-src/Foundation-startup.inc
-src/MulleObjCLoader+Foundation.h
-src/NSDebug.h
-src/NSObjCRuntime.h
+src/MulleFoundationSetup.h
+src/MulleFoundation.h
+src/MulleFoundation-startup.inc
+src/MulleObjCLoader+MulleFoundation.h
 src/import.h
 src/include.h
-src/version.h
 ) 
 

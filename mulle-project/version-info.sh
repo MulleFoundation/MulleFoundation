@@ -4,5 +4,5 @@
 # enough for you. If you don't have this file, there will be
 # not git operations.
 #
-VERSIONNAME="FOUNDATION_VERSION"
-VERSIONFILE="src/Foundation.h"
+VERSIONNAME="MULLE_FOUNDATION_VERSION"
+VERSIONFILE="src/MulleFoundation.h"

@@ -91,7 +91,9 @@ add_library( "MulleFoundation"
 )
 
 
-set( INSTALL_LIBRARY_TARGETS "MulleFoundation")
+set( INSTALL_LIBRARY_TARGETS "MulleFoundation"
+   ${INSTALL_LIBRARY_TARGETS}
+)
 
 include( PostLibrary OPTIONAL)
 
@@ -123,5 +125,7 @@ install( FILES ${PUBLIC_HEADERS}  DESTINATION "include/MulleFoundation")
 install( FILES ${PRIVATE_HEADERS} DESTINATION "include/MulleFoundation/private")
 
 install( FILES ${CMAKE_INCLUDES}  DESTINATION "include/MulleFoundation/cmake")
+
+install( FILES ${FOUNDATION_HEADERS}  DESTINATION "include/Foundation")
 
 include( PostInstall OPTIONAL)

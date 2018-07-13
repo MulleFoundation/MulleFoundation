@@ -5,11 +5,11 @@ if( MULLE_TRACE_INCLUDE)
 endif()
 
 set( SOURCES
-src/Foundation.m
+src/MulleFoundation.m
 )
 
 set( STAGE2_SOURCES
-src/MulleObjCLoader+Foundation.m
+src/MulleObjCLoader+MulleFoundation.m
 )
 
 set( STANDALONE_SOURCES
@@ -17,5 +17,5 @@ src/MulleFoundation-standalone.m
 )
 
 set( STARTUP_SOURCES
-src/Foundation-startup.m
+src/MulleFoundation-startup.m
 )

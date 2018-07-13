@@ -5,37 +5,47 @@ if( NOT __EXECUTABLE_OBJC_CMAKE__)
       message( STATUS "# Include \"${CMAKE_CURRENT_LIST_FILE}\"" )
    endif()
 
-   set( EXECUTABLE_OBJC_VERSION 4)
+   if( NOT EXECUTABLE_NAME)
+      set( EXECUTABLE_NAME "MulleFoundation")
+   endif()
+
+   option( LINK_STARTUP_LIBRARY "Add a startup library to ObjC executable" ON)
 
    #
    # This library contains ___get_or_create_mulle_objc_universe and
    # the startup code to create the universe
    #
-   if( NOT MULLE_OBJC_STARTUP_LIBRARY)
-      find_library( MULLE_OBJC_STARTUP_LIBRARY NAMES MulleObjC-startup)
+   if( LINK_STARTUP_LIBRARY)
+      if( NOT STARTUP_LIBRARY_NAME)
+         set( STARTUP_LIBRARY_NAME "MulleObjC-startup")
+      endif()
+
+      if( NOT STARTUP_LIBRARY)
+         find_library( STARTUP_LIBRARY NAMES ${STARTUP_LIBRARY_NAME})
+      endif()
+
+      message( STATUS "STARTUP_LIBRARY is ${STARTUP_LIBRARY}")
+
+      set( EXECUTABLE_LIBRARY_LIST
+        ${EXECUTABLE_LIBRARY_LIST}
+        ${STARTUP_LIBRARY}
+      )
    endif()
-
-   message( STATUS "MULLE_OBJC_STARTUP_LIBRARY is ${MULLE_OBJC_STARTUP_LIBRARY}")
-
-   set( EXECUTABLE_LIBRARY_LIST
-      ${EXECUTABLE_LIBRARY_LIST}
-      ${MULLE_OBJC_STARTUP_LIBRARY}
-   )
 
    #
    # need this for .aam projects
    #
-   set_target_properties( MulleFoundation
+   set_target_properties( "${EXECUTABLE_NAME}"
       PROPERTIES LINKER_LANGUAGE C
    )
 
    #
-   # For noobs add a line so they find the output
+   # For noobs: add a line so they find the output
    #
    add_custom_command(
-     TARGET MulleFoundation
+     TARGET "${EXECUTABLE_NAME}"
      POST_BUILD
-     COMMAND echo "Your executable \"$<TARGET_FILE:MulleFoundation>\" is now ready to run"
+     COMMAND echo "Your executable \"$<TARGET_FILE:${EXECUTABLE_NAME}>\" is now ready to run"
      VERBATIM
    )
 

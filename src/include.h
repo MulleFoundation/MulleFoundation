@@ -23,7 +23,4 @@
 
 /* You can add some more include statements here */
 
-#include "version.h"
-
-
 #endif

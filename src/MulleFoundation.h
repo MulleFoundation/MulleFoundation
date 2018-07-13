@@ -1,12 +1,12 @@
 //
-//  Foundation.h
+//  MulleFoundation.h
 //  Foundation
 //
 //  Created by Nat! on 02.04.16.
 //  Copyright © 2016 Mulle kybernetiK. All rights reserved.
 //
 
-#define FOUNDATION_VERSION   ((0 << 20) | (13 << 8) | 0)
+#define MULLE_FOUNDATION_VERSION   ((0 << 20) | (13 << 8) | 0)
 
 // this specifies the "vendor" and also announces it
 // known values:
@@ -21,9 +21,9 @@
 // only code that includes the foundation header will get the
 // benefit of version checking at runtime!
 
-#define FOUNDATION_VERSION_MAJOR  0
-#define FOUNDATION_VERSION_MINOR  13
-#define FOUNDATION_VERSION_PATCH  0
+#define MULLE_FOUNDATION_VERSION_MAJOR  0
+#define MULLE_FOUNDATION_VERSION_MINOR  13
+#define MULLE_FOUNDATION_VERSION_PATCH  0
 
 
 #if TRACE_INCLUDE
@@ -60,7 +60,7 @@
 #import "import.h"
 
 
-#import "MulleObjCLoader+Foundation.h"
+#import "MulleObjCLoader+MulleFoundation.h"
 
 // the forwarding method in this particular runtime
 void   *__forward_mulle_objc_object_call( void *self,
