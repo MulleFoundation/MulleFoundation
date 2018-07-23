@@ -110,7 +110,7 @@ and everybody will be happy")
          set( CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS OFF)
          set( CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} /DEF:${DEF_FILE}")
 
-         message( STATUS "MSVC will generate \"${DEF_FILE}\" from ${TARGET_ALL_LOAD_LIBRARIES}")
+         message( STATUS "MSVC will generate \"${DEF_FILE}\" from ${STANDALONE_ALL_LOAD_LIBRARIES}")
 
          add_custom_command( OUTPUT ${DEF_FILE}
                              COMMAND mulle-mingw-dumpdef.bat -o "${DEF_FILE}"

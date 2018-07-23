@@ -1,7 +1,13 @@
 
-inotifywait
+fswatch
 ssh
+curl
 cc
+clang
 gcc
 ld
+otool
+install_name_tool
+xcrun
+xcodebuild
 ninja

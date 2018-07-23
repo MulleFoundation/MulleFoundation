@@ -6,6 +6,8 @@
 #ifndef _mulle_foundation_include_h__
 #define _mulle_foundation_include_h__
 
-/* no headers */
+# if __has_include(<MulleObjCDecimalFoundation/MulleObjCDecimalFoundation.h>)
+#  include <MulleObjCDecimalFoundation/MulleObjCDecimalFoundation.h>   // MulleObjCDecimalFoundation
+# endif
 
 #endif
