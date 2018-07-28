@@ -8,13 +8,13 @@ static void   versionassert( struct _mulle_objc_universe *universe,
    uint32_t   mask;
 
    mask = ~0U << 20;
-   if( (version->foundation & mask) != (FOUNDATION_VERSION & mask))
+   if( (version->foundation & mask) != (MULLE_FOUNDATION_VERSION & mask))
       _mulle_objc_universe_raise_inconsistency_exception( universe,
           "mulle_objc_universe %p: foundation version set to %x "
           "but universe foundation is %x",
               universe,
               version->foundation,
-              FOUNDATION_VERSION);
+              MULLE_FOUNDATION_VERSION);
 }
 
 # define FOUNDATION_VERSION_ASSERT   versionassert

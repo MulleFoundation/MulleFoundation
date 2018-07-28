@@ -64,6 +64,4 @@ wc
 which
 column
 git
-uuidgen
 cmake
-make

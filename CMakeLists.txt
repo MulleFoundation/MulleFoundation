@@ -90,8 +90,11 @@ add_library( "MulleFoundation"
    ${ALL_OBJECT_FILES}
 )
 
+include( Library OPTIONAL)
 
-set( INSTALL_LIBRARY_TARGETS "MulleFoundation"
+
+set( INSTALL_LIBRARY_TARGETS
+   "MulleFoundation"
    ${INSTALL_LIBRARY_TARGETS}
 )
 
