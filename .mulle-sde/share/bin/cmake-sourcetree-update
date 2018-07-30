@@ -69,7 +69,7 @@ uname_to_cmake()
       'mingw')
          systemname="Windows"
       ;;
-      
+
       *)
          systemname="`tr 'a-z' 'A-Z' <<< "${uname:0:1}"`"
          systemname="${systemname}${uname:1}"
@@ -176,6 +176,16 @@ _emit_cmake_find_library()
          failstatus="STATUS"
          failstring="${identifier}_LIBRARY is missing but it is marked as \\\"no-require-link\\\""
       ;;
+
+      #
+      # the idea with no-require-${MULLE_UNAME} is halfbaked and should
+      # probably be removed (or done correctly)
+      #
+      # *",no-require-${MULLE_UNAME},"*)
+#
+      #    failstatus="STATUS"
+      #    failstring="${identifier}_LIBRARY is missing but it is marked as \\\"no-require-${MULLE_UNAME}\\\""
+      # ;;
 
       *',no-require,'*)
 
@@ -314,6 +324,12 @@ _emit_cmake_header_only()
          failstatus="STATUS"
          failstring="${identifier}_LIBRARY is missing but it is marked as \\\"no-require\\\""
       ;;
+
+      # *",no-require-${MULLE_UNAME},"*)
+#
+      #    failstatus="STATUS"
+      #    failstring="${identifier}_LIBRARY is missing but it is marked as \\\"no-require-${MULLE_UNAME}\\\""
+      # ;;
 
       *)
          failstatus="FATAL_ERROR"
