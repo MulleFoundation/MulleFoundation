@@ -6,7 +6,7 @@
 //  Copyright © 2016 Mulle kybernetiK. All rights reserved.
 //
 
-#define MULLE_FOUNDATION_VERSION   ((0 << 20) | (13 << 8) | 0)
+#define MULLE_FOUNDATION_VERSION   ((0 << 20) | (13 << 8) | 1)
 
 // this specifies the "vendor" and also announces it
 // known values:

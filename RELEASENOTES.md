@@ -1,3 +1,8 @@
+### 0.13.1
+
+* fixed and improved objc-loader.inc
+* modernize mulle-sde cmake
+
 ## 0.13.0
 
 * move Foundation.h to its own project

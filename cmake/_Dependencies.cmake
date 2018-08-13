@@ -21,13 +21,25 @@ if( NOT MULLE_OBJC_OSFOUNDATION_LIBRARY)
       get_filename_component( _TMP_MULLE_OBJC_OSFOUNDATION_ROOT "${_TMP_MULLE_OBJC_OSFOUNDATION_ROOT}" DIRECTORY)
 
       # search for DependenciesAndLibraries.cmake to include
-      foreach( _TMP_MULLE_OBJC_OSFOUNDATION_NAME in MulleObjCOSFoundation)
+      foreach( _TMP_MULLE_OBJC_OSFOUNDATION_NAME "MulleObjCOSFoundation")
          set( _TMP_MULLE_OBJC_OSFOUNDATION_DIR "${_TMP_MULLE_OBJC_OSFOUNDATION_ROOT}/include/${_TMP_MULLE_OBJC_OSFOUNDATION_NAME}/cmake")
          # use explicit path to avoid "surprises"
+         message( STATUS "_TMP_MULLE_OBJC_OSFOUNDATION_DIR is ${_TMP_MULLE_OBJC_OSFOUNDATION_DIR}")
          if( EXISTS "${_TMP_MULLE_OBJC_OSFOUNDATION_DIR}/DependenciesAndLibraries.cmake")
             unset( MULLE_OBJC_OSFOUNDATION_DEFINITIONS)
             list( INSERT CMAKE_MODULE_PATH 0 "${_TMP_MULLE_OBJC_OSFOUNDATION_DIR}")
+            # we only want top level INHERIT_OBJC_LOADERS, so disable them
+            if( NOT NO_INHERIT_OBJC_LOADERS)
+               set( NO_INHERIT_OBJC_LOADERS OFF)
+            endif()
+            list( APPEND _TMP_INHERIT_OBJC_LOADERS ${NO_INHERIT_OBJC_LOADERS})
+            set( NO_INHERIT_OBJC_LOADERS ON)
+            #
             include( "${_TMP_MULLE_OBJC_OSFOUNDATION_DIR}/DependenciesAndLibraries.cmake")
+            #
+            list( GET _TMP_INHERIT_OBJC_LOADERS -1 NO_INHERIT_OBJC_LOADERS)
+            list( REMOVE_AT _TMP_INHERIT_OBJC_LOADERS -1)
+            #
             list( REMOVE_ITEM CMAKE_MODULE_PATH "${_TMP_MULLE_OBJC_OSFOUNDATION_DIR}")
             set( INHERITED_DEFINITIONS
                ${INHERITED_DEFINITIONS}
@@ -35,21 +47,26 @@ if( NOT MULLE_OBJC_OSFOUNDATION_LIBRARY)
                CACHE INTERNAL "need to cache this"
             )
             break()
+         else()
+            message( STATUS "${_TMP_MULLE_OBJC_OSFOUNDATION_DIR}/DependenciesAndLibraries.cmake not found")
          endif()
       endforeach()
 
       # search for objc-loader.inc in include directory
-      foreach( _TMP_MULLE_OBJC_OSFOUNDATION_NAME in MulleObjCOSFoundation)
-         set( _TMP_MULLE_OBJC_OSFOUNDATION_FILE "${_TMP_MULLE_OBJC_OSFOUNDATION_ROOT}/include/${_TMP_MULLE_OBJC_OSFOUNDATION_NAME}/objc-loader.inc")
-         if( EXISTS "${_TMP_MULLE_OBJC_OSFOUNDATION_FILE}")
-            set( INHERITED_OBJC_LOADERS
-               ${INHERITED_OBJC_LOADERS}
-               ${_TMP_MULLE_OBJC_OSFOUNDATION_FILE}
-               CACHE INTERNAL "need to cache this"
-            )
-            break()
-         endif()
-      endforeach()
+      # this can be turned  off (see above)
+      if( NOT NO_INHERIT_OBJC_LOADERS)
+         foreach( _TMP_MULLE_OBJC_OSFOUNDATION_NAME "MulleObjCOSFoundation")
+            set( _TMP_MULLE_OBJC_OSFOUNDATION_FILE "${_TMP_MULLE_OBJC_OSFOUNDATION_ROOT}/include/${_TMP_MULLE_OBJC_OSFOUNDATION_NAME}/objc-loader.inc")
+            if( EXISTS "${_TMP_MULLE_OBJC_OSFOUNDATION_FILE}")
+               set( INHERITED_OBJC_LOADERS
+                  ${INHERITED_OBJC_LOADERS}
+                  ${_TMP_MULLE_OBJC_OSFOUNDATION_FILE}
+                  CACHE INTERNAL "need to cache this"
+               )
+               break()
+            endif()
+         endforeach()
+      endif()
    else()
       message( FATAL_ERROR "MULLE_OBJC_OSFOUNDATION_LIBRARY was not found")
    endif()
@@ -73,13 +90,25 @@ if( NOT MULLE_OBJC_EXPAT_FOUNDATION_LIBRARY)
       get_filename_component( _TMP_MULLE_OBJC_EXPAT_FOUNDATION_ROOT "${_TMP_MULLE_OBJC_EXPAT_FOUNDATION_ROOT}" DIRECTORY)
 
       # search for DependenciesAndLibraries.cmake to include
-      foreach( _TMP_MULLE_OBJC_EXPAT_FOUNDATION_NAME in MulleObjCExpatFoundation)
+      foreach( _TMP_MULLE_OBJC_EXPAT_FOUNDATION_NAME "MulleObjCExpatFoundation")
          set( _TMP_MULLE_OBJC_EXPAT_FOUNDATION_DIR "${_TMP_MULLE_OBJC_EXPAT_FOUNDATION_ROOT}/include/${_TMP_MULLE_OBJC_EXPAT_FOUNDATION_NAME}/cmake")
          # use explicit path to avoid "surprises"
+         message( STATUS "_TMP_MULLE_OBJC_EXPAT_FOUNDATION_DIR is ${_TMP_MULLE_OBJC_EXPAT_FOUNDATION_DIR}")
          if( EXISTS "${_TMP_MULLE_OBJC_EXPAT_FOUNDATION_DIR}/DependenciesAndLibraries.cmake")
             unset( MULLE_OBJC_EXPAT_FOUNDATION_DEFINITIONS)
             list( INSERT CMAKE_MODULE_PATH 0 "${_TMP_MULLE_OBJC_EXPAT_FOUNDATION_DIR}")
+            # we only want top level INHERIT_OBJC_LOADERS, so disable them
+            if( NOT NO_INHERIT_OBJC_LOADERS)
+               set( NO_INHERIT_OBJC_LOADERS OFF)
+            endif()
+            list( APPEND _TMP_INHERIT_OBJC_LOADERS ${NO_INHERIT_OBJC_LOADERS})
+            set( NO_INHERIT_OBJC_LOADERS ON)
+            #
             include( "${_TMP_MULLE_OBJC_EXPAT_FOUNDATION_DIR}/DependenciesAndLibraries.cmake")
+            #
+            list( GET _TMP_INHERIT_OBJC_LOADERS -1 NO_INHERIT_OBJC_LOADERS)
+            list( REMOVE_AT _TMP_INHERIT_OBJC_LOADERS -1)
+            #
             list( REMOVE_ITEM CMAKE_MODULE_PATH "${_TMP_MULLE_OBJC_EXPAT_FOUNDATION_DIR}")
             set( INHERITED_DEFINITIONS
                ${INHERITED_DEFINITIONS}
@@ -87,21 +116,26 @@ if( NOT MULLE_OBJC_EXPAT_FOUNDATION_LIBRARY)
                CACHE INTERNAL "need to cache this"
             )
             break()
+         else()
+            message( STATUS "${_TMP_MULLE_OBJC_EXPAT_FOUNDATION_DIR}/DependenciesAndLibraries.cmake not found")
          endif()
       endforeach()
 
       # search for objc-loader.inc in include directory
-      foreach( _TMP_MULLE_OBJC_EXPAT_FOUNDATION_NAME in MulleObjCExpatFoundation)
-         set( _TMP_MULLE_OBJC_EXPAT_FOUNDATION_FILE "${_TMP_MULLE_OBJC_EXPAT_FOUNDATION_ROOT}/include/${_TMP_MULLE_OBJC_EXPAT_FOUNDATION_NAME}/objc-loader.inc")
-         if( EXISTS "${_TMP_MULLE_OBJC_EXPAT_FOUNDATION_FILE}")
-            set( INHERITED_OBJC_LOADERS
-               ${INHERITED_OBJC_LOADERS}
-               ${_TMP_MULLE_OBJC_EXPAT_FOUNDATION_FILE}
-               CACHE INTERNAL "need to cache this"
-            )
-            break()
-         endif()
-      endforeach()
+      # this can be turned  off (see above)
+      if( NOT NO_INHERIT_OBJC_LOADERS)
+         foreach( _TMP_MULLE_OBJC_EXPAT_FOUNDATION_NAME "MulleObjCExpatFoundation")
+            set( _TMP_MULLE_OBJC_EXPAT_FOUNDATION_FILE "${_TMP_MULLE_OBJC_EXPAT_FOUNDATION_ROOT}/include/${_TMP_MULLE_OBJC_EXPAT_FOUNDATION_NAME}/objc-loader.inc")
+            if( EXISTS "${_TMP_MULLE_OBJC_EXPAT_FOUNDATION_FILE}")
+               set( INHERITED_OBJC_LOADERS
+                  ${INHERITED_OBJC_LOADERS}
+                  ${_TMP_MULLE_OBJC_EXPAT_FOUNDATION_FILE}
+                  CACHE INTERNAL "need to cache this"
+               )
+               break()
+            endif()
+         endforeach()
+      endif()
    else()
       message( STATUS "MULLE_OBJC_EXPAT_FOUNDATION_LIBRARY is missing but it is marked as \"no-require\"")
    endif()
@@ -125,13 +159,25 @@ if( NOT MULLE_OBJC_KVCFOUNDATION_LIBRARY)
       get_filename_component( _TMP_MULLE_OBJC_KVCFOUNDATION_ROOT "${_TMP_MULLE_OBJC_KVCFOUNDATION_ROOT}" DIRECTORY)
 
       # search for DependenciesAndLibraries.cmake to include
-      foreach( _TMP_MULLE_OBJC_KVCFOUNDATION_NAME in MulleObjCKVCFoundation)
+      foreach( _TMP_MULLE_OBJC_KVCFOUNDATION_NAME "MulleObjCKVCFoundation")
          set( _TMP_MULLE_OBJC_KVCFOUNDATION_DIR "${_TMP_MULLE_OBJC_KVCFOUNDATION_ROOT}/include/${_TMP_MULLE_OBJC_KVCFOUNDATION_NAME}/cmake")
          # use explicit path to avoid "surprises"
+         message( STATUS "_TMP_MULLE_OBJC_KVCFOUNDATION_DIR is ${_TMP_MULLE_OBJC_KVCFOUNDATION_DIR}")
          if( EXISTS "${_TMP_MULLE_OBJC_KVCFOUNDATION_DIR}/DependenciesAndLibraries.cmake")
             unset( MULLE_OBJC_KVCFOUNDATION_DEFINITIONS)
             list( INSERT CMAKE_MODULE_PATH 0 "${_TMP_MULLE_OBJC_KVCFOUNDATION_DIR}")
+            # we only want top level INHERIT_OBJC_LOADERS, so disable them
+            if( NOT NO_INHERIT_OBJC_LOADERS)
+               set( NO_INHERIT_OBJC_LOADERS OFF)
+            endif()
+            list( APPEND _TMP_INHERIT_OBJC_LOADERS ${NO_INHERIT_OBJC_LOADERS})
+            set( NO_INHERIT_OBJC_LOADERS ON)
+            #
             include( "${_TMP_MULLE_OBJC_KVCFOUNDATION_DIR}/DependenciesAndLibraries.cmake")
+            #
+            list( GET _TMP_INHERIT_OBJC_LOADERS -1 NO_INHERIT_OBJC_LOADERS)
+            list( REMOVE_AT _TMP_INHERIT_OBJC_LOADERS -1)
+            #
             list( REMOVE_ITEM CMAKE_MODULE_PATH "${_TMP_MULLE_OBJC_KVCFOUNDATION_DIR}")
             set( INHERITED_DEFINITIONS
                ${INHERITED_DEFINITIONS}
@@ -139,21 +185,26 @@ if( NOT MULLE_OBJC_KVCFOUNDATION_LIBRARY)
                CACHE INTERNAL "need to cache this"
             )
             break()
+         else()
+            message( STATUS "${_TMP_MULLE_OBJC_KVCFOUNDATION_DIR}/DependenciesAndLibraries.cmake not found")
          endif()
       endforeach()
 
       # search for objc-loader.inc in include directory
-      foreach( _TMP_MULLE_OBJC_KVCFOUNDATION_NAME in MulleObjCKVCFoundation)
-         set( _TMP_MULLE_OBJC_KVCFOUNDATION_FILE "${_TMP_MULLE_OBJC_KVCFOUNDATION_ROOT}/include/${_TMP_MULLE_OBJC_KVCFOUNDATION_NAME}/objc-loader.inc")
-         if( EXISTS "${_TMP_MULLE_OBJC_KVCFOUNDATION_FILE}")
-            set( INHERITED_OBJC_LOADERS
-               ${INHERITED_OBJC_LOADERS}
-               ${_TMP_MULLE_OBJC_KVCFOUNDATION_FILE}
-               CACHE INTERNAL "need to cache this"
-            )
-            break()
-         endif()
-      endforeach()
+      # this can be turned  off (see above)
+      if( NOT NO_INHERIT_OBJC_LOADERS)
+         foreach( _TMP_MULLE_OBJC_KVCFOUNDATION_NAME "MulleObjCKVCFoundation")
+            set( _TMP_MULLE_OBJC_KVCFOUNDATION_FILE "${_TMP_MULLE_OBJC_KVCFOUNDATION_ROOT}/include/${_TMP_MULLE_OBJC_KVCFOUNDATION_NAME}/objc-loader.inc")
+            if( EXISTS "${_TMP_MULLE_OBJC_KVCFOUNDATION_FILE}")
+               set( INHERITED_OBJC_LOADERS
+                  ${INHERITED_OBJC_LOADERS}
+                  ${_TMP_MULLE_OBJC_KVCFOUNDATION_FILE}
+                  CACHE INTERNAL "need to cache this"
+               )
+               break()
+            endif()
+         endforeach()
+      endif()
    else()
       message( FATAL_ERROR "MULLE_OBJC_KVCFOUNDATION_LIBRARY was not found")
    endif()
@@ -167,8 +218,8 @@ if( NOT MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY)
    # the order looks ascending, but due to the way this file is read
    # it ends up being descending, which is what we need
    if( MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY)
-      set( DEPENDENCY_LIBRARIES
-         ${DEPENDENCY_LIBRARIES}
+      set( ALL_LOAD_DEPENDENCY_LIBRARIES
+         ${ALL_LOAD_DEPENDENCY_LIBRARIES}
          ${MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY}
          CACHE INTERNAL "need to cache this"
       )
@@ -177,13 +228,25 @@ if( NOT MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY)
       get_filename_component( _TMP_MULLE_OBJC_DECIMAL_FOUNDATION_ROOT "${_TMP_MULLE_OBJC_DECIMAL_FOUNDATION_ROOT}" DIRECTORY)
 
       # search for DependenciesAndLibraries.cmake to include
-      foreach( _TMP_MULLE_OBJC_DECIMAL_FOUNDATION_NAME in MulleObjCDecimalFoundation)
+      foreach( _TMP_MULLE_OBJC_DECIMAL_FOUNDATION_NAME "MulleObjCDecimalFoundation")
          set( _TMP_MULLE_OBJC_DECIMAL_FOUNDATION_DIR "${_TMP_MULLE_OBJC_DECIMAL_FOUNDATION_ROOT}/include/${_TMP_MULLE_OBJC_DECIMAL_FOUNDATION_NAME}/cmake")
          # use explicit path to avoid "surprises"
+         message( STATUS "_TMP_MULLE_OBJC_DECIMAL_FOUNDATION_DIR is ${_TMP_MULLE_OBJC_DECIMAL_FOUNDATION_DIR}")
          if( EXISTS "${_TMP_MULLE_OBJC_DECIMAL_FOUNDATION_DIR}/DependenciesAndLibraries.cmake")
             unset( MULLE_OBJC_DECIMAL_FOUNDATION_DEFINITIONS)
             list( INSERT CMAKE_MODULE_PATH 0 "${_TMP_MULLE_OBJC_DECIMAL_FOUNDATION_DIR}")
+            # we only want top level INHERIT_OBJC_LOADERS, so disable them
+            if( NOT NO_INHERIT_OBJC_LOADERS)
+               set( NO_INHERIT_OBJC_LOADERS OFF)
+            endif()
+            list( APPEND _TMP_INHERIT_OBJC_LOADERS ${NO_INHERIT_OBJC_LOADERS})
+            set( NO_INHERIT_OBJC_LOADERS ON)
+            #
             include( "${_TMP_MULLE_OBJC_DECIMAL_FOUNDATION_DIR}/DependenciesAndLibraries.cmake")
+            #
+            list( GET _TMP_INHERIT_OBJC_LOADERS -1 NO_INHERIT_OBJC_LOADERS)
+            list( REMOVE_AT _TMP_INHERIT_OBJC_LOADERS -1)
+            #
             list( REMOVE_ITEM CMAKE_MODULE_PATH "${_TMP_MULLE_OBJC_DECIMAL_FOUNDATION_DIR}")
             set( INHERITED_DEFINITIONS
                ${INHERITED_DEFINITIONS}
@@ -191,8 +254,26 @@ if( NOT MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY)
                CACHE INTERNAL "need to cache this"
             )
             break()
+         else()
+            message( STATUS "${_TMP_MULLE_OBJC_DECIMAL_FOUNDATION_DIR}/DependenciesAndLibraries.cmake not found")
          endif()
       endforeach()
+
+      # search for objc-loader.inc in include directory
+      # this can be turned  off (see above)
+      if( NOT NO_INHERIT_OBJC_LOADERS)
+         foreach( _TMP_MULLE_OBJC_DECIMAL_FOUNDATION_NAME "MulleObjCDecimalFoundation")
+            set( _TMP_MULLE_OBJC_DECIMAL_FOUNDATION_FILE "${_TMP_MULLE_OBJC_DECIMAL_FOUNDATION_ROOT}/include/${_TMP_MULLE_OBJC_DECIMAL_FOUNDATION_NAME}/objc-loader.inc")
+            if( EXISTS "${_TMP_MULLE_OBJC_DECIMAL_FOUNDATION_FILE}")
+               set( INHERITED_OBJC_LOADERS
+                  ${INHERITED_OBJC_LOADERS}
+                  ${_TMP_MULLE_OBJC_DECIMAL_FOUNDATION_FILE}
+                  CACHE INTERNAL "need to cache this"
+               )
+               break()
+            endif()
+         endforeach()
+      endif()
    else()
       message( STATUS "MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY is missing but it is marked as \"no-require\"")
    endif()

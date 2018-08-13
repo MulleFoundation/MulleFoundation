@@ -1,1 +1,4 @@
-
+      { @selector( MulleObjCLoader), @selector( MulleObjCDecimalFoundation) },      // 47a9beb6;MulleObjCLoader;f04a7a28;MulleObjCDecimalFoundation
+      { @selector( MulleObjCLoader), @selector( MulleObjCExpatFoundation) },      // 47a9beb6;MulleObjCLoader;e5f6fc77;MulleObjCExpatFoundation
+      { @selector( MulleObjCLoader), @selector( MulleObjCKVCFoundation) },      // 47a9beb6;MulleObjCLoader;4f2544f7;MulleObjCKVCFoundation
+      { @selector( MulleObjCLoader), @selector( MulleObjCOSFoundation) },      // 47a9beb6;MulleObjCLoader;94ffe970;MulleObjCOSFoundation
