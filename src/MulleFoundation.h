@@ -6,8 +6,6 @@
 //  Copyright © 2016 Mulle kybernetiK. All rights reserved.
 //
 
-#define MULLE_FOUNDATION_VERSION   ((0 << 20) | (13 << 8) | 1)
-
 // this specifies the "vendor" and also announces it
 // known values:
 //
@@ -16,14 +14,6 @@
 //    * "Community"
 //
 #define MULLE_FOUNDATION     "Mulle kybernetiK"
-
-// must be kept like this, this is how the compiler reads it
-// only code that includes the foundation header will get the
-// benefit of version checking at runtime!
-
-#define MULLE_FOUNDATION_VERSION_MAJOR  0
-#define MULLE_FOUNDATION_VERSION_MINOR  13
-#define MULLE_FOUNDATION_VERSION_PATCH  0
 
 
 #if TRACE_INCLUDE
@@ -59,6 +49,7 @@
 
 #import "import.h"
 
+#import "version.h"
 
 #import "MulleObjCLoader+MulleFoundation.h"
 
