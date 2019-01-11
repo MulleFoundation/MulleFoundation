@@ -2,7 +2,6 @@ cmake_minimum_required( VERSION 3.1)
 
 project( MulleFoundation C)
 
-
 ### mulle-sde environment
 
 # add cmake module paths to search path
