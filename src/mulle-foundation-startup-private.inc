@@ -1,3 +1,5 @@
+#import <MulleObjCStandardFoundation/private/mulle-foundation-universeconfiguration-private.h>
+
 // default version asserter for Foundation code
 
 #ifndef FOUNDATION_VERSION_ASSERT
@@ -20,4 +22,14 @@ static void   versionassert( struct _mulle_objc_universe *universe,
 # define FOUNDATION_VERSION_ASSERT   versionassert
 #endif
 
+
 #include <MulleObjCStandardFoundation/private/mulle-foundation-startup-private.inc>
+
+
+static inline void   MulleFoundationBang( struct _mulle_objc_universe *universe,
+                                          struct mulle_allocator *allocator,
+                                          struct _mulle_objc_universeconfiguration *config)
+{
+   MulleObjCStandardFoundationBang( universe, allocator, config);
+}
+
