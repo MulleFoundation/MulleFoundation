@@ -29,13 +29,15 @@ Build Status | Release Version
 [MulleObjCOSFoundation](//github.com/MulleFoundation/MulleObjCOSFoundation) | [![Build Status](https://travis-ci.org/MulleFoundation/MulleObjCOSFoundation.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleObjCOSFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCOSFoundation.svg)
 [MulleObjCStandardFoundation](//github.com/MulleFoundation/MulleObjCStandardFoundation) | [![Build Status](https://travis-ci.org/MulleFoundation/MulleObjCStandardFoundation.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleObjCStandardFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCStandardFoundation.svg)
 
+> MulleObjCOSFoundation one test failure is known and left
+> as an exercise for the reader.
 
 ## Install
 
-See [mulle-foundation-developer](//github.com/mulle-objc/mulle-foundation-developer)
+See [foundation-developer](//github.com/mulle-objc/foundation-developer)
 for installation instructions. In general you don't need to download the
 **MulleFoundation** manually. **mulle-sde**, which is part of
-**mulle-foundation-developer** will do this for you.
+*foundation-developer* will do this for you.
 
 
 ## Acknowledgements
