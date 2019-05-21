@@ -7,7 +7,7 @@ endif()
 
 # sourcetree: MULLE_OBJC_OS_FOUNDATION;no-singlephase;
 if( NOT MULLE_OBJC_OS_FOUNDATION_LIBRARY)
-   find_library( MULLE_OBJC_OS_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCOSFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCOSFoundation)
+   find_library( MULLE_OBJC_OS_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCOSFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCOSFoundation NO_CMAKE_SYSTEM_PATH)
    message( STATUS "MULLE_OBJC_OS_FOUNDATION_LIBRARY is ${MULLE_OBJC_OS_FOUNDATION_LIBRARY}")
    #
    # the order looks ascending, but due to the way this file is read
@@ -88,7 +88,7 @@ endif()
 
 # sourcetree: MULLE_OBJC_EXPAT_FOUNDATION;no-require,no-singlephase;
 if( NOT MULLE_OBJC_EXPAT_FOUNDATION_LIBRARY)
-   find_library( MULLE_OBJC_EXPAT_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCExpatFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCExpatFoundation)
+   find_library( MULLE_OBJC_EXPAT_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCExpatFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCExpatFoundation NO_CMAKE_SYSTEM_PATH)
    message( STATUS "MULLE_OBJC_EXPAT_FOUNDATION_LIBRARY is ${MULLE_OBJC_EXPAT_FOUNDATION_LIBRARY}")
    #
    # the order looks ascending, but due to the way this file is read
@@ -169,7 +169,7 @@ endif()
 
 # sourcetree: MULLE_OBJC_KVC_FOUNDATION;no-singlephase;
 if( NOT MULLE_OBJC_KVC_FOUNDATION_LIBRARY)
-   find_library( MULLE_OBJC_KVC_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCKVCFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCKVCFoundation)
+   find_library( MULLE_OBJC_KVC_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCKVCFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCKVCFoundation NO_CMAKE_SYSTEM_PATH)
    message( STATUS "MULLE_OBJC_KVC_FOUNDATION_LIBRARY is ${MULLE_OBJC_KVC_FOUNDATION_LIBRARY}")
    #
    # the order looks ascending, but due to the way this file is read
@@ -248,9 +248,9 @@ if( NOT MULLE_OBJC_KVC_FOUNDATION_LIBRARY)
 endif()
 
 
-# sourcetree: MULLE_OBJC_DECIMAL_FOUNDATION;no-import,no-require,no-singlephase;
+# sourcetree: MULLE_OBJC_DECIMAL_FOUNDATION;no-require,no-singlephase;
 if( NOT MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY)
-   find_library( MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCDecimalFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCDecimalFoundation)
+   find_library( MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCDecimalFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCDecimalFoundation NO_CMAKE_SYSTEM_PATH)
    message( STATUS "MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY is ${MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY}")
    #
    # the order looks ascending, but due to the way this file is read

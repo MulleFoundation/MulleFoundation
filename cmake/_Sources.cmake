@@ -18,5 +18,5 @@ src/mulle-foundation-standalone.m
 )
 
 set( STARTUP_SOURCES
-src/mulle-foundation-startup.m
+src/MulleFoundation-startup.m
 )
