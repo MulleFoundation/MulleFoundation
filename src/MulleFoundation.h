@@ -41,8 +41,6 @@
 #endif
 
 
-
-
 #if ! defined (__has_include)
 # error "Congratulations. You're compiling without mulle-clang and you made it quite far"
 #endif
@@ -50,6 +48,8 @@
 #import "import.h"
 
 #import "version.h"
+
+#import "NSConditionLock.h"
 
 #import "MulleObjCLoader+MulleFoundation.h"
 
