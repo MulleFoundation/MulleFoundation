@@ -15,8 +15,9 @@
 
 
 #define N_THREADS   16
+#define LOOPS       1000
 
-
+static int   forever;
 
 
 @implementation NSConditionLock( Test)
@@ -29,13 +30,14 @@
 
    threadno = [argument intValue];
    value    = (NSInteger) threadno;
-   for( i = 0; i < 1000; i++)
+   for( i = 0; i < LOOPS; i++)
    {
       [self lockWhenCondition:value];
-      printf( "%d #%d: %ld\n",
-               threadno,
-               i,
-               (long) [self condition]);
+      if( ! forever)
+         printf( "%d #%d: %ld\n",
+                  threadno,
+                  i,
+                  (long) [self condition]);
       [self unlockWithCondition:value + 1];
       value += N_THREADS;
    }
@@ -56,17 +58,32 @@ int   main( int argc, const char * argv[])
       return( 1);
 #endif
 
-   lock = [[[NSConditionLock alloc] initWithCondition:0] autorelease];
-   printf( "0. %ld\n", [lock condition]);
+   forever = argc == 2;
 
-   for( i = 1; i <= N_THREADS; i++)
-      [NSThread detachNewThreadSelector:@selector( runThread:)
-                               toTarget:lock
-                             withObject:[NSNumber numberWithInt:i]];
+   lock = [[NSConditionLock alloc] initWithCondition:0];
+   do
+   {
+      if( ! forever)
+         printf( "0. %ld\n", [lock condition]);
 
-   // all threads should be running now, lets go
-   [lock lockWhenCondition:0];
-   [lock unlockWithCondition:1];
+      for( i = 1; i <= N_THREADS; i++)
+         [NSThread detachNewThreadSelector:@selector( runThread:)
+                                  toTarget:lock
+                                withObject:[NSNumber numberWithInt:i]];
+
+      // all threads should be running now, lets go
+      [lock lockWhenCondition:0];
+      [lock unlockWithCondition:1];
+
+      [lock lockWhenCondition:N_THREADS*LOOPS+1];
+      [lock unlockWithCondition:0];
+
+      if( forever)
+         fprintf( stderr, ".");
+   }
+   while( forever);
+
+   [lock release];
 
    return( 0);
 }

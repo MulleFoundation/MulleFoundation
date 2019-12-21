@@ -103,6 +103,24 @@
 }
 
 
+- (void) mulleUnlockWithCondition:(NSInteger) value
+                        broadcast:(BOOL) broadcast
+{
+   _mulle_atomic_pointer_nonatomic_write( &_currentCondition, (void *) value);
+
+   //
+   // so we broadcast here, because if we only signal we could signal a thread
+   // that doesn't really care and then nothing goes anymore ?
+   //
+   if( broadcast)
+      [self broadcast];
+   else
+      [self signal];
+   [self unlock];
+}
+
+
+
 - (BOOL) lockBeforeDate:(NSDate *) limit
 {
    return( [self waitUntilDate:limit]);

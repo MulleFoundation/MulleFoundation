@@ -1,7 +1,23 @@
 # MulleFoundation
 
 MulleFoundation combines various Objective-C class libraries into one unifying
-Foundation that you `#import` and link against.
+Foundation that you `#import` and link against. It also add the following
+classes and principal categories:
+
+Class             | Description
+------------------|-----------
+`NSConditionLock` |
+
+
+Category                                    | Description
+--------------------------------------------|-------------------------
+`MulleObjCJSMNParser( MulleObjCCurlParser)` | Translate JSON from curl
+`MulleObjCCurl( NSURL)`                     | Make MulleObjCCurl NSURL aware
+
+
+You will more often link against the [Foundation](//github.com/MulleFoundation)
+though for compatibility with other platforms ObjC code.
+
 
 Build Status | Release Version
 -------------|-----------------------------------

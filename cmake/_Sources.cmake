@@ -7,6 +7,9 @@ endif()
 
 set( SOURCES
 src/MulleFoundation.m
+src/MulleObjCCurl+NSURL.m
+src/MulleObjCJSMNParser+MulleObjCCurlParser.m
+src/NSConditionLock.m
 )
 
 set( STAGE2_SOURCES

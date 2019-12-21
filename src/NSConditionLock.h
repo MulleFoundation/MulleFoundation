@@ -58,5 +58,10 @@
 - (BOOL) mulleLockWhenCondition:(NSInteger) value
                      beforeDate:(NSDate *) date;
 
+// choose between signal or broadcast to wake up threads
+// see pthread_cond_signal dox
+- (void) mulleUnlockWithCondition:(NSInteger) value
+                        broadcast:(BOOL) broadcast;
+
 @end
 

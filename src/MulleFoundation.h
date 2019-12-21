@@ -51,6 +51,9 @@
 
 #import "NSConditionLock.h"
 
+#import "MulleObjCCurl+NSURL.h"
+#import "MulleObjCJSMNParser+MulleObjCCurlParser.h"
+
 #import "MulleObjCLoader+MulleFoundation.h"
 
 // the forwarding method in this particular runtime

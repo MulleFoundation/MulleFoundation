@@ -18,7 +18,10 @@ src/mulle-foundation-startup-private.inc
 
 set( PUBLIC_HEADERS
 src/MulleFoundation.h
+src/MulleObjCCurl+NSURL.h
+src/MulleObjCJSMNParser+MulleObjCCurlParser.h
 src/MulleObjCLoader+MulleFoundation.h
+src/NSConditionLock.h
 src/import.h
 src/include.h
 src/version.h
