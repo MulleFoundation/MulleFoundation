@@ -2,6 +2,8 @@
 
 #import "import-private.h"
 
+#if defined( HAVE_LIB_MULLE_OBJC_JSMN_FOUNDATION) & defined( HAVE_LIB_MULLE_OBJC_CURL_FOUNDATION)
+
 
 @implementation MulleObjCJSMNParser( MulleObjCCurlParser)
 
@@ -59,3 +61,5 @@
 }
 
 @end
+
+#endif

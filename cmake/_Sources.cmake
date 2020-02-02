@@ -10,12 +10,9 @@ src/MulleFoundation.m
 src/MulleObjCCurl+NSURL.m
 src/MulleObjCJSMNParser+MulleObjCCurlParser.m
 src/NSConditionLock.m
+src/mulle-foundation-standalone.m
 )
 
 set( STAGE2_SOURCES
 src/MulleObjCLoader+MulleFoundation.m
-)
-
-set( STANDALONE_SOURCES
-src/mulle-foundation-standalone.m
 )

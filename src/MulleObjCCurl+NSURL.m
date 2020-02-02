@@ -3,7 +3,7 @@
 #import "import-private.h"
 
 
-#if defined( HAVE_LIB_MULLEOBJCJSMNFOUNDATION) && defined( HAVE_LIB_MULLEOBJCINETFOUNDATION)
+#if defined( HAVE_LIB_MULLE_OBJC_CURL_FOUNDATION) && defined( HAVE_LIB_MULLE_OBJC_INET_FOUNDATION)
 
 @implementation MulleObjCCurl( NSURL)
 

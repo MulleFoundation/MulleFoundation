@@ -1,7 +1,7 @@
 #import "import.h"
 
 
-#if defined( HAVE_LIB_MULLEOBJCCURLFOUNDATION) && defined( HAVE_LIB_MULLEOBJCINETFOUNDATION)
+#if defined( HAVE_LIB_MULLE_OBJC_CURL_FOUNDATION) && defined( HAVE_LIB_MULLE_OBJC_INET_FOUNDATION)
 
 @interface MulleObjCCurl( NSURL)
 

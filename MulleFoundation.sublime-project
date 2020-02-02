@@ -15,10 +15,11 @@
 			"folder_exclude_patterns":
 			[
 				".git",
-				".mulle-*",
+				"var",
 				".unison*",
 				"addiction",
 				"build",
+            "kitchen",
 				"dependency",
 				"stash"
 			],
