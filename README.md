@@ -1,22 +1,17 @@
 # MulleFoundation
 
 MulleFoundation combines various Objective-C class libraries into one unifying
-Foundation that you `#import` and link against. It also add the following
-classes and principal categories:
+Foundation that you `#import` and link against. It also adds the following
+class:
 
 Class             | Description
 ------------------|-----------
 `NSConditionLock` |
 
 
-Category                                    | Description
---------------------------------------------|-------------------------
-`MulleObjCJSMNParser( MulleObjCCurlParser)` | Translate JSON from curl
-`MulleObjCCurl( NSURL)`                     | Make MulleObjCCurl NSURL aware
-
-
-You will more often link against the [Foundation](//github.com/MulleFoundation)
-though for compatibility with other platforms ObjC code.
+You will often link against the [Foundation](//github.com/MulleFoundation)
+instead of the MulleFoundation though - for increased compatibility
+with other platforms' ObjC code.
 
 
 Build Status | Release Version
@@ -38,12 +33,11 @@ Build Status | Release Version
 
   Name         | Build Status | Release Version
 ---------------|--------------|---------------------------------
-[MulleObjC](//github.com/mulle-objc/MulleObjC) | [![Build Status](https://travis-ci.org/mulle-objc/MulleObjC.svg?branch=release)](https://travis-ci.org/mulle-objc/MulleObjC) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-objc/MulleObjC.svg)
-[MulleObjCExpatFoundation](//github.com/MulleFoundation/MulleObjCExpatFoundation)  | [![Build Status](https://travis-ci.org/MulleFoundation/MulleObjCExpatFoundation.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleObjCExpatFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCExpatFoundation.svg)
-[MulleObjCInetFoundation](//github.com/MulleFoundation/MulleObjCInetFoundation) | [![Build Status](https://travis-ci.org/MulleFoundation/MulleObjCInetFoundation.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleObjCInetFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCInetFoundation.svg)
+[MulleObjCCalendarFoundation](//github.com/MulleFoundation/MulleObjCCalendarFoundation)  | [![Build Status](https://travis-ci.org/MulleFoundation/MulleObjCCalendarFoundation.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleObjCCalendarFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCCalendarFoundation.svg)
+[MulleObjCDecimalFoundation](//github.com/MulleFoundation/MulleObjCDecimalFoundation)  | [![Build Status](https://travis-ci.org/MulleFoundation/MulleObjCCalendarFoundation.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleObjCDecimalFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCDecimalFoundation.svg)
+[MulleObjCMathFoundation](//github.com/MulleFoundation/MulleObjCMathFoundation) | [![Build Status](https://travis-ci.org/MulleFoundation/MulleObjCMathFoundation.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleObjCMathFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCMathFoundation.svg)
 [MulleObjCKVCFoundation](//github.com/MulleFoundation/MulleObjCKVCFoundation) | [![Build Status](https://travis-ci.org/MulleFoundation/MulleObjCKVCFoundation.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleObjCKVCFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCKVCFoundation.svg)
 [MulleObjCOSFoundation](//github.com/MulleFoundation/MulleObjCOSFoundation) | [![Build Status](https://travis-ci.org/MulleFoundation/MulleObjCOSFoundation.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleObjCOSFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCOSFoundation.svg)
-[MulleObjCStandardFoundation](//github.com/MulleFoundation/MulleObjCStandardFoundation) | [![Build Status](https://travis-ci.org/MulleFoundation/MulleObjCStandardFoundation.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleObjCStandardFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCStandardFoundation.svg)
 
 > MulleObjCOSFoundation one test failure is known and left
 > as an exercise for the reader.

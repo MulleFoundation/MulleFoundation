@@ -27,7 +27,7 @@ if( STANDALONE)
    endif()
 
    if( NOT STANDALONE_DEFINITIONS)
-      set( STANDALONE_DEFINITIONS ${MULLE_FOUNDATION_DEFINITIONS})
+      set( STANDALONE_DEFINITIONS ${mulle_foundation_DEFINITIONS})
    endif()
 
    #

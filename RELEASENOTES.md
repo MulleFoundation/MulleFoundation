@@ -1,3 +1,9 @@
+## 0.17.0
+
+* moved some code to MulleWeb
+* fix include define strings and make all included foundation dependencies optional, because why not
+
+
 ## 0.16.0
 
 * startup split off into own project
