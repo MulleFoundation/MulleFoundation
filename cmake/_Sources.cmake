@@ -8,9 +8,12 @@ endif()
 set( SOURCES
 src/MulleFoundation.m
 src/NSConditionLock.m
-src/mulle-foundation-standalone.m
 )
 
 set( STAGE2_SOURCES
 src/MulleObjCLoader+MulleFoundation.m
+)
+
+set( STANDALONE_SOURCES
+src/mulle-foundation-standalone.m
 )

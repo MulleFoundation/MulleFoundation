@@ -69,7 +69,7 @@ if( NOT MULLE_OBJC_OS_FOUNDATION_LIBRARY)
          endif()
       endforeach()
       #
-      # Search for "objc-loader.inc" in include directory.
+      # Search for "MulleObjCLoader+<name>.h" in include directory.
       # Disable with: `mulle-sourcetree mark MulleObjCOSFoundation no-cmakeloader`
       #
       if( NOT NO_INHERIT_OBJC_LOADERS)
@@ -154,7 +154,7 @@ if( NOT MULLE_OBJC_KVC_FOUNDATION_LIBRARY)
          endif()
       endforeach()
       #
-      # Search for "objc-loader.inc" in include directory.
+      # Search for "MulleObjCLoader+<name>.h" in include directory.
       # Disable with: `mulle-sourcetree mark MulleObjCKVCFoundation no-cmakeloader`
       #
       if( NOT NO_INHERIT_OBJC_LOADERS)
@@ -239,7 +239,7 @@ if( NOT MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY)
          endif()
       endforeach()
       #
-      # Search for "objc-loader.inc" in include directory.
+      # Search for "MulleObjCLoader+<name>.h" in include directory.
       # Disable with: `mulle-sourcetree mark MulleObjCDecimalFoundation no-cmakeloader`
       #
       if( NOT NO_INHERIT_OBJC_LOADERS)
@@ -324,7 +324,7 @@ if( NOT MULLE_OBJC_CALENDAR_FOUNDATION_LIBRARY)
          endif()
       endforeach()
       #
-      # Search for "objc-loader.inc" in include directory.
+      # Search for "MulleObjCLoader+<name>.h" in include directory.
       # Disable with: `mulle-sourcetree mark MulleObjCCalendarFoundation no-cmakeloader`
       #
       if( NOT NO_INHERIT_OBJC_LOADERS)
@@ -409,7 +409,7 @@ if( NOT MULLE_OBJC_MATH_FOUNDATION_LIBRARY)
          endif()
       endforeach()
       #
-      # Search for "objc-loader.inc" in include directory.
+      # Search for "MulleObjCLoader+<name>.h" in include directory.
       # Disable with: `mulle-sourcetree mark MulleObjCMathFoundation no-cmakeloader`
       #
       if( NOT NO_INHERIT_OBJC_LOADERS)
