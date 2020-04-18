@@ -82,6 +82,15 @@
 #  endif
 # endif
 
+// How to tweak the following MulleObjCUnicodeFoundation #import
+//    remove:          `mulle-sourcetree mark MulleObjCUnicodeFoundation no-header`
+//    rename:          `mulle-sourcetree mark MulleObjCUnicodeFoundation set include whatever.h`
+//    toggle #import:  `mulle-sourcetree mark MulleObjCUnicodeFoundation [no-]import`
+//    toggle public:   `mulle-sourcetree mark MulleObjCUnicodeFoundation [no-]public`
+//    toggle optional: `mulle-sourcetree mark MulleObjCUnicodeFoundation [no-]require`
+//    remove for os:   `mulle-sourcetree mark MulleObjCUnicodeFoundation no-os-<osname>`
+# import <MulleObjCUnicodeFoundation/MulleObjCUnicodeFoundation.h>   // MulleObjCUnicodeFoundation
+
 #include "_MulleFoundation-include.h"
 
 
