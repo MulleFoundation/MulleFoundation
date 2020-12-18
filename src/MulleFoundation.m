@@ -1,5 +1,5 @@
 #import "MulleFoundation.h"
 
 
-int   __FOUNDATION_ranlib__;
+int   __MULLE_FOUNDATION_ranlib__;
 

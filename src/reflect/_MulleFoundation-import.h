@@ -13,12 +13,13 @@
 #define _MulleFoundation_import_h__
 
 // How to tweak the following MulleObjCOSFoundation #import
-//    remove:          `mulle-sourcetree mark MulleObjCOSFoundation no-header`
-//    rename:          `mulle-sourcetree mark MulleObjCOSFoundation set include whatever.h`
-//    toggle #import:  `mulle-sourcetree mark MulleObjCOSFoundation [no-]import`
-//    toggle public:   `mulle-sourcetree mark MulleObjCOSFoundation [no-]public`
-//    toggle optional: `mulle-sourcetree mark MulleObjCOSFoundation [no-]require`
-//    remove for os:   `mulle-sourcetree mark MulleObjCOSFoundation no-os-<osname>`
+//    remove:             `mulle-sourcetree mark MulleObjCOSFoundation no-header`
+//    rename:             `mulle-sde dependency|library set MulleObjCOSFoundation include whatever.h`
+//    toggle #import:     `mulle-sourcetree mark MulleObjCOSFoundation [no-]import`
+//    toggle localheader: `mulle-sourcetree mark MulleObjCOSFoundation [no-]localheader`
+//    toggle public:      `mulle-sourcetree mark MulleObjCOSFoundation [no-]public`
+//    toggle optional:    `mulle-sourcetree mark MulleObjCOSFoundation [no-]require`
+//    remove for os:      `mulle-sourcetree mark MulleObjCOSFoundation no-os-<osname>`
 # ifdef __has_include
 #  if __has_include(<MulleObjCOSFoundation/MulleObjCOSFoundation.h>)
 #   import <MulleObjCOSFoundation/MulleObjCOSFoundation.h>   // MulleObjCOSFoundation
@@ -27,12 +28,13 @@
 # endif
 
 // How to tweak the following MulleObjCKVCFoundation #import
-//    remove:          `mulle-sourcetree mark MulleObjCKVCFoundation no-header`
-//    rename:          `mulle-sourcetree mark MulleObjCKVCFoundation set include whatever.h`
-//    toggle #import:  `mulle-sourcetree mark MulleObjCKVCFoundation [no-]import`
-//    toggle public:   `mulle-sourcetree mark MulleObjCKVCFoundation [no-]public`
-//    toggle optional: `mulle-sourcetree mark MulleObjCKVCFoundation [no-]require`
-//    remove for os:   `mulle-sourcetree mark MulleObjCKVCFoundation no-os-<osname>`
+//    remove:             `mulle-sourcetree mark MulleObjCKVCFoundation no-header`
+//    rename:             `mulle-sde dependency|library set MulleObjCKVCFoundation include whatever.h`
+//    toggle #import:     `mulle-sourcetree mark MulleObjCKVCFoundation [no-]import`
+//    toggle localheader: `mulle-sourcetree mark MulleObjCKVCFoundation [no-]localheader`
+//    toggle public:      `mulle-sourcetree mark MulleObjCKVCFoundation [no-]public`
+//    toggle optional:    `mulle-sourcetree mark MulleObjCKVCFoundation [no-]require`
+//    remove for os:      `mulle-sourcetree mark MulleObjCKVCFoundation no-os-<osname>`
 # ifdef __has_include
 #  if __has_include(<MulleObjCKVCFoundation/MulleObjCKVCFoundation.h>)
 #   import <MulleObjCKVCFoundation/MulleObjCKVCFoundation.h>   // MulleObjCKVCFoundation
@@ -41,12 +43,13 @@
 # endif
 
 // How to tweak the following MulleObjCDecimalFoundation #import
-//    remove:          `mulle-sourcetree mark MulleObjCDecimalFoundation no-header`
-//    rename:          `mulle-sourcetree mark MulleObjCDecimalFoundation set include whatever.h`
-//    toggle #import:  `mulle-sourcetree mark MulleObjCDecimalFoundation [no-]import`
-//    toggle public:   `mulle-sourcetree mark MulleObjCDecimalFoundation [no-]public`
-//    toggle optional: `mulle-sourcetree mark MulleObjCDecimalFoundation [no-]require`
-//    remove for os:   `mulle-sourcetree mark MulleObjCDecimalFoundation no-os-<osname>`
+//    remove:             `mulle-sourcetree mark MulleObjCDecimalFoundation no-header`
+//    rename:             `mulle-sde dependency|library set MulleObjCDecimalFoundation include whatever.h`
+//    toggle #import:     `mulle-sourcetree mark MulleObjCDecimalFoundation [no-]import`
+//    toggle localheader: `mulle-sourcetree mark MulleObjCDecimalFoundation [no-]localheader`
+//    toggle public:      `mulle-sourcetree mark MulleObjCDecimalFoundation [no-]public`
+//    toggle optional:    `mulle-sourcetree mark MulleObjCDecimalFoundation [no-]require`
+//    remove for os:      `mulle-sourcetree mark MulleObjCDecimalFoundation no-os-<osname>`
 # ifdef __has_include
 #  if __has_include(<MulleObjCDecimalFoundation/MulleObjCDecimalFoundation.h>)
 #   import <MulleObjCDecimalFoundation/MulleObjCDecimalFoundation.h>   // MulleObjCDecimalFoundation
@@ -55,12 +58,13 @@
 # endif
 
 // How to tweak the following MulleObjCCalendarFoundation #import
-//    remove:          `mulle-sourcetree mark MulleObjCCalendarFoundation no-header`
-//    rename:          `mulle-sourcetree mark MulleObjCCalendarFoundation set include whatever.h`
-//    toggle #import:  `mulle-sourcetree mark MulleObjCCalendarFoundation [no-]import`
-//    toggle public:   `mulle-sourcetree mark MulleObjCCalendarFoundation [no-]public`
-//    toggle optional: `mulle-sourcetree mark MulleObjCCalendarFoundation [no-]require`
-//    remove for os:   `mulle-sourcetree mark MulleObjCCalendarFoundation no-os-<osname>`
+//    remove:             `mulle-sourcetree mark MulleObjCCalendarFoundation no-header`
+//    rename:             `mulle-sde dependency|library set MulleObjCCalendarFoundation include whatever.h`
+//    toggle #import:     `mulle-sourcetree mark MulleObjCCalendarFoundation [no-]import`
+//    toggle localheader: `mulle-sourcetree mark MulleObjCCalendarFoundation [no-]localheader`
+//    toggle public:      `mulle-sourcetree mark MulleObjCCalendarFoundation [no-]public`
+//    toggle optional:    `mulle-sourcetree mark MulleObjCCalendarFoundation [no-]require`
+//    remove for os:      `mulle-sourcetree mark MulleObjCCalendarFoundation no-os-<osname>`
 # ifdef __has_include
 #  if __has_include(<MulleObjCCalendarFoundation/MulleObjCCalendarFoundation.h>)
 #   import <MulleObjCCalendarFoundation/MulleObjCCalendarFoundation.h>   // MulleObjCCalendarFoundation
@@ -69,12 +73,13 @@
 # endif
 
 // How to tweak the following MulleObjCMathFoundation #import
-//    remove:          `mulle-sourcetree mark MulleObjCMathFoundation no-header`
-//    rename:          `mulle-sourcetree mark MulleObjCMathFoundation set include whatever.h`
-//    toggle #import:  `mulle-sourcetree mark MulleObjCMathFoundation [no-]import`
-//    toggle public:   `mulle-sourcetree mark MulleObjCMathFoundation [no-]public`
-//    toggle optional: `mulle-sourcetree mark MulleObjCMathFoundation [no-]require`
-//    remove for os:   `mulle-sourcetree mark MulleObjCMathFoundation no-os-<osname>`
+//    remove:             `mulle-sourcetree mark MulleObjCMathFoundation no-header`
+//    rename:             `mulle-sde dependency|library set MulleObjCMathFoundation include whatever.h`
+//    toggle #import:     `mulle-sourcetree mark MulleObjCMathFoundation [no-]import`
+//    toggle localheader: `mulle-sourcetree mark MulleObjCMathFoundation [no-]localheader`
+//    toggle public:      `mulle-sourcetree mark MulleObjCMathFoundation [no-]public`
+//    toggle optional:    `mulle-sourcetree mark MulleObjCMathFoundation [no-]require`
+//    remove for os:      `mulle-sourcetree mark MulleObjCMathFoundation no-os-<osname>`
 # ifdef __has_include
 #  if __has_include(<MulleObjCMathFoundation/MulleObjCMathFoundation.h>)
 #   import <MulleObjCMathFoundation/MulleObjCMathFoundation.h>   // MulleObjCMathFoundation
@@ -83,15 +88,24 @@
 # endif
 
 // How to tweak the following MulleObjCUnicodeFoundation #import
-//    remove:          `mulle-sourcetree mark MulleObjCUnicodeFoundation no-header`
-//    rename:          `mulle-sourcetree mark MulleObjCUnicodeFoundation set include whatever.h`
-//    toggle #import:  `mulle-sourcetree mark MulleObjCUnicodeFoundation [no-]import`
-//    toggle public:   `mulle-sourcetree mark MulleObjCUnicodeFoundation [no-]public`
-//    toggle optional: `mulle-sourcetree mark MulleObjCUnicodeFoundation [no-]require`
-//    remove for os:   `mulle-sourcetree mark MulleObjCUnicodeFoundation no-os-<osname>`
-# import <MulleObjCUnicodeFoundation/MulleObjCUnicodeFoundation.h>   // MulleObjCUnicodeFoundation
+//    remove:             `mulle-sourcetree mark MulleObjCUnicodeFoundation no-header`
+//    rename:             `mulle-sde dependency|library set MulleObjCUnicodeFoundation include whatever.h`
+//    toggle #import:     `mulle-sourcetree mark MulleObjCUnicodeFoundation [no-]import`
+//    toggle localheader: `mulle-sourcetree mark MulleObjCUnicodeFoundation [no-]localheader`
+//    toggle public:      `mulle-sourcetree mark MulleObjCUnicodeFoundation [no-]public`
+//    toggle optional:    `mulle-sourcetree mark MulleObjCUnicodeFoundation [no-]require`
+//    remove for os:      `mulle-sourcetree mark MulleObjCUnicodeFoundation no-os-<osname>`
+# if defined( __has_include) && __has_include("MulleObjCUnicodeFoundation.h")
+#   import "MulleObjCUnicodeFoundation.h"   // MulleObjCUnicodeFoundation
+# else
+#   import <MulleObjCUnicodeFoundation/MulleObjCUnicodeFoundation.h>   // MulleObjCUnicodeFoundation
+# endif
 
-#include "_MulleFoundation-include.h"
+#ifdef __has_include
+# if __has_include( "_MulleFoundation-include.h")
+#  include "_MulleFoundation-include.h"
+# endif
+#endif
 
 
 #endif

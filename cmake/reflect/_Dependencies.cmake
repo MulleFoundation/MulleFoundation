@@ -8,7 +8,7 @@ endif()
 
 #
 # Generated from sourcetree: MulleObjCOSFoundation;no-require,no-singlephase;
-# Disable with: `mulle-sourcetree mark MulleObjCOSFoundation no-link`
+# Disable with: `mulle-sourcetree mark MulleObjCOSFoundation no-header`
 #
 if( NOT MULLE_OBJC_OS_FOUNDATION_LIBRARY)
    find_library( MULLE_OBJC_OS_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCOSFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCOSFoundation NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
@@ -93,7 +93,7 @@ endif()
 
 #
 # Generated from sourcetree: MulleObjCKVCFoundation;no-require,no-singlephase;
-# Disable with: `mulle-sourcetree mark MulleObjCKVCFoundation no-link`
+# Disable with: `mulle-sourcetree mark MulleObjCKVCFoundation no-header`
 #
 if( NOT MULLE_OBJC_KVC_FOUNDATION_LIBRARY)
    find_library( MULLE_OBJC_KVC_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCKVCFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCKVCFoundation NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
@@ -178,7 +178,7 @@ endif()
 
 #
 # Generated from sourcetree: MulleObjCDecimalFoundation;no-require,no-singlephase;
-# Disable with: `mulle-sourcetree mark MulleObjCDecimalFoundation no-link`
+# Disable with: `mulle-sourcetree mark MulleObjCDecimalFoundation no-header`
 #
 if( NOT MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY)
    find_library( MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCDecimalFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCDecimalFoundation NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
@@ -263,7 +263,7 @@ endif()
 
 #
 # Generated from sourcetree: MulleObjCCalendarFoundation;no-require,no-singlephase;
-# Disable with: `mulle-sourcetree mark MulleObjCCalendarFoundation no-link`
+# Disable with: `mulle-sourcetree mark MulleObjCCalendarFoundation no-header`
 #
 if( NOT MULLE_OBJC_CALENDAR_FOUNDATION_LIBRARY)
    find_library( MULLE_OBJC_CALENDAR_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCCalendarFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCCalendarFoundation NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
@@ -348,7 +348,7 @@ endif()
 
 #
 # Generated from sourcetree: MulleObjCMathFoundation;no-require,no-singlephase;
-# Disable with: `mulle-sourcetree mark MulleObjCMathFoundation no-link`
+# Disable with: `mulle-sourcetree mark MulleObjCMathFoundation no-header`
 #
 if( NOT MULLE_OBJC_MATH_FOUNDATION_LIBRARY)
    find_library( MULLE_OBJC_MATH_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCMathFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCMathFoundation NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
@@ -433,7 +433,7 @@ endif()
 
 #
 # Generated from sourcetree: MulleObjCUnicodeFoundation;no-singlephase;
-# Disable with: `mulle-sourcetree mark MulleObjCUnicodeFoundation no-link`
+# Disable with: `mulle-sourcetree mark MulleObjCUnicodeFoundation no-header`
 #
 if( NOT MULLE_OBJC_UNICODE_FOUNDATION_LIBRARY)
    find_library( MULLE_OBJC_UNICODE_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCUnicodeFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCUnicodeFoundation NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)

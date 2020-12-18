@@ -57,5 +57,3 @@
 void   *__forward_mulle_objc_object_call( void *self,
                                           mulle_objc_methodid_t _cmd,
                                           void *_param);
-
-
