@@ -1,0 +1,21 @@
+{
+   "name" : "MulleFoundation",
+   "version" : "0.18.0",
+   "description" : "💍 Umbrella library for the MulleFoundation",
+   "homepage" : "https://github.com/MulleFoundation/MulleFoundation",
+   "bugs" : "https://github.com/MulleFoundation/MulleFoundation/issues",
+   "keywords" : [],
+   "license" : "UNLICENSED",
+   "repository" : {
+      "type" : "git",
+      "url" : "MulleFoundation/MulleFoundation"
+   },
+   "dependencies" : {
+      "MulleObjCOSFoundation" : "MulleFoundation/MulleObjCOSFoundation",
+      "MulleObjCKVCFoundation" : "MulleFoundation/MulleObjCKVCFoundation",
+      "MulleObjCDecimalFoundation" : "MulleFoundation/MulleObjCDecimalFoundation",
+      "MulleObjCCalendarFoundation" : "MulleFoundation/MulleObjCCalendarFoundation",
+      "MulleObjCMathFoundation" : "MulleFoundation/MulleObjCMathFoundation",
+      "MulleObjCUnicodeFoundation" : "MulleFoundation/MulleObjCUnicodeFoundation"
+   }
+}

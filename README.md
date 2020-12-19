@@ -1,5 +1,7 @@
 # MulleFoundation
 
+#### 💍 Umbrella library for the MulleFoundation
+
 MulleFoundation combines various Objective-C class libraries into one unifying
 Foundation that you `#import` and link against. It also adds the following
 class:
