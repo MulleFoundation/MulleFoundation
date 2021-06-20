@@ -16,11 +16,6 @@ instead of the MulleFoundation though - for increased compatibility
 with other platforms' ObjC code.
 
 
-Build Status | Release Version
--------------|-----------------------------------
-[![Build Status](https://travis-ci.org/MulleFoundation/MulleFoundation.svg)](https://travis-ci.org/MulleFoundation/MulleFoundation) | ![Community tag](https://img.shields.io/github/tag/MulleFoundation/MulleFoundation.svg)
-
-
 ## What's so different ?
 
 * It is based on the **mulle-objc-runtime**
@@ -44,6 +39,31 @@ Build Status | Release Version
 > MulleObjCOSFoundation one test failure is known and left
 > as an exercise for the reader.
 
+### You are here
+
+```
+   .===================================================================.
+   | MulleFoundation                                                   |
+   '==================================================================='
+   .----------------------------.
+   | Calendar                   |
+   '----------------------------'
+   .----------------------------.
+   | OS                         |
+   '----------------------------'
+           .--------------------..----------..-----..---------.
+           | Plist              || Archiver || KVC || Unicode |
+           '--------------------''----------''-----''---------'
+           .--------------------------------------------------..-------.
+           | Standard                                         || Math  |
+           '--------------------------------------------------''-------'
+   .------..-----------------------------..----------------------------.
+   | Lock || Container                   || Value                      |
+   '------''-----------------------------''----------------------------'
+   .-------------------------------------------------------------------.
+   | MulleObjC                                                         |
+   '-------------------------------------------------------------------'
+```
 ## Install
 
 See [foundation-developer](//github.com/mulle-objc/foundation-developer)

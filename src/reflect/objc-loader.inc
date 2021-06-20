@@ -1,7 +1,12 @@
+      { @selector( MulleObjCLoader), @selector( MulleObjCArchiverFoundation) },      // 47a9beb6;MulleObjCLoader;98076059;MulleObjCArchiverFoundation
       { @selector( MulleObjCLoader), @selector( MulleObjCCalendarFoundation) },      // 47a9beb6;MulleObjCLoader;6b608d36;MulleObjCCalendarFoundation
+      { @selector( MulleObjCLoader), @selector( MulleObjCContainerFoundation) },      // 47a9beb6;MulleObjCLoader;2132102f;MulleObjCContainerFoundation
       { @selector( MulleObjCLoader), @selector( MulleObjCDecimalFoundation) },      // 47a9beb6;MulleObjCLoader;f04a7a28;MulleObjCDecimalFoundation
       { @selector( MulleObjCLoader), @selector( MulleObjCKVCFoundation) },      // 47a9beb6;MulleObjCLoader;4f2544f7;MulleObjCKVCFoundation
+      { @selector( MulleObjCLoader), @selector( MulleObjCLockFoundation) },      // 47a9beb6;MulleObjCLoader;86a97828;MulleObjCLockFoundation
       { @selector( MulleObjCLoader), @selector( MulleObjCMathFoundation) },      // 47a9beb6;MulleObjCLoader;37da74b9;MulleObjCMathFoundation
       { @selector( MulleObjCLoader), @selector( MulleObjCOSFoundation) },      // 47a9beb6;MulleObjCLoader;94ffe970;MulleObjCOSFoundation
+      { @selector( MulleObjCLoader), @selector( MulleObjCPlistFoundation) },      // 47a9beb6;MulleObjCLoader;e8aa8d92;MulleObjCPlistFoundation
+      { @selector( MulleObjCLoader), @selector( MulleObjCStandardFoundation) },      // 47a9beb6;MulleObjCLoader;ed704a42;MulleObjCStandardFoundation
       { @selector( MulleObjCLoader), @selector( MulleObjCUnicodeFoundation) },      // 47a9beb6;MulleObjCLoader;ab2bbded;MulleObjCUnicodeFoundation
-      { @selector( NSConditionLock), MULLE_OBJC_NO_CATEGORYID },      // 5e0deecf;NSConditionLock;;
+      { @selector( MulleObjCLoader), @selector( MulleObjCValueFoundation) },      // 47a9beb6;MulleObjCLoader;535d5103;MulleObjCValueFoundation

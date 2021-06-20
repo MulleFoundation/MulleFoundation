@@ -49,9 +49,7 @@
 
 #import "version.h"
 
-#import "NSConditionLock.h"
-
-#import "MulleObjCLoader+MulleFoundation.h"
+#import "_MulleFoundation-export.h"
 
 // the forwarding method in this particular runtime
 void   *__forward_mulle_objc_object_call( void *self,
