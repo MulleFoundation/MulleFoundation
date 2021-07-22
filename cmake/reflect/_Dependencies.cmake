@@ -15,7 +15,7 @@ endif()
 #
 # Generated from sourcetree: DACD462C-D0AC-4D93-81A6-4E0972215046;MulleObjCOSFoundation;no-require,no-singlephase;
 # Disable with : `mulle-sourcetree mark MulleObjCOSFoundation no-link`
-# Disable for this platform: `mulle-sourcetree mark MulleObjCOSFoundation no-cmake-platform-linux`
+# Disable for this platform: `mulle-sourcetree mark MulleObjCOSFoundation no-cmake-platform-darwin`
 #
 if( NOT MULLE_OBJC_OS_FOUNDATION_LIBRARY)
    find_library( MULLE_OBJC_OS_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCOSFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCOSFoundation NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
@@ -112,7 +112,7 @@ endif()
 #
 # Generated from sourcetree: 3C6EAD75-99C0-482F-AAA7-CFB194733AEC;MulleObjCKVCFoundation;no-require,no-singlephase;
 # Disable with : `mulle-sourcetree mark MulleObjCKVCFoundation no-link`
-# Disable for this platform: `mulle-sourcetree mark MulleObjCKVCFoundation no-cmake-platform-linux`
+# Disable for this platform: `mulle-sourcetree mark MulleObjCKVCFoundation no-cmake-platform-darwin`
 #
 if( NOT MULLE_OBJC_KVC_FOUNDATION_LIBRARY)
    find_library( MULLE_OBJC_KVC_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCKVCFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCKVCFoundation NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
@@ -209,7 +209,7 @@ endif()
 #
 # Generated from sourcetree: 41549518-5DAC-4A6A-82A9-E2CAABE3828F;MulleObjCDecimalFoundation;no-require,no-singlephase;
 # Disable with : `mulle-sourcetree mark MulleObjCDecimalFoundation no-link`
-# Disable for this platform: `mulle-sourcetree mark MulleObjCDecimalFoundation no-cmake-platform-linux`
+# Disable for this platform: `mulle-sourcetree mark MulleObjCDecimalFoundation no-cmake-platform-darwin`
 #
 if( NOT MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY)
    find_library( MULLE_OBJC_DECIMAL_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCDecimalFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCDecimalFoundation NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
@@ -306,7 +306,7 @@ endif()
 #
 # Generated from sourcetree: 1D103583-A637-4819-9255-3A265C80E49A;MulleObjCCalendarFoundation;no-require,no-singlephase;
 # Disable with : `mulle-sourcetree mark MulleObjCCalendarFoundation no-link`
-# Disable for this platform: `mulle-sourcetree mark MulleObjCCalendarFoundation no-cmake-platform-linux`
+# Disable for this platform: `mulle-sourcetree mark MulleObjCCalendarFoundation no-cmake-platform-darwin`
 #
 if( NOT MULLE_OBJC_CALENDAR_FOUNDATION_LIBRARY)
    find_library( MULLE_OBJC_CALENDAR_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCCalendarFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCCalendarFoundation NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
@@ -403,7 +403,7 @@ endif()
 #
 # Generated from sourcetree: C48EE179-39A6-466D-A07E-37ECC02D20A4;MulleObjCMathFoundation;no-require,no-singlephase;
 # Disable with : `mulle-sourcetree mark MulleObjCMathFoundation no-link`
-# Disable for this platform: `mulle-sourcetree mark MulleObjCMathFoundation no-cmake-platform-linux`
+# Disable for this platform: `mulle-sourcetree mark MulleObjCMathFoundation no-cmake-platform-darwin`
 #
 if( NOT MULLE_OBJC_MATH_FOUNDATION_LIBRARY)
    find_library( MULLE_OBJC_MATH_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCMathFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCMathFoundation NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
@@ -500,7 +500,7 @@ endif()
 #
 # Generated from sourcetree: df7054ac-99cd-4386-b5fc-cbce1eaf009e;MulleObjCUnicodeFoundation;no-singlephase;
 # Disable with : `mulle-sourcetree mark MulleObjCUnicodeFoundation no-link`
-# Disable for this platform: `mulle-sourcetree mark MulleObjCUnicodeFoundation no-cmake-platform-linux`
+# Disable for this platform: `mulle-sourcetree mark MulleObjCUnicodeFoundation no-cmake-platform-darwin`
 #
 if( NOT MULLE_OBJC_UNICODE_FOUNDATION_LIBRARY)
    find_library( MULLE_OBJC_UNICODE_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCUnicodeFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCUnicodeFoundation NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
@@ -597,7 +597,7 @@ endif()
 #
 # Generated from sourcetree: 113F8278-0CA5-4813-9285-8EB1110AD9D9;MulleObjCArchiverFoundation;no-require,no-singlephase;
 # Disable with : `mulle-sourcetree mark MulleObjCArchiverFoundation no-link`
-# Disable for this platform: `mulle-sourcetree mark MulleObjCArchiverFoundation no-cmake-platform-linux`
+# Disable for this platform: `mulle-sourcetree mark MulleObjCArchiverFoundation no-cmake-platform-darwin`
 #
 if( NOT MULLE_OBJC_ARCHIVER_FOUNDATION_LIBRARY)
    find_library( MULLE_OBJC_ARCHIVER_FOUNDATION_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}MulleObjCArchiverFoundation${CMAKE_STATIC_LIBRARY_SUFFIX} MulleObjCArchiverFoundation NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
