@@ -1,6 +1,6 @@
 ## 0.19.0
 
-* Various small improvements
+* moved NSConditionLock out of here, so MulleFoundation itself is code free
 
 
 ## 0.18.0
