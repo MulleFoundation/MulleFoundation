@@ -55,3 +55,11 @@
 void   *__forward_mulle_objc_object_call( void *self,
                                           mulle_objc_methodid_t _cmd,
                                           void *_param);
+
+
+
+#ifdef __has_include
+# if __has_include( "_MulleFoundation-versioncheck.h")
+#  include "_MulleFoundation-versioncheck.h"
+# endif
+#endif
