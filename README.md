@@ -26,20 +26,21 @@ with other platforms' ObjC code.
 
 ## Constituent Libraries
 
-![Libraries](https://raw.githubusercontent.com/mulle-objc/MulleFoundation/release/dox/MulleFoundation-dependencies.png)
-
   Name         | Build Status | Release Version
 ---------------|--------------|---------------------------------
-[MulleObjCArchiverFoundation](//github.com/MulleFoundation/MulleObjCArchiverFoundation)  | [![Build Status](https://travis-ci.org/MulleFoundation/MulleObjCArchiverFoundation.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleObjCArchiverFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCArchiverFoundation.svg)
-[MulleObjCCalendarFoundation](//github.com/MulleFoundation/MulleObjCCalendarFoundation)  | [![Build Status](https://travis-ci.org/MulleFoundation/MulleObjCCalendarFoundation.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleObjCCalendarFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCCalendarFoundation.svg)
-[MulleObjCDecimalFoundation](//github.com/MulleFoundation/MulleObjCDecimalFoundation)  | [![Build Status](https://travis-ci.org/MulleFoundation/MulleObjCDecimalFoundation.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleObjCDecimalFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCDecimalFoundation.svg)
-[MulleObjCKVCFoundation](//github.com/MulleFoundation/MulleObjCKVCFoundation) | [![Build Status](https://travis-ci.org/MulleFoundation/MulleObjCKVCFoundation.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleObjCKVCFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCKVCFoundation.svg)
-[MulleObjCMathFoundation](//github.com/MulleFoundation/MulleObjCMathFoundation) | [![Build Status](https://travis-ci.org/MulleFoundation/MulleObjCMathFoundation.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleObjCMathFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCMathFoundation.svg)
-[MulleObjCOSFoundation](//github.com/MulleFoundation/MulleObjCOSFoundation) | [![Build Status](https://travis-ci.org/MulleFoundation/MulleObjCOSFoundation.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleObjCOSFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCOSFoundation.svg)
-[MulleObjCUnicodeFoundation](//github.com/MulleFoundation/MulleObjCUnicodeFoundation)  | [![Build Status](https://travis-ci.org/MulleFoundation/MulleObjCUnicodeFoundation.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleObjCUnicodeFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCUnicodeFoundation.svg)
+[MulleObjCArchiverFoundation](//github.com/MulleFoundation/MulleObjCArchiverFoundation)  | [![Build Status](https://github.com/MulleFoundation/MulleObjCArchiverFoundation/workflows/CI/badge.svg?branch=release)](https://github.com/MulleFoundation/MulleObjCArchiverFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCArchiverFoundation.svg)
+[MulleObjCCalendarFoundation](//github.com/MulleFoundation/MulleObjCCalendarFoundation)  | [![Build Status](https://github.com/MulleFoundation/MulleObjCCalendarFoundation/workflows/CI/badge.svg?branch=release)](https://github.com/MulleFoundation/MulleObjCCalendarFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCCalendarFoundation.svg)
+[MulleObjCKVCFoundation](//github.com/MulleFoundation/MulleObjCKVCFoundation) | [![Build Status](https://github.com/MulleFoundation/MulleObjCKVCFoundation/workflows/CI/badge.svg?branch=release)](https://github.com/MulleFoundation/MulleObjCKVCFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCKVCFoundation.svg)
+[MulleObjCMathFoundation](//github.com/MulleFoundation/MulleObjCMathFoundation) | [![Build Status](https://github.com/MulleFoundation/MulleObjCMathFoundation/workflows/CI/badge.svg?branch=release)](https://github.com/MulleFoundation/MulleObjCMathFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCMathFoundation.svg)
+[MulleObjCOSFoundation](//github.com/MulleFoundation/MulleObjCOSFoundation) | [![Build Status](https://github.com/MulleFoundation/MulleObjCOSFoundation/workflows/CI/badge.svg?branch=release)](https://github.com/MulleFoundation/MulleObjCOSFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCOSFoundation.svg)
+[MulleObjCUnicodeFoundation](//github.com/MulleFoundation/MulleObjCUnicodeFoundation)  | [![Build Status](https://github.com/MulleFoundation/MulleObjCUnicodeFoundation/workflows/CI/badge.svg?branch=release)](https://github.com/MulleFoundation/MulleObjCUnicodeFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCUnicodeFoundation.svg)
 
-> MulleObjCOSFoundation one test failure is known and left
+<!--
+[MulleObjCDecimalFoundation](//github.com/MulleFoundation/MulleObjCDecimalFoundation)  | [![Build Status](https://github.com/MulleFoundation/MulleObjCDecimalFoundation/workflows/CI/badge.svg?branch=release)](https://github.com/MulleFoundation/MulleObjCDecimalFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCDecimalFoundation.svg)
+
+> MulleObjCOSFoundation's one test failure is known and left
 > as an exercise for the reader.
+-->
 
 
 ### You are here
