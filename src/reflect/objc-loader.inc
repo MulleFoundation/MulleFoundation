@@ -8,5 +8,6 @@
       { @selector( MulleObjCLoader), @selector( MulleObjCOSFoundation) },      // 47a9beb6;MulleObjCLoader;94ffe970;MulleObjCOSFoundation
       { @selector( MulleObjCLoader), @selector( MulleObjCPlistFoundation) },      // 47a9beb6;MulleObjCLoader;e8aa8d92;MulleObjCPlistFoundation
       { @selector( MulleObjCLoader), @selector( MulleObjCStandardFoundation) },      // 47a9beb6;MulleObjCLoader;ed704a42;MulleObjCStandardFoundation
+      { @selector( MulleObjCLoader), @selector( MulleObjCTimeFoundation) },      // 47a9beb6;MulleObjCLoader;cc20d48b;MulleObjCTimeFoundation
       { @selector( MulleObjCLoader), @selector( MulleObjCUnicodeFoundation) },      // 47a9beb6;MulleObjCLoader;ab2bbded;MulleObjCUnicodeFoundation
       { @selector( MulleObjCLoader), @selector( MulleObjCValueFoundation) },      // 47a9beb6;MulleObjCLoader;535d5103;MulleObjCValueFoundation

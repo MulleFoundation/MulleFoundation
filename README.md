@@ -55,6 +55,16 @@ for installation instructions. In general you don't need to download the
 **MulleFoundation** manually. **mulle-sde**, which is part of
 *foundation-developer* will do this for you.
 
+### Legacy install
+
+This builds everything and installs header and libraries into a folder of
+your choice like `/usr/local` or `${HOME}`:
+
+``` bash
+mulle-sde install --prefix "/usr/local" \
+                   "https://github.com/MulleFoundation/MulleFoundation/archive/latest.tar.gz"
+``
+
 
 ## Acknowledgements
 
