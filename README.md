@@ -32,6 +32,7 @@ with other platforms' ObjC code.
 [MulleObjCCalendarFoundation](//github.com/MulleFoundation/MulleObjCCalendarFoundation)  | [![Build Status](https://github.com/MulleFoundation/MulleObjCCalendarFoundation/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleObjCCalendarFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCCalendarFoundation.svg)
 [MulleObjCKVCFoundation](//github.com/MulleFoundation/MulleObjCKVCFoundation) | [![Build Status](https://github.com/MulleFoundation/MulleObjCKVCFoundation/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleObjCKVCFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCKVCFoundation.svg)
 [MulleObjCMathFoundation](//github.com/MulleFoundation/MulleObjCMathFoundation) | [![Build Status](https://github.com/MulleFoundation/MulleObjCMathFoundation/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleObjCMathFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCMathFoundation.svg)
+[MulleObjCUUIDFoundation](//github.com/MulleFoundation/MulleObjCUUIDFoundation) | [![Build Status](https://github.com/MulleFoundation/MulleObjCUUIDFoundation/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleObjCUUIDFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCUUIDFoundation.svg)
 [MulleObjCOSFoundation](//github.com/MulleFoundation/MulleObjCOSFoundation) | [![Build Status](https://github.com/MulleFoundation/MulleObjCOSFoundation/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleObjCOSFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCOSFoundation.svg)
 [MulleObjCUnicodeFoundation](//github.com/MulleFoundation/MulleObjCUnicodeFoundation)  | [![Build Status](https://github.com/MulleFoundation/MulleObjCUnicodeFoundation/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleObjCUnicodeFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCUnicodeFoundation.svg)
 
@@ -63,7 +64,23 @@ your choice like `/usr/local` or `${HOME}`:
 ``` bash
 mulle-sde install --prefix "/usr/local" \
                    "https://github.com/MulleFoundation/MulleFoundation/archive/latest.tar.gz"
-``
+```
+
+### Manual Installation
+
+*Don't do this, it will take hours...*
+
+Install the "Constituent Libraries", then install into `/usr/local`:
+
+
+``` sh
+cmake -B build \
+      -DCMAKE_INSTALL_PREFIX=/usr/local \
+      -DCMAKE_PREFIX_PATH=/usr/local \
+      -DCMAKE_BUILD_TYPE=Release &&
+cmake --build build --config Release &&
+cmake --install build --config Release
+```
 
 
 ## Acknowledgements

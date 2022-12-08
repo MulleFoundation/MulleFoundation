@@ -14,6 +14,9 @@ include( Environment)
 
 include( Files)
 
+include( IDESupport OPTIONAL)
+
+
 ### Library
 
 if( HEADERS_PHASE)
@@ -36,5 +39,15 @@ unset( STARTUP_LIBRARY_NAME)
 
 
 include( Library)
+
+
+# use LIBRARY_COMPILE_TARGET for compiler options
+target_compile_definitions( "${LIBRARY_COMPILE_TARGET}" PUBLIC)
+target_compile_options( "${LIBRARY_COMPILE_TARGET}" PUBLIC -Wall)
+# use LIBRARY_LINK_TARGET for linker options
+if( LINK_PHASE)
+   target_link_options( "${LIBRARY_LINK_TARGET}" PUBLIC)
+endif()
+
 include( InstallLibrary)
 include( FinalOutput OPTIONAL)
