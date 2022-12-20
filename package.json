@@ -8,7 +8,7 @@
    "license" : "UNLICENSED",
    "repository" : {
       "type" : "git",
-      "url" : "MulleFoundation/MulleFoundation"
+      "url" : "github:MulleFoundation/MulleFoundation"
    },
    "dependencies" : {
       "MulleObjCOSFoundation" : "git://github.com/MulleFoundation/MulleObjCOSFoundation",
