@@ -1,1 +1,1 @@
-#import <MulleObjCStandardFoundation/private/mulle-foundation-setup-private.h>
+#import <MulleObjCStandardFoundation/mulle-foundation-setup-private.h>

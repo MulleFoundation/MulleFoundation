@@ -1,0 +1,3 @@
+MulleFoundation combines various Objective-C class libraries into one unifying
+Foundation that you `#import` and link against.
+

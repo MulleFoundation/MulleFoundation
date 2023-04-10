@@ -3,75 +3,66 @@
 #### 💍 Umbrella library for the MulleFoundation
 
 MulleFoundation combines various Objective-C class libraries into one unifying
-Foundation that you `#import` and link against. It also adds the following
-class:
-
-Class             | Description
-------------------|-----------
-`NSConditionLock` |
+Foundation that you `#import` and link against.
 
 
-You will often link against the [Foundation](//github.com/MulleFoundation)
-instead of the MulleFoundation though - for increased compatibility
-with other platforms' ObjC code.
+| Release Version                                       | Release Notes
+|-------------------------------------------------------|--------------
+| ![Mulle kybernetiK tag](https://img.shields.io/github/tag//MulleFoundation.svg?branch=release) [![Build Status](https://github.com//MulleFoundation/workflows/CI/badge.svg?branch=release)](//github.com//MulleFoundation/actions)| [RELEASENOTES](RELEASENOTES.md) |
 
 
-## What's so different ?
+## API
 
-* It is based on the **mulle-objc-runtime**
-* The MulleFoundation can be linked statically
-* It runs on OS X and Linux (Ubuntu) and FreeBSD, portable Objective-C
-* "Everything Faster than Everything Else"
+| Class             | Description
+|-------------------|-----------
+| `NSConditionLock` |
 
 
-## Constituent Libraries
 
-  Name         | Build Status | Release Version
----------------|--------------|---------------------------------
-[MulleObjCArchiverFoundation](//github.com/MulleFoundation/MulleObjCArchiverFoundation)  | [![Build Status](https://github.com/MulleFoundation/MulleObjCArchiverFoundation/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleObjCArchiverFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCArchiverFoundation.svg)
-[MulleObjCCalendarFoundation](//github.com/MulleFoundation/MulleObjCCalendarFoundation)  | [![Build Status](https://github.com/MulleFoundation/MulleObjCCalendarFoundation/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleObjCCalendarFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCCalendarFoundation.svg)
-[MulleObjCKVCFoundation](//github.com/MulleFoundation/MulleObjCKVCFoundation) | [![Build Status](https://github.com/MulleFoundation/MulleObjCKVCFoundation/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleObjCKVCFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCKVCFoundation.svg)
-[MulleObjCMathFoundation](//github.com/MulleFoundation/MulleObjCMathFoundation) | [![Build Status](https://github.com/MulleFoundation/MulleObjCMathFoundation/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleObjCMathFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCMathFoundation.svg)
-[MulleObjCUUIDFoundation](//github.com/MulleFoundation/MulleObjCUUIDFoundation) | [![Build Status](https://github.com/MulleFoundation/MulleObjCUUIDFoundation/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleObjCUUIDFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCUUIDFoundation.svg)
-[MulleObjCOSFoundation](//github.com/MulleFoundation/MulleObjCOSFoundation) | [![Build Status](https://github.com/MulleFoundation/MulleObjCOSFoundation/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleObjCOSFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCOSFoundation.svg)
-[MulleObjCUnicodeFoundation](//github.com/MulleFoundation/MulleObjCUnicodeFoundation)  | [![Build Status](https://github.com/MulleFoundation/MulleObjCUnicodeFoundation/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleObjCUnicodeFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCUnicodeFoundation.svg)
+## Requirements
 
-<!--
-[MulleObjCDecimalFoundation](//github.com/MulleFoundation/MulleObjCDecimalFoundation)  | [![Build Status](https://github.com/MulleFoundation/MulleObjCDecimalFoundation/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleObjCDecimalFoundation/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleObjCDecimalFoundation.svg)
-
-> MulleObjCOSFoundation's one test failure is known and left
-> as an exercise for the reader.
--->
-
+|   Requirement         | Release Version  | Description
+|-----------------------|------------------|---------------
+| [MulleObjCOSFoundation](https://github.com/MulleFoundation/MulleObjCOSFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag//.svg) [![Build Status](https://github.com///workflows/CI/badge.svg?branch=release)](https://github.com///actions/workflows/mulle-sde-ci.yml) | 💻 Platform-dependent classes and categories like NSTask, NSPipe
+| [MulleObjCDecimalFoundation](https://github.com/MulleFoundation/MulleObjCDecimalFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag//.svg) [![Build Status](https://github.com///workflows/CI/badge.svg?branch=release)](https://github.com///actions/workflows/mulle-sde-ci.yml) | 🤲🏻 Large Decimal Numbers
+| [MulleObjCCalendarFoundation](https://github.com/MulleFoundation/MulleObjCCalendarFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag//.svg) [![Build Status](https://github.com///workflows/CI/badge.svg?branch=release)](https://github.com///actions/workflows/mulle-sde-ci.yml) | 📆 Calendar class NSCalendar
+| [mulle-objc-list](https://github.com/mulle-objc/mulle-objc-list) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag//.svg) [![Build Status](https://github.com///workflows/CI/badge.svg?branch=release)](https://github.com///actions/workflows/mulle-sde-ci.yml) | 📒 Lists mulle-objc runtime information contained in executables.
 
 ### You are here
 
 ![Overview](overview.dot.svg)
 
+## Add
+
+Use [mulle-sde](//github.com/mulle-sde) to add MulleFoundation to your project:
+
+``` sh
+mulle-sde add github:MulleFoundation/MulleFoundation
+```
 
 ## Install
 
-See [foundation-developer](//github.com/MulleFoundation/Foundation-developer)
-for installation instructions. In general you don't need to download the
-**MulleFoundation** manually. **mulle-sde**, which is part of
-*foundation-developer* will do this for you.
+### Install with mulle-sde
 
-### Legacy install
+Use [mulle-sde](//github.com/mulle-sde) to build and install MulleFoundation and all dependencies:
 
-This builds everything and installs header and libraries into a folder of
-your choice like `/usr/local` or `${HOME}`:
-
-``` bash
-mulle-sde install --prefix "/usr/local" \
-                   "https://github.com/MulleFoundation/MulleFoundation/archive/latest.tar.gz"
+``` sh
+mulle-sde install --prefix /usr/local \
+   https://github.com/MulleFoundation/MulleFoundation/archive/latest.tar.gz
 ```
 
 ### Manual Installation
 
-*Don't do this, it will take hours...*
+Install the requirements:
 
-Install the "Constituent Libraries", then install into `/usr/local`:
+| Requirements                                 | Description
+|----------------------------------------------|-----------------------
+| [MulleObjCOSFoundation](https://github.com/MulleFoundation/MulleObjCOSFoundation)             | 💻 Platform-dependent classes and categories like NSTask, NSPipe
+| [MulleObjCDecimalFoundation](https://github.com/MulleFoundation/MulleObjCDecimalFoundation)             | 🤲🏻 Large Decimal Numbers
+| [MulleObjCCalendarFoundation](https://github.com/MulleFoundation/MulleObjCCalendarFoundation)             | 📆 Calendar class NSCalendar
+| [mulle-objc-list](https://github.com/mulle-objc/mulle-objc-list)             | 📒 Lists mulle-objc runtime information contained in executables.
 
+Install **MulleFoundation** into `/usr/local` with [cmake](https://cmake.org):
 
 ``` sh
 cmake -B build \
@@ -82,21 +73,8 @@ cmake --build build --config Release &&
 cmake --install build --config Release
 ```
 
-
-## Acknowledgements
-
-Parts of this library:
-
-```
-Copyright (c) 2006-2007 Christopher J. W. Lloyd
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-```
-
-
 ## Author
 
-[Nat!](//www.mulle-kybernetik.com/weblog) for
-[Mulle kybernetiK](//www.mulle-kybernetik.com) and
-[Codeon GmbH](//www.codeon.de)
+[Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK
+
+

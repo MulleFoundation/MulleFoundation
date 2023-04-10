@@ -29,23 +29,6 @@
 #endif
 
 // You can tweak the following #import with these commands.
-// (Use 3C6EAD75-99C0-482F-AAA7-CFB194733AEC instead of MulleObjCKVCFoundation if there are duplicate entries)
-//    remove #import: : `mulle-sde dependency mark MulleObjCKVCFoundation no-header`
-//    rename:              `mulle-sde dependency|library set MulleObjCKVCFoundation include whatever.h`
-//    reorder:             `mulle-sde dependency move MulleObjCKVCFoundation <up|down>`
-//    toggle #import:     `mulle-sde dependency mark MulleObjCKVCFoundation [no-]import`
-//    toggle public:       `mulle-sde dependency mark MulleObjCKVCFoundation [no-]public`
-//    toggle optional:     `mulle-sde dependency mark MulleObjCKVCFoundation [no-]require`
-//    remove for platform: `mulle-sde dependency mark MulleObjCKVCFoundation no-platform-<uname>`
-//        (use `mulle-sourcetree-to-c --unames` to list known values)
-#ifdef __has_include
-# if __has_include(<MulleObjCKVCFoundation/MulleObjCKVCFoundation.h>)
-#  import <MulleObjCKVCFoundation/MulleObjCKVCFoundation.h>   // MulleObjCKVCFoundation
-#  define HAVE_LIB_MULLE_OBJC_KVC_FOUNDATION
-# endif
-#endif
-
-// You can tweak the following #import with these commands.
 // (Use 41549518-5DAC-4A6A-82A9-E2CAABE3828F instead of MulleObjCDecimalFoundation if there are duplicate entries)
 //    remove #import: : `mulle-sde dependency mark MulleObjCDecimalFoundation no-header`
 //    rename:              `mulle-sde dependency|library set MulleObjCDecimalFoundation include whatever.h`
@@ -76,52 +59,6 @@
 # if __has_include(<MulleObjCCalendarFoundation/MulleObjCCalendarFoundation.h>)
 #  import <MulleObjCCalendarFoundation/MulleObjCCalendarFoundation.h>   // MulleObjCCalendarFoundation
 #  define HAVE_LIB_MULLE_OBJC_CALENDAR_FOUNDATION
-# endif
-#endif
-
-// You can tweak the following #import with these commands.
-// (Use C48EE179-39A6-466D-A07E-37ECC02D20A4 instead of MulleObjCMathFoundation if there are duplicate entries)
-//    remove #import: : `mulle-sde dependency mark MulleObjCMathFoundation no-header`
-//    rename:              `mulle-sde dependency|library set MulleObjCMathFoundation include whatever.h`
-//    reorder:             `mulle-sde dependency move MulleObjCMathFoundation <up|down>`
-//    toggle #import:     `mulle-sde dependency mark MulleObjCMathFoundation [no-]import`
-//    toggle public:       `mulle-sde dependency mark MulleObjCMathFoundation [no-]public`
-//    toggle optional:     `mulle-sde dependency mark MulleObjCMathFoundation [no-]require`
-//    remove for platform: `mulle-sde dependency mark MulleObjCMathFoundation no-platform-<uname>`
-//        (use `mulle-sourcetree-to-c --unames` to list known values)
-#ifdef __has_include
-# if __has_include(<MulleObjCMathFoundation/MulleObjCMathFoundation.h>)
-#  import <MulleObjCMathFoundation/MulleObjCMathFoundation.h>   // MulleObjCMathFoundation
-#  define HAVE_LIB_MULLE_OBJC_MATH_FOUNDATION
-# endif
-#endif
-
-// You can tweak the following #import with these commands.
-// (Use df7054ac-99cd-4386-b5fc-cbce1eaf009e instead of MulleObjCUnicodeFoundation if there are duplicate entries)
-//    remove #import: : `mulle-sde dependency mark MulleObjCUnicodeFoundation no-header`
-//    rename:              `mulle-sde dependency|library set MulleObjCUnicodeFoundation include whatever.h`
-//    reorder:             `mulle-sde dependency move MulleObjCUnicodeFoundation <up|down>`
-//    toggle #import:     `mulle-sde dependency mark MulleObjCUnicodeFoundation [no-]import`
-//    toggle public:       `mulle-sde dependency mark MulleObjCUnicodeFoundation [no-]public`
-//    toggle optional:     `mulle-sde dependency mark MulleObjCUnicodeFoundation [no-]require`
-//    remove for platform: `mulle-sde dependency mark MulleObjCUnicodeFoundation no-platform-<uname>`
-//        (use `mulle-sourcetree-to-c --unames` to list known values)
-#import <MulleObjCUnicodeFoundation/MulleObjCUnicodeFoundation.h>   // MulleObjCUnicodeFoundation
-
-// You can tweak the following #import with these commands.
-// (Use CC33FA59-ACA8-47AF-861D-6036B12CA9C9 instead of MulleObjCArchiverFoundation if there are duplicate entries)
-//    remove #import: : `mulle-sde dependency mark MulleObjCArchiverFoundation no-header`
-//    rename:              `mulle-sde dependency|library set MulleObjCArchiverFoundation include whatever.h`
-//    reorder:             `mulle-sde dependency move MulleObjCArchiverFoundation <up|down>`
-//    toggle #import:     `mulle-sde dependency mark MulleObjCArchiverFoundation [no-]import`
-//    toggle public:       `mulle-sde dependency mark MulleObjCArchiverFoundation [no-]public`
-//    toggle optional:     `mulle-sde dependency mark MulleObjCArchiverFoundation [no-]require`
-//    remove for platform: `mulle-sde dependency mark MulleObjCArchiverFoundation no-platform-<uname>`
-//        (use `mulle-sourcetree-to-c --unames` to list known values)
-#ifdef __has_include
-# if __has_include(<MulleObjCArchiverFoundation/MulleObjCArchiverFoundation.h>)
-#  import <MulleObjCArchiverFoundation/MulleObjCArchiverFoundation.h>   // MulleObjCArchiverFoundation
-#  define HAVE_LIB_MULLE_OBJC_ARCHIVER_FOUNDATION
 # endif
 #endif
 

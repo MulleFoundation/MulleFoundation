@@ -1,0 +1,35 @@
+{
+   "name" : "MulleFoundation",
+   "version" : "0.21.1",
+   "description" : "Umbrella library for the MulleFoundation",
+   "keywords" : [],
+   "license" : "BSD-3-Clause",
+   "repo" : "MulleFoundation/MulleFoundation",
+   "src" : [
+      "src/generic/import-private.h",
+      "src/generic/import.h",
+      "src/generic/include-private.h",
+      "src/generic/include.h",
+      "src/mulle-foundation-setup-private.h",
+      "src/mulle-foundation-standalone.m",
+      "src/mulle-foundation-startup-private.inc",
+      "src/MulleFoundation.h",
+      "src/MulleFoundation.m",
+      "src/MulleObjCLoader+MulleFoundation.h",
+      "src/MulleObjCLoader+MulleFoundation.m",
+      "src/reflect/objc-loader.inc",
+      "src/reflect/_MulleFoundation-export.h",
+      "src/reflect/_MulleFoundation-import-private.h",
+      "src/reflect/_MulleFoundation-import.h",
+      "src/reflect/_MulleFoundation-include-private.h",
+      "src/reflect/_MulleFoundation-include.h",
+      "src/reflect/_MulleFoundation-provide.h",
+      "src/version.h"
+   ],
+   "dependencies" : {
+      "MulleFoundation/MulleObjCOSFoundation": "*",
+      "MulleFoundation/MulleObjCDecimalFoundation": "*",
+      "MulleFoundation/MulleObjCCalendarFoundation": "*",
+      "mulle-objc/mulle-objc-list": "*"
+   }
+}

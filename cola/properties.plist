@@ -1,0 +1,47 @@
+{
+   project =
+   {
+      description="💍 Umbrella library for the MulleFoundation";
+      domain="github";
+      name="MulleFoundation";
+      user="MulleFoundation";
+      repo="MulleFoundation";
+      homepage="https://github.com/MulleFoundation/MulleFoundation";
+      license="BSD-3-Clause"
+   };
+   dependencies =
+   (
+      {
+         description="💻 Platform-dependent classes and categories like NSTask, NSPipe";
+         domain="github";
+         name="MulleObjCOSFoundation";
+         repo="MulleObjCOSFoundation";
+         url="https://github.com/MulleFoundation/MulleObjCOSFoundation";
+         user="MulleFoundation";
+      },
+      {
+         description="🤲🏻 Large Decimal Numbers";
+         domain="github";
+         name="MulleObjCDecimalFoundation";
+         repo="MulleObjCDecimalFoundation";
+         url="https://github.com/MulleFoundation/MulleObjCDecimalFoundation";
+         user="MulleFoundation";
+      },
+      {
+         description="📆 Calendar class NSCalendar";
+         domain="github";
+         name="MulleObjCCalendarFoundation";
+         repo="MulleObjCCalendarFoundation";
+         url="https://github.com/MulleFoundation/MulleObjCCalendarFoundation";
+         user="MulleFoundation";
+      },
+      {
+         description="📒 Lists mulle-objc runtime information contained in executables.";
+         domain="github";
+         name="mulle-objc-list";
+         repo="mulle-objc-list";
+         url="https://github.com/mulle-objc/mulle-objc-list";
+         user="mulle-objc";
+      }
+   )
+}
