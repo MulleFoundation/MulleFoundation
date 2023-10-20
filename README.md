@@ -63,6 +63,8 @@ Install the requirements:
 | [MulleObjCCalendarFoundation](https://github.com/MulleFoundation/MulleObjCCalendarFoundation)             | 📆 Calendar class NSCalendar
 | [mulle-objc-list](https://github.com/mulle-objc/mulle-objc-list)             | 📒 Lists mulle-objc runtime information contained in executables.
 
+Download the latest [tar](https://github.com/MulleFoundation/MulleFoundation/archive/refs/tags/latest.tar.gz) or [zip](https://github.com/MulleFoundation/MulleFoundation/archive/refs/tags/latest.zip) archive and unpack it.
+
 Install **MulleFoundation** into `/usr/local` with [cmake](https://cmake.org):
 
 ``` sh
