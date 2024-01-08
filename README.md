@@ -6,9 +6,10 @@ MulleFoundation combines various Objective-C class libraries into one unifying
 Foundation that you `#import` and link against.
 
 
+
 | Release Version                                       | Release Notes
 |-------------------------------------------------------|--------------
-| ![Mulle kybernetiK tag](https://img.shields.io/github/tag//MulleFoundation.svg?branch=release) [![Build Status](https://github.com//MulleFoundation/workflows/CI/badge.svg?branch=release)](//github.com//MulleFoundation/actions)| [RELEASENOTES](RELEASENOTES.md) |
+| ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleFoundation.svg?branch=release) [![Build Status](https://github.com/MulleFoundation/MulleFoundation/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleFoundation/actions) | [RELEASENOTES](RELEASENOTES.md) |
 
 
 ## API
@@ -78,6 +79,6 @@ cmake --install build --config Release
 
 ## Author
 
-[Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK
+[Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK  
 
 

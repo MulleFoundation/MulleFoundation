@@ -1,7 +1,7 @@
 {
    "name" : "MulleFoundation",
-   "version" : "0.22.0",
-   "description" : "Umbrella library for the MulleFoundation",
+   "version" : "0.22.1",
+   "description" : "💍 Umbrella library for the MulleFoundation",
    "keywords" : [],
    "license" : "BSD-3-Clause",
    "repo" : "MulleFoundation/MulleFoundation",
@@ -17,6 +17,7 @@
       "src/MulleFoundation.m",
       "src/MulleObjCLoader+MulleFoundation.h",
       "src/MulleObjCLoader+MulleFoundation.m",
+      "src/reflect/objc-loader.inc",
       "src/reflect/_MulleFoundation-export.h",
       "src/reflect/_MulleFoundation-import-private.h",
       "src/reflect/_MulleFoundation-import.h",

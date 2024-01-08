@@ -11,15 +11,18 @@
  *
  */
 
-// You can tweak the following #import with these commands.
-// (Use DACD462C-D0AC-4D93-81A6-4E0972215046 instead of MulleObjCOSFoundation if there are duplicate entries)
-//    remove #import: : `mulle-sde dependency mark MulleObjCOSFoundation no-header`
-//    rename:              `mulle-sde dependency|library set MulleObjCOSFoundation include whatever.h`
-//    reorder:             `mulle-sde dependency move MulleObjCOSFoundation <up|down>`
-//    toggle #import:     `mulle-sde dependency mark MulleObjCOSFoundation [no-]import`
-//    toggle public:       `mulle-sde dependency mark MulleObjCOSFoundation [no-]public`
-//    toggle optional:     `mulle-sde dependency mark MulleObjCOSFoundation [no-]require`
-//    remove for platform: `mulle-sde dependency mark MulleObjCOSFoundation no-platform-<uname>`
+// To remove the following dependency (headers and library) completely:
+//   `mulle-sde dependency remove MulleObjCOSFoundation`
+// (Use DACD462C-D0AC-4D93-81A6-4E0972215046 instead of MulleObjCOSFoundation, if there are duplicate entries)
+//
+// You can tweak the following #import with these commands:
+//    remove #import      : `mulle-sde dependency mark MulleObjCOSFoundation no-header`
+//    rename              : `mulle-sde dependency|library set MulleObjCOSFoundation include whatever.h`
+//    reorder             : `mulle-sde dependency move MulleObjCOSFoundation <up|down>`
+//    toggle #import      : `mulle-sde dependency mark MulleObjCOSFoundation [no-]import`
+//    toggle public       : `mulle-sde dependency mark MulleObjCOSFoundation [no-]public`
+//    toggle optional     : `mulle-sde dependency mark MulleObjCOSFoundation [no-]require`
+//    remove for platform : `mulle-sde dependency mark MulleObjCOSFoundation no-platform-<uname>`
 //        (use `mulle-sourcetree-to-c --unames` to list known values)
 #ifdef __has_include
 # if __has_include(<MulleObjCOSFoundation/MulleObjCOSFoundation.h>)
@@ -28,15 +31,18 @@
 # endif
 #endif
 
-// You can tweak the following #import with these commands.
-// (Use 41549518-5DAC-4A6A-82A9-E2CAABE3828F instead of MulleObjCDecimalFoundation if there are duplicate entries)
-//    remove #import: : `mulle-sde dependency mark MulleObjCDecimalFoundation no-header`
-//    rename:              `mulle-sde dependency|library set MulleObjCDecimalFoundation include whatever.h`
-//    reorder:             `mulle-sde dependency move MulleObjCDecimalFoundation <up|down>`
-//    toggle #import:     `mulle-sde dependency mark MulleObjCDecimalFoundation [no-]import`
-//    toggle public:       `mulle-sde dependency mark MulleObjCDecimalFoundation [no-]public`
-//    toggle optional:     `mulle-sde dependency mark MulleObjCDecimalFoundation [no-]require`
-//    remove for platform: `mulle-sde dependency mark MulleObjCDecimalFoundation no-platform-<uname>`
+// To remove the following dependency (headers and library) completely:
+//   `mulle-sde dependency remove MulleObjCDecimalFoundation`
+// (Use 41549518-5DAC-4A6A-82A9-E2CAABE3828F instead of MulleObjCDecimalFoundation, if there are duplicate entries)
+//
+// You can tweak the following #import with these commands:
+//    remove #import      : `mulle-sde dependency mark MulleObjCDecimalFoundation no-header`
+//    rename              : `mulle-sde dependency|library set MulleObjCDecimalFoundation include whatever.h`
+//    reorder             : `mulle-sde dependency move MulleObjCDecimalFoundation <up|down>`
+//    toggle #import      : `mulle-sde dependency mark MulleObjCDecimalFoundation [no-]import`
+//    toggle public       : `mulle-sde dependency mark MulleObjCDecimalFoundation [no-]public`
+//    toggle optional     : `mulle-sde dependency mark MulleObjCDecimalFoundation [no-]require`
+//    remove for platform : `mulle-sde dependency mark MulleObjCDecimalFoundation no-platform-<uname>`
 //        (use `mulle-sourcetree-to-c --unames` to list known values)
 #ifdef __has_include
 # if __has_include(<MulleObjCDecimalFoundation/MulleObjCDecimalFoundation.h>)
@@ -45,15 +51,18 @@
 # endif
 #endif
 
-// You can tweak the following #import with these commands.
-// (Use 1D103583-A637-4819-9255-3A265C80E49A instead of MulleObjCCalendarFoundation if there are duplicate entries)
-//    remove #import: : `mulle-sde dependency mark MulleObjCCalendarFoundation no-header`
-//    rename:              `mulle-sde dependency|library set MulleObjCCalendarFoundation include whatever.h`
-//    reorder:             `mulle-sde dependency move MulleObjCCalendarFoundation <up|down>`
-//    toggle #import:     `mulle-sde dependency mark MulleObjCCalendarFoundation [no-]import`
-//    toggle public:       `mulle-sde dependency mark MulleObjCCalendarFoundation [no-]public`
-//    toggle optional:     `mulle-sde dependency mark MulleObjCCalendarFoundation [no-]require`
-//    remove for platform: `mulle-sde dependency mark MulleObjCCalendarFoundation no-platform-<uname>`
+// To remove the following dependency (headers and library) completely:
+//   `mulle-sde dependency remove MulleObjCCalendarFoundation`
+// (Use 1D103583-A637-4819-9255-3A265C80E49A instead of MulleObjCCalendarFoundation, if there are duplicate entries)
+//
+// You can tweak the following #import with these commands:
+//    remove #import      : `mulle-sde dependency mark MulleObjCCalendarFoundation no-header`
+//    rename              : `mulle-sde dependency|library set MulleObjCCalendarFoundation include whatever.h`
+//    reorder             : `mulle-sde dependency move MulleObjCCalendarFoundation <up|down>`
+//    toggle #import      : `mulle-sde dependency mark MulleObjCCalendarFoundation [no-]import`
+//    toggle public       : `mulle-sde dependency mark MulleObjCCalendarFoundation [no-]public`
+//    toggle optional     : `mulle-sde dependency mark MulleObjCCalendarFoundation [no-]require`
+//    remove for platform : `mulle-sde dependency mark MulleObjCCalendarFoundation no-platform-<uname>`
 //        (use `mulle-sourcetree-to-c --unames` to list known values)
 #ifdef __has_include
 # if __has_include(<MulleObjCCalendarFoundation/MulleObjCCalendarFoundation.h>)
