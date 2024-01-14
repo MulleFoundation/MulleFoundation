@@ -20,14 +20,6 @@
          user="MulleFoundation";
       },
       {
-         description="🤲🏻 Large Decimal Numbers";
-         domain="github";
-         name="MulleObjCDecimalFoundation";
-         repo="MulleObjCDecimalFoundation";
-         url="https://github.com/MulleFoundation/MulleObjCDecimalFoundation";
-         user="MulleFoundation";
-      },
-      {
          description="📆 Calendar class NSCalendar";
          domain="github";
          name="MulleObjCCalendarFoundation";
