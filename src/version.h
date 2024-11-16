@@ -1,4 +1,4 @@
-#define MULLE_FOUNDATION_VERSION   ((0UL << 20) | (22 << 8) | 1)
+#define MULLE_FOUNDATION_VERSION   ((0UL << 20) | (22 << 8) | 2)
 
 // must be kept like this, this is how the compiler reads it
 // only code that includes the foundation header will get the
