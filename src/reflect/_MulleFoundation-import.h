@@ -12,6 +12,21 @@
  */
 
 // To remove the following dependency (headers and library) completely:
+//   `mulle-sde dependency remove MulleFoundationBase`
+// (Use 80D335DA-30FC-48BD-BED6-804569C1C9F8 instead of MulleFoundationBase, if there are duplicate entries)
+//
+// You can tweak the following #import with these commands:
+//    remove #import      : `mulle-sde dependency mark MulleFoundationBase no-header`
+//    rename              : `mulle-sde dependency|library set MulleFoundationBase include whatever.h`
+//    reorder             : `mulle-sde dependency move MulleFoundationBase <up|down>`
+//    toggle #import      : `mulle-sde dependency mark MulleFoundationBase [no-]import`
+//    toggle public       : `mulle-sde dependency mark MulleFoundationBase [no-]public`
+//    toggle optional     : `mulle-sde dependency mark MulleFoundationBase [no-]require`
+//    remove for platform : `mulle-sde dependency mark MulleFoundationBase no-platform-<uname>`
+//        (use `mulle-sourcetree-to-c --unames` to list known values)
+#import <MulleFoundationBase/MulleFoundationBase.h>   // MulleFoundationBase
+
+// To remove the following dependency (headers and library) completely:
 //   `mulle-sde dependency remove MulleObjCOSFoundation`
 // (Use DACD462C-D0AC-4D93-81A6-4E0972215046 instead of MulleObjCOSFoundation, if there are duplicate entries)
 //
