@@ -3,6 +3,8 @@
    {
       description="💍 Umbrella library for the MulleFoundation";
       domain="github";
+      language="c";
+      dialect="objc";
       name="MulleFoundation";
       user="MulleFoundation";
       repo="MulleFoundation";
@@ -12,11 +14,27 @@
    dependencies =
    (
       {
+         description="🧱 MulleFoundationBase amalgamates Foundations projects";
+         domain="github";
+         name="MulleFoundationBase";
+         repo="MulleFoundationBase";
+         url="https://github.com/MulleFoundation/MulleFoundationBase";
+         user="MulleFoundation";
+      },
+      {
          description="💻 Platform-dependent classes and categories like NSTask, NSPipe";
          domain="github";
          name="MulleObjCOSFoundation";
          repo="MulleObjCOSFoundation";
          url="https://github.com/MulleFoundation/MulleObjCOSFoundation";
+         user="MulleFoundation";
+      },
+      {
+         description="🤲🏻 Large Decimal Numbers";
+         domain="github";
+         name="MulleObjCDecimalFoundation";
+         repo="MulleObjCDecimalFoundation";
+         url="https://github.com/MulleFoundation/MulleObjCDecimalFoundation";
          user="MulleFoundation";
       },
       {
