@@ -1,6 +1,6 @@
 {
    "name" : "MulleFoundation",
-   "version" : "0.22.1",
+   "version" : "0.22.4",
    "description" : "💍 Umbrella library for the MulleFoundation",
    "keywords" : [],
    "license" : "BSD-3-Clause",
@@ -27,6 +27,7 @@
       "src/version.h"
    ],
    "dependencies" : {
+      "MulleFoundation/MulleFoundationBase": "*",
       "MulleFoundation/MulleObjCOSFoundation": "*",
       "MulleFoundation/MulleObjCDecimalFoundation": "*",
       "MulleFoundation/MulleObjCCalendarFoundation": "*",
