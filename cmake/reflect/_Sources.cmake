@@ -18,12 +18,5 @@ src/MulleFoundation.m
 # contents selected with patternfile ??-source--stage2-sources
 #
 set( STAGE2_SOURCES
-src/MulleObjCLoader+MulleFoundation.m
-)
-
-#
-# contents selected with patternfile ??-source--standalone-sources
-#
-set( STANDALONE_SOURCES
-src/mulle-foundation-standalone.m
+src/MulleObjCDeps+MulleFoundation.m
 )

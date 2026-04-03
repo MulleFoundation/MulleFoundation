@@ -13,7 +13,7 @@
 #define _mulle_foundation__export_h__
 
 
-#import "MulleObjCLoader+MulleFoundation.h"
+#import "MulleObjCDeps+MulleFoundation.h"
 
 
 #endif

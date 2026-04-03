@@ -19,7 +19,7 @@
 //    remove #import      : `mulle-sde dependency mark MulleFoundationBase no-header`
 //    rename              : `mulle-sde dependency|library set MulleFoundationBase include whatever.h`
 //    reorder             : `mulle-sde dependency move MulleFoundationBase <up|down>`
-//    toggle #import      : `mulle-sde dependency mark MulleFoundationBase [no-]import`
+//    toggle objc         : `mulle-sde dependency mark MulleFoundationBase [no-]import`
 //    toggle public       : `mulle-sde dependency mark MulleFoundationBase [no-]public`
 //    toggle optional     : `mulle-sde dependency mark MulleFoundationBase [no-]require`
 //    remove for platform : `mulle-sde dependency mark MulleFoundationBase no-platform-<uname>`
@@ -34,7 +34,7 @@
 //    remove #import      : `mulle-sde dependency mark MulleObjCOSFoundation no-header`
 //    rename              : `mulle-sde dependency|library set MulleObjCOSFoundation include whatever.h`
 //    reorder             : `mulle-sde dependency move MulleObjCOSFoundation <up|down>`
-//    toggle #import      : `mulle-sde dependency mark MulleObjCOSFoundation [no-]import`
+//    toggle objc         : `mulle-sde dependency mark MulleObjCOSFoundation [no-]import`
 //    toggle public       : `mulle-sde dependency mark MulleObjCOSFoundation [no-]public`
 //    toggle optional     : `mulle-sde dependency mark MulleObjCOSFoundation [no-]require`
 //    remove for platform : `mulle-sde dependency mark MulleObjCOSFoundation no-platform-<uname>`
@@ -54,7 +54,7 @@
 //    remove #import      : `mulle-sde dependency mark MulleObjCDecimalFoundation no-header`
 //    rename              : `mulle-sde dependency|library set MulleObjCDecimalFoundation include whatever.h`
 //    reorder             : `mulle-sde dependency move MulleObjCDecimalFoundation <up|down>`
-//    toggle #import      : `mulle-sde dependency mark MulleObjCDecimalFoundation [no-]import`
+//    toggle objc         : `mulle-sde dependency mark MulleObjCDecimalFoundation [no-]import`
 //    toggle public       : `mulle-sde dependency mark MulleObjCDecimalFoundation [no-]public`
 //    toggle optional     : `mulle-sde dependency mark MulleObjCDecimalFoundation [no-]require`
 //    remove for platform : `mulle-sde dependency mark MulleObjCDecimalFoundation no-platform-<uname>`
@@ -74,7 +74,7 @@
 //    remove #import      : `mulle-sde dependency mark MulleObjCCalendarFoundation no-header`
 //    rename              : `mulle-sde dependency|library set MulleObjCCalendarFoundation include whatever.h`
 //    reorder             : `mulle-sde dependency move MulleObjCCalendarFoundation <up|down>`
-//    toggle #import      : `mulle-sde dependency mark MulleObjCCalendarFoundation [no-]import`
+//    toggle objc         : `mulle-sde dependency mark MulleObjCCalendarFoundation [no-]import`
 //    toggle public       : `mulle-sde dependency mark MulleObjCCalendarFoundation [no-]public`
 //    toggle optional     : `mulle-sde dependency mark MulleObjCCalendarFoundation [no-]require`
 //    remove for platform : `mulle-sde dependency mark MulleObjCCalendarFoundation no-platform-<uname>`
