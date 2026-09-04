@@ -27,7 +27,7 @@
 {
    MulleFoo   *obj;
 
-   obj = [[[self alloc] init] autorelease];
+   obj = [self instance];
    [obj setNameUTF8String:name];
    return( obj);
 }

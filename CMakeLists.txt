@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.13...99.99)
 
-project( MulleFoundation VERSION 0.23.1 LANGUAGES C)
+project( MulleFoundation VERSION 0.23.2 LANGUAGES C)
 
 
 ### mulle-sde environment

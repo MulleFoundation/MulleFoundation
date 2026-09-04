@@ -64,6 +64,7 @@ src/generic/include.h
 set( PUBLIC_HEADERS
 src/MulleFoundation.h
 src/MulleObjCDeps+MulleFoundation.h
+src/reflect/_MulleFoundation-versioncheck.h
 src/version.h
 )
 

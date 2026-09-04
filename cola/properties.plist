@@ -6,6 +6,7 @@
       language="c";
       dialect="objc";
       name="MulleFoundation";
+      version="0.23.2";
       user="MulleFoundation";
       repo="MulleFoundation";
       homepage="https://github.com/MulleFoundation/MulleFoundation";
