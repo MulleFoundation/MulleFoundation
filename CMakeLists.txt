@@ -8,10 +8,10 @@
 #
 cmake_minimum_required( VERSION 3.13)
 
-project( MulleFoundation VERSION 0.29.0 LANGUAGES C)
+project( MulleFoundation VERSION 0.31.0 LANGUAGES C)
 
 set( MULLE_PROJECT_TYPE "Library")
-set( PROJECT_VERSION  0.29.0)
+set( PROJECT_VERSION  0.31.0)
 
 ### mulle-sde environment
 

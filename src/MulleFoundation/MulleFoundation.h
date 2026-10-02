@@ -40,7 +40,7 @@
  *
  *  version:  major, minor, patch
  */
-#define MULLE_FOUNDATION_VERSION  ((0UL << 20) | (29 << 8) | 0)
+#define MULLE_FOUNDATION_VERSION  ((0UL << 20) | (31 << 8) | 0)
 
 
 static inline unsigned int   MulleFoundation_get_version_major( void)
@@ -70,8 +70,8 @@ static inline unsigned int   MulleFoundation_get_version_patch( void)
 #import <MulleObjCCalendarFoundation/MulleObjCCalendarFoundation.h>
 #import <MulleObjCOSFoundation/MulleObjCOSFoundation.h>
 
-#ifdef __has_include
-# if __has_include(<MulleObjCDecimalFoundation/MulleObjCDecimalFoundation.h>)
-#  import <MulleObjCDecimalFoundation/MulleObjCDecimalFoundation.h>
-# endif
-#endif
+// #ifdef __has_include
+// # if __has_include(<MulleObjCDecimalFoundation/MulleObjCDecimalFoundation.h>)
+// #  import <MulleObjCDecimalFoundation/MulleObjCDecimalFoundation.h>
+// # endif
+// #endif

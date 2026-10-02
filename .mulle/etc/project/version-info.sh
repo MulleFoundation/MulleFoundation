@@ -1,2 +1,1 @@
-VERSIONFILE=CMakeLists.txt
-VERSIONNAME=PROJECT_VERSION
+VERSIONFILE="src/MulleFoundation/MulleFoundation.h"

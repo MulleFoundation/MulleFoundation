@@ -20,8 +20,8 @@
 #endif
 
 // optionally include decimal foundation, when published
-#ifdef __has_include
-# if __has_include(<MulleObjCDecimalFoundation/MulleObjCDecimalFoundation.h>)
-      { @selector( MulleObjCDeps), @selector( MulleObjCDecimalFoundation) },
-# endif
-#endif
+//#ifdef __has_include
+//# if __has_include(<MulleObjCDecimalFoundation/MulleObjCDecimalFoundation.h>)
+//      { @selector( MulleObjCDeps), @selector( MulleObjCDecimalFoundation) },
+//# endif
+//#endif
