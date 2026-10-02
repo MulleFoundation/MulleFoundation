@@ -48,6 +48,7 @@ Then edit `MulleFoundationBase.h` and add the envelope header to the others.
 | [MulleObjCBSDFoundation](https://github.com/MulleFoundation/MulleObjCBSDFoundation) | This is a [mulle-sde](https://mulle-sde.github.io/) project.
 | [MulleObjCCalendarFoundation](https://github.com/MulleFoundation/MulleObjCCalendarFoundation) | 📆 Calendar class NSCalendar
 | [MulleObjCDarwinFoundation](https://github.com/MulleFoundation/MulleObjCDarwinFoundation) | This is a [mulle-sde](https://mulle-sde.github.io/) project.
+| [MulleObjCFreeBSDFoundation](https://github.com/MulleFoundation/MulleObjCFreeBSDFoundation) | This is a [mulle-sde](https://mulle-sde.github.io/) project.
 | [MulleObjCLinuxFoundation](https://github.com/MulleFoundation/MulleObjCLinuxFoundation) | This is a [mulle-sde](https://mulle-sde.github.io/) project.
 | [MulleObjCOSBaseFoundation](https://github.com/MulleFoundation/MulleObjCOSBaseFoundation) | 
 | [MulleObjCOSFoundation](https://github.com/MulleFoundation/MulleObjCOSFoundation) | 💻 Platform-dependent classes and categories like NSTask, NSPipe

@@ -58,6 +58,14 @@
       {
          description="This is a [mulle-sde](https://mulle-sde.github.io/) project.";
          domain="clib";
+         name="src/MulleObjCFreeBSDFoundation";
+         repo="MulleObjCFreeBSDFoundation@*";
+         url="https://github.com/MulleFoundation/MulleObjCFreeBSDFoundation@*";
+         user="MulleFoundation";
+      },
+      {
+         description="This is a [mulle-sde](https://mulle-sde.github.io/) project.";
+         domain="clib";
          name="src/MulleObjCDarwinFoundation";
          repo="MulleObjCDarwinFoundation@*";
          url="https://github.com/MulleFoundation/MulleObjCDarwinFoundation@*";

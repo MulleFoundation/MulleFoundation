@@ -74,3 +74,10 @@ build-*/
 *.tmp.*
 *.test.*
 .idea
+.vscode/
+*.orig
+.touch
+CMakeLists.txt.previous
+*.workspace
+*.*-workspace
+research/
