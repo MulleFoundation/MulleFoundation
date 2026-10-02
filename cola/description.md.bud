@@ -1,0 +1,12 @@
+This is an almagamation of the MulleFoundation libraries that do not 
+depend on platform specific code (below MulleObjCOSFoundation),
+See the [constituting projects](#Constituents) for documentation, 
+bug reports, pull requests.
+
+The advantages of **MulleFoundationBase** are:
+
+* compiles faster than almost a dozen individual projects
+* you only need to link against one library file
+* `#import` statements of the individual libraries can remain unchanged or can be simplified to `#import <MulleFoundationBase/MulleFoundationBase.h>`
+
+

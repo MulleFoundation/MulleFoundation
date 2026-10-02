@@ -1,0 +1,153 @@
+//
+//  NSDateComponents.m
+//  MulleObjCCalendarFoundation
+//
+//  Copyright (c) 2019 Nat! - Mulle kybernetiK.
+//  All rights reserved.
+//
+//
+//  Redistribution and use in source and binary forms, with or without
+//  modification, are permitted provided that the following conditions are met:
+//
+//  Redistributions of source code must retain the above copyright notice, this
+//  list of conditions and the following disclaimer.
+//
+//  Redistributions in binary form must reproduce the above copyright notice,
+//  this list of conditions and the following disclaimer in the documentation
+//  and/or other materials provided with the distribution.
+//
+//  Neither the name of Mulle kybernetiK nor the names of its contributors
+//  may be used to endorse or promote products derived from this software
+//  without specific prior written permission.
+//
+//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+//  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+//  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+//  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+//  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+//  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+//  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+//  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+//  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+//  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+//  POSSIBILITY OF SUCH DAMAGE.
+//
+#import "NSDateComponents.h"
+
+
+@implementation NSDateComponents
+
+- (instancetype) init
+{
+   NSInteger   *p;
+   NSInteger   *sentinel;
+
+   p        = &_era;
+   sentinel = &_nanosecond + 1;
+   while( p < sentinel)
+      *p++ = NSDateComponentUndefined;
+
+   return( self);
+}
+
+
+- (void) setWeek:(NSInteger) week
+{
+   _weekOfYear = week;
+}
+
+
+- (NSInteger) week
+{
+   return( _weekOfYear);
+}
+
+
+- (NSInteger) valueForComponent:(NSCalendarUnit) unit
+{
+   switch( unit)
+   {
+   case NSCalendarUnitEra            : return( _era);
+   case NSCalendarUnitYear           : return( _year);
+   case NSCalendarUnitQuarter        : return( _quarter);
+   case NSCalendarUnitMonth          : return( _month);
+   case NSCalendarUnitWeekOfYear     : return( _weekOfYear);
+   case NSCalendarUnitWeekOfMonth    : return( _weekOfMonth);
+   case NSCalendarUnitDay            : return( _day);
+   case NSCalendarUnitWeekday        : return( _weekday);
+   case NSCalendarUnitWeekdayOrdinal : return( _weekdayOrdinal);
+   case NSCalendarUnitHour           : return( _hour);
+   case NSCalendarUnitMinute         : return( _minute);
+   case NSCalendarUnitSecond         : return( _second);
+   case NSCalendarUnitNanosecond     : return( _nanosecond);
+   }
+#ifdef DEBUG
+   abort();
+#endif
+   return( 0);
+}
+
+
+- (void) setValue:(NSInteger) value
+     forComponent:(NSCalendarUnit) unit
+{
+   switch( unit)
+   {
+   case NSCalendarUnitEra            : _era            = value; break;
+   case NSCalendarUnitYear           : _year           = value; break;
+   case NSCalendarUnitQuarter        : _quarter        = value; break;
+   case NSCalendarUnitMonth          : _month          = value; break;
+   case NSCalendarUnitWeekOfYear     : _weekOfYear     = value; break;
+   case NSCalendarUnitWeekOfMonth    : _weekOfMonth    = value; break;
+   case NSCalendarUnitDay            : _day            = value; break;
+   case NSCalendarUnitWeekday        : _weekday        = value; break;
+   case NSCalendarUnitWeekdayOrdinal : _weekdayOrdinal = value; break;
+   case NSCalendarUnitHour           : _hour           = value; break;
+   case NSCalendarUnitMinute         : _minute         = value; break;
+   case NSCalendarUnitSecond         : _second         = value; break;
+   case NSCalendarUnitNanosecond     : _nanosecond     = value; break;
+   default:
+#ifdef DEBUG
+      abort();
+#endif
+      break;
+   }
+}
+
+
+static void   append( NSMutableString *s, NSString *format, NSString *delim, NSInteger value)
+{
+   [s appendString:delim];
+
+   if( value == NSIntegerMax)
+      [s appendString:@"*"];
+   else
+      [s appendFormat:format, value];
+}
+
+
+- (NSString *) description
+{
+   NSMutableString   *s;
+
+   s = [NSMutableString string];
+
+   append( s, @"%04ld", nil, _year);
+   append( s, @"%02ld", @"-", _month);
+   append( s, @"%02ld", @"-", _day);
+
+   append( s, @"%02ld", @" ", _hour);
+   append( s, @"%02ld", @":", _minute);
+   append( s, @"%02ld", @":", _second);
+   append( s, @"%09ld", @".", _nanosecond);
+
+   return( s);
+}
+
+
+- (NSString *) mulleDebugContentsDescription      MULLE_OBJC_THREADSAFE_METHOD
+{
+   return( [self description]);
+}
+
+@end

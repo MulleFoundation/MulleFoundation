@@ -1,0 +1,7 @@
+{
+   config = {
+       skipYouAreHere = YES;
+       skipOverviewGraphic = YES;
+       skipClibAdd = YES;
+   }
+}

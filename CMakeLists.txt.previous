@@ -1,0 +1,224 @@
+#
+# You rarely need to edit this file. To add or remove files in your
+# project edit the "src" folders contents and run `mulle-sde reflect`
+#
+#
+# A convenient way to add a new source file is:
+#    mulle-sde add src/foo.m
+#
+cmake_minimum_required( VERSION 3.13)
+
+project( MulleFoundation VERSION 0.29.0 LANGUAGES C)
+
+
+set( MULLE_PROJECT_TYPE "Library")
+
+# The C runtime remains composed from its existing CMake projects. Override
+# these paths when the projects are not checked out as sibling repositories.
+set( MULLE_CORE_SOURCE_DIR
+     "${CMAKE_CURRENT_SOURCE_DIR}/../../mulle-core/mulle-core"
+     CACHE PATH "Path to the mulle-core project checkout")
+set( MULLE_CORE_ALL_LOAD_SOURCE_DIR
+     "${CMAKE_CURRENT_SOURCE_DIR}/../../mulle-core/mulle-core-all-load"
+     CACHE PATH "Path to the mulle-core-all-load checkout")
+set( MULLE_OBJC_RUNTIME_SOURCE_DIR
+     "${CMAKE_CURRENT_SOURCE_DIR}/../../mulle-objc/mulle-objc-runtime"
+     CACHE PATH "Path to the mulle-objc-runtime checkout")
+
+if( NOT IS_DIRECTORY "${MULLE_CORE_SOURCE_DIR}")
+   message( FATAL_ERROR
+      "MULLE_CORE_SOURCE_DIR does not exist: ${MULLE_CORE_SOURCE_DIR}")
+endif()
+if( NOT IS_DIRECTORY "${MULLE_CORE_ALL_LOAD_SOURCE_DIR}")
+   message( FATAL_ERROR
+      "MULLE_CORE_ALL_LOAD_SOURCE_DIR does not exist: ${MULLE_CORE_ALL_LOAD_SOURCE_DIR}")
+endif()
+if( NOT IS_DIRECTORY "${MULLE_OBJC_RUNTIME_SOURCE_DIR}")
+   message( FATAL_ERROR
+      "MULLE_OBJC_RUNTIME_SOURCE_DIR does not exist: ${MULLE_OBJC_RUNTIME_SOURCE_DIR}")
+endif()
+
+# mulle-core copies its headers into ${CMAKE_BINARY_DIR}/include when built
+# via add_subdirectory. All targets (runtime, Foundation amalgamation) need
+# those headers on the include path (mulle-c11, mulle-container, etc.).
+include_directories( "${CMAKE_BINARY_DIR}/include")
+
+add_subdirectory( "${MULLE_CORE_SOURCE_DIR}" "mulle-core")
+add_subdirectory( "${MULLE_CORE_ALL_LOAD_SOURCE_DIR}" "mulle-core-all-load")
+add_subdirectory( "${MULLE_OBJC_RUNTIME_SOURCE_DIR}" "mulle-objc-runtime")
+
+# Some constituent sources use angle-bracket includes with their original
+# project names (e.g. <MulleFoundationBase/MulleFoundationBase.h>).
+# Create compatibility shims in the build tree so those imports resolve.
+set( _COMPAT_INCLUDE_DIR "${CMAKE_BINARY_DIR}/include/MulleFoundationBase")
+file( MAKE_DIRECTORY "${_COMPAT_INCLUDE_DIR}")
+file( COPY "${CMAKE_CURRENT_SOURCE_DIR}/src/MulleFoundationBase.h"
+      DESTINATION "${_COMPAT_INCLUDE_DIR}")
+unset( _COMPAT_INCLUDE_DIR)
+set( PROJECT_VERSION  0.29.0)
+
+### mulle-sde environment
+
+# add cmake module paths to search path
+list( INSERT CMAKE_MODULE_PATH 0 "${CMAKE_CURRENT_SOURCE_DIR}/cmake/share")
+list( INSERT CMAKE_MODULE_PATH 0 "${CMAKE_CURRENT_SOURCE_DIR}/cmake/reflect")
+list( INSERT CMAKE_MODULE_PATH 0 "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
+include( Environment)
+
+include( Files)
+
+include( IDESupport OPTIONAL)
+
+
+unset( SUB_PROJECT_NAMES)
+file( GLOB SUB_PROJECT_PATHS src/MulleObjC*)
+
+foreach( SUB_PROJECT_PATH ${SUB_PROJECT_PATHS})
+   if( IS_DIRECTORY "${SUB_PROJECT_PATH}")
+      get_filename_component( SUB_PROJECT_NAME "${SUB_PROJECT_PATH}" NAME)
+      list( APPEND SUB_PROJECT_NAMES "${SUB_PROJECT_NAME}")
+      message( STATUS "SUB_PROJECT_NAME = ${SUB_PROJECT_NAME}")
+   endif()
+endforeach()
+set( SUB_PROJECT_NAMES ${SUB_PROJECT_NAMES} CACHE INTERNAL "sub-project names")
+
+
+if( HEADER_PHASE)
+   #
+   # need to install like the embedded subprojects would
+   #
+   unset(REMAINING_PUBLIC_HEADERS)
+   foreach( TMP_HEADER ${INSTALL_PUBLIC_HEADERS};${PUBLIC_GENERIC_HEADERS})
+      get_filename_component( TMP_PROJECT_NAME "${TMP_HEADER}" DIRECTORY)
+      get_filename_component( TMP_PROJECT_NAME "${TMP_PROJECT_NAME}" NAME)
+      list( FIND SUB_PROJECT_NAMES "${TMP_PROJECT_NAME}" TMP_INDEX)
+      # can't stay as a symlink, otherwise symlinks get installed which
+      # fail, as they are relative
+      file( REAL_PATH "${TMP_HEADER}" TMP_HEADER)
+      if( NOT( "${TMP_INDEX}" EQUAL -1))
+         install( FILES ${TMP_HEADER} DESTINATION "include/${TMP_PROJECT_NAME}")
+      else()
+         list( APPEND REMAINING_PUBLIC_HEADERS "${TMP_HEADER}")
+      endif()
+   endforeach()
+
+   unset(REMAINING_PRIVATE_HEADERS)
+   foreach( TMP_HEADER ${INSTALL_PRIVATE_HEADERS};${PRIVATE_GENERIC_HEADERS})
+      get_filename_component( TMP_PROJECT_NAME "${TMP_HEADER}" DIRECTORY)
+      get_filename_component( TMP_PROJECT_NAME "${TMP_PROJECT_NAME}" NAME)
+      list( FIND SUB_PROJECT_NAMES "${TMP_PROJECT_NAME}" TMP_INDEX)
+      # can't stay as a symlink, otherwise symlinks get installed which
+      # fail, as they are relative
+      file( REAL_PATH "${TMP_HEADER}" TMP_HEADER)
+      if( NOT( "${TMP_INDEX}" EQUAL -1))
+         install( FILES ${TMP_HEADER} DESTINATION "include/${TMP_PROJECT_NAME}")
+      else()
+         list( APPEND REMAINING_PRIVATE_HEADERS "${TMP_HEADER}")
+      endif()
+   endforeach()
+
+   install( FILES ${REMAINING_PUBLIC_HEADERS}  DESTINATION "include/${PROJECT_NAME}")
+   install( FILES ${REMAINING_PRIVATE_HEADERS} DESTINATION "include/${PROJECT_NAME}")
+   install( FILES ${INSTALL_CMAKE_INCLUDES}          DESTINATION "include/${PROJECT_NAME}/cmake")
+
+   # short cut out
+   if( NOT COMPILE_PHASE AND NOT LINK_PHASE)
+      return()
+   endif()
+endif()
+
+if( LINK_PHASE)
+   include( Dependencies OPTIONAL)
+endif()
+
+include( Library)
+
+# The mulle-objc runtime requires these definitions for its header guards
+# and ObjC type system. Normally these come from mulle-sde's DEPENDENCY_DIR
+# infrastructure; add them explicitly for add_subdirectory() consumers.
+add_definitions( -D__MULLE_OBJC_TPS__)
+add_definitions( -D__MULLE_OBJC_FCS__)
+if( CMAKE_BUILD_TYPE MATCHES "^Debug")
+   add_definitions( -D__MULLE_OBJC_TAO__)
+else()
+   add_definitions( -D__MULLE_OBJC_NO_TAO__)
+endif()
+
+# The Objective-C amalgamation consumes the separately composed runtime and C
+# core targets. Linking them to the object target supplies their include paths
+# and compiler definitions before the amalgamation is compiled.
+foreach( MULLE_FOUNDATION_RUNTIME_TARGET
+         mulle-objc-runtime
+         mulle-core-all-load
+         mulle-core)
+   if( TARGET "${MULLE_FOUNDATION_RUNTIME_TARGET}")
+      target_link_libraries( "${LIBRARY_COMPILE_TARGET}" PRIVATE
+         "${MULLE_FOUNDATION_RUNTIME_TARGET}")
+      target_link_libraries( "${LIBRARY_LINK_TARGET}" PUBLIC
+         "${MULLE_FOUNDATION_RUNTIME_TARGET}")
+   endif()
+endforeach()
+
+# use LIBRARY_COMPILE_TARGET for compiler options
+target_compile_definitions( "${LIBRARY_COMPILE_TARGET}" PUBLIC)
+target_compile_options( "${LIBRARY_COMPILE_TARGET}" PUBLIC)
+# use LIBRARY_LINK_TARGET for linker options
+if( LINK_PHASE)
+   target_link_options( "${LIBRARY_LINK_TARGET}" PUBLIC)
+
+   # Preserve Objective-C class/category registration when this target is a
+   # static library consumed through add_subdirectory().
+   if( NOT BUILD_SHARED_LIBS AND NOT CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
+      if( APPLE)
+         target_link_options( "${LIBRARY_LINK_TARGET}" INTERFACE
+            "-force_load" "$<TARGET_FILE:${LIBRARY_LINK_TARGET}>"
+         )
+      elseif( MSVC)
+         target_link_options( "${LIBRARY_LINK_TARGET}" INTERFACE
+            "/WHOLEARCHIVE:$<TARGET_FILE:${LIBRARY_LINK_TARGET}>"
+         )
+      else()
+         target_link_options( "${LIBRARY_LINK_TARGET}" INTERFACE
+            "-Wl,--whole-archive" "$<TARGET_FILE:${LIBRARY_LINK_TARGET}>"
+            "-Wl,--no-whole-archive"
+         )
+      endif()
+   endif()
+endif()
+
+if( NOT TARGET MulleFoundation)
+   add_library( MulleFoundation ALIAS "${LIBRARY_LINK_TARGET}")
+endif()
+
+include( InstallLibrary)
+
+# Install the API TOC of each constituent library.
+# clib flattens paths to basename, so "asset/dox/api/toc/index.md" arrives as
+# "src/<name>/index.md" and legacy "asset/dox/TOC.md" as "src/<name>/TOC.md".
+# Always install into the canonical path mulle-sde api expects.
+if( LINK_PHASE)
+   foreach( SUB_PROJECT_NAME ${SUB_PROJECT_NAMES})
+      set( SUB_ASSETS_TOC "${CMAKE_CURRENT_SOURCE_DIR}/src/${SUB_PROJECT_NAME}/index.md")
+      if( NOT EXISTS "${SUB_ASSETS_TOC}")
+         set( SUB_ASSETS_TOC "${CMAKE_CURRENT_SOURCE_DIR}/src/${SUB_PROJECT_NAME}/TOC.md")
+      endif()
+      if( EXISTS "${SUB_ASSETS_TOC}")
+         message( STATUS "Installing API TOC from ${SUB_PROJECT_NAME}")
+         install( FILES "${SUB_ASSETS_TOC}"
+                  DESTINATION "share/${SUB_PROJECT_NAME}/dox/api/toc"
+                  RENAME "index.md"
+                  PERMISSIONS OWNER_WRITE OWNER_READ
+                              GROUP_READ
+                              WORLD_READ)
+      endif()
+   endforeach()
+endif()
+
+if( LINK_PHASE)
+   include( InstallCMakeInclude)
+   include( InstallCMakePackage)
+endif()
+
+
+include( FinalOutput OPTIONAL)

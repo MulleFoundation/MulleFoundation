@@ -1,0 +1,26 @@
+{
+   "name" : "MulleFoundation",
+   "version" : "0.29.0",
+   "description" : "Force-loadable amalgamation of MulleFoundation and MulleObjC",
+   "keywords" : [],
+   "license" : "UNLICENSED",
+   "repo" : "MulleFoundation/MulleFoundation",
+   "src" : [
+      "asset/dox/api/toc/index.md",
+      "src/generic/import-private.h",
+      "src/generic/import.h",
+      "src/generic/include-private.h",
+      "src/generic/include.h",
+      "src/generic/MulleObjCDeps+MulleFoundation.h",
+      "src/generic/MulleObjCDeps+MulleFoundation.m",
+      "src/MulleFoundation.h",
+      "src/reflect/objc-deps.inc",
+      "src/reflect/_MulleFoundation-export.h",
+      "src/reflect/_MulleFoundation-provide.h"
+   ],
+   "dependencies" : {
+      "mulle-core/mulle-core": "*",
+      "mulle-core/mulle-core-all-load": "*",
+      "mulle-objc/mulle-objc-runtime": "*"
+   }
+}

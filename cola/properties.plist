@@ -1,0 +1,99 @@
+{
+   project =
+   {
+      description="🧱 MulleFoundation amalgamates Foundations projects";
+      domain="github";
+      language="c";
+      dialect="objc";
+      name="MulleFoundation";
+      user="MulleFoundation";
+      repo="MulleFoundation";
+      homepage="https://github.com/MulleFoundation/MulleFoundation";
+      license="UNLICENSED";
+   };
+   dependencies =
+   (
+      {
+         description="🧱 MulleFoundationBase amalgamates Foundations projects";
+         domain="github";
+         name="MulleFoundationBase";
+         repo="MulleFoundationBase";
+         url="https://github.com/MulleFoundation/MulleFoundationBase";
+         user="MulleFoundation";
+      }
+   );
+   amalgamated =
+   (
+      {
+         domain="clib";
+         name="src/MulleObjCOSBaseFoundation";
+         repo="MulleObjCOSBaseFoundation@*";
+         url="https://github.com/MulleFoundation/MulleObjCOSBaseFoundation@*";
+         user="MulleFoundation";
+      },
+      {
+         description="This is a [mulle-sde](https://mulle-sde.github.io/) project.";
+         domain="clib";
+         name="src/MulleObjCPosixFoundation";
+         repo="MulleObjCPosixFoundation@*";
+         url="https://github.com/MulleFoundation/MulleObjCPosixFoundation@*";
+         user="MulleFoundation";
+      },
+      {
+         description="This is a [mulle-sde](https://mulle-sde.github.io/) project.";
+         domain="clib";
+         name="src/MulleObjCLinuxFoundation";
+         repo="MulleObjCLinuxFoundation@*";
+         url="https://github.com/MulleFoundation/MulleObjCLinuxFoundation@*";
+         user="MulleFoundation";
+      },
+      {
+         description="This is a [mulle-sde](https://mulle-sde.github.io/) project.";
+         domain="clib";
+         name="src/MulleObjCBSDFoundation";
+         repo="MulleObjCBSDFoundation@*";
+         url="https://github.com/MulleFoundation/MulleObjCBSDFoundation@*";
+         user="MulleFoundation";
+      },
+      {
+         description="This is a [mulle-sde](https://mulle-sde.github.io/) project.";
+         domain="clib";
+         name="src/MulleObjCDarwinFoundation";
+         repo="MulleObjCDarwinFoundation@*";
+         url="https://github.com/MulleFoundation/MulleObjCDarwinFoundation@*";
+         user="MulleFoundation";
+      },
+      {
+         description="This is the beginning... But nothing works!";
+         domain="clib";
+         name="src/MulleObjCWindowsFoundation";
+         repo="MulleObjCWindowsFoundation@*";
+         url="https://github.com/MulleFoundation/MulleObjCWindowsFoundation@*";
+         user="MulleFoundation";
+      },
+      {
+         description="💻 Platform-dependent classes and categories like NSTask, NSPipe";
+         domain="clib";
+         name="src/MulleObjCOSFoundation";
+         repo="MulleObjCOSFoundation@*";
+         url="https://github.com/MulleFoundation/MulleObjCOSFoundation@*";
+         user="MulleFoundation";
+      },
+      {
+         description="🚪 NSCoding classes like NSArchiver/NSUnarchiver";
+         domain="clib";
+         name="src/MulleObjCArchiverFoundation";
+         repo="MulleObjCArchiverFoundation@*";
+         url="https://github.com/MulleFoundation/MulleObjCArchiverFoundation@*";
+         user="MulleFoundation";
+      },
+      {
+         description="📆 Calendar class NSCalendar";
+         domain="clib";
+         name="src/MulleObjCCalendarFoundation";
+         repo="MulleObjCCalendarFoundation@*";
+         url="https://github.com/MulleFoundation/MulleObjCCalendarFoundation@*";
+         user="MulleFoundation";
+      }
+   );
+}
