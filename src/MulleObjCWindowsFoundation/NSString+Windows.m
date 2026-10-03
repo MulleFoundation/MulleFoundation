@@ -83,6 +83,11 @@ static NSStringEncoding   mulle_windows_cstring_encoding( void)
 }
 #pragma GCC diagnostic pop
 
+@end
+
+
+@implementation NSString( FileSystemString)
+
 
 - (NSString *) mulleUnixFileSystemString
 {

@@ -393,7 +393,7 @@ static int   check_header_8( struct mulle_buffer *buffer, char *expect)
    [self _readHeader];
 
    // read table offsets at end
-   mulle_buffer_set_seek( &_buffer, - (sizeof( long long) * 5 + 8), MULLE_BUFFER_SEEK_END);
+   mulle_buffer_set_seek( &_buffer, -(long) (sizeof( long long) * 5 + 8), MULLE_BUFFER_SEEK_END);
 
    if( ! check_header_8( &_buffer, "**off**"))
       return( NO);

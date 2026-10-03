@@ -13,7 +13,6 @@
 // other files in this library
 #import "NSErrorWindows.h"
 #import "NSFileManager+Windows.h"
-#import "NSString+Windows.h"
 
 // Windows headers
 #include <windows.h>

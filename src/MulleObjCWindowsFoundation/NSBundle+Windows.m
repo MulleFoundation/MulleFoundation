@@ -37,7 +37,6 @@
 #import <MulleObjCOSBaseFoundation/NSBundle-Private.h>
 
 #import "NSFileManager+Windows.h"
-#import "NSString+Windows.h"
 
 // std-c and dependencies
 #include <windows.h>

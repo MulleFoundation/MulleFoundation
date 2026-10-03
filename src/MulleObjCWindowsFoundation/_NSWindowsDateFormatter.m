@@ -354,6 +354,43 @@ static int   tm_sprintf_character( struct tm *tm,
 }
 
 
+static char   *mulle_weekday_abbreviations[ 7] =
+{
+   "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"
+};
+
+static char   *mulle_weekday_names[ 7] =
+{
+   "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
+   "Saturday"
+};
+
+static char   *mulle_month_abbreviations[ 12] =
+{
+   "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+};
+
+static char   *mulle_month_names[ 12] =
+{
+   "January", "February", "March", "April", "May", "June",
+   "July", "August", "September", "October", "November", "December"
+};
+
+
+static int   match_name_ci( char *input, char *name)
+{
+   while( *name)
+   {
+      if( tolower( (unsigned char) *input) != tolower( (unsigned char) *name))
+         return( 0);
+      ++input;
+      ++name;
+   }
+   return( 1);
+}
+
+
 - (NSDate *) _parseDateWithUTF8String:(char **) string
                      formatUTF8String:(char *) c_format
                                locale:(NSLocale *) locale
@@ -456,6 +493,53 @@ static int   tm_sprintf_character( struct tm *tm,
          tm.tm_sec = val;
          input += 2;
          break;
+
+      case 'a' :
+      case 'A' :
+      {
+         char   **names;
+         size_t   count;
+
+         names = (*s == 'a') ? mulle_weekday_abbreviations : mulle_weekday_names;
+         for( count = 0; count < 7; count++)
+         {
+            if( match_name_ci( input, names[ count]))
+            {
+               input += strlen( names[ count]);
+               break;
+            }
+         }
+         if( count == 7)
+         {
+            errno = EINVAL;
+            return( nil);
+         }
+         break;
+      }
+
+      case 'b' :
+      case 'B' :
+      {
+         char   **names;
+         size_t   count;
+
+         names = (*s == 'b') ? mulle_month_abbreviations : mulle_month_names;
+         for( count = 0; count < 12; count++)
+         {
+            if( match_name_ci( input, names[ count]))
+            {
+               tm.tm_mon = (int) count;
+               input    += strlen( names[ count]);
+               break;
+            }
+         }
+         if( count == 12)
+         {
+            errno = EINVAL;
+            return( nil);
+         }
+         break;
+      }
 
       case 'F' :
          for( i = 0; i < 9; i++)

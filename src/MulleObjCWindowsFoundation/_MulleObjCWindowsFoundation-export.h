@@ -17,7 +17,6 @@
 #import "MulleObjCDeps+MulleObjCWindowsFoundation.h"
 #import "NSErrorWindows.h"
 #import "NSFileManager+Windows.h"
-#import "NSString+Windows.h"
 #import "NSTask+Windows.h"
 
 

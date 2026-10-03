@@ -259,7 +259,6 @@ src/MulleObjCWindowsFoundation/NSDate+Windows-Private.h
 src/MulleObjCWindowsFoundation/NSErrorWindows.h
 src/MulleObjCWindowsFoundation/NSFileManager+Windows.h
 src/MulleObjCWindowsFoundation/NSLog.h
-src/MulleObjCWindowsFoundation/NSString+Windows.h
 src/MulleObjCWindowsFoundation/NSTask+Windows.h
 src/MulleObjCWindowsFoundation/NSTimeZone+Windows-Private.h
 src/MulleObjCWindowsFoundation/_NSWindowsDateFormatter.h

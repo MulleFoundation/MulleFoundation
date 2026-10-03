@@ -35,7 +35,6 @@
 #import "import-private.h"
 
 #import "NSErrorWindows.h"
-#import "NSString+Windows.h"
 
 // std-c and dependencies
 #include <windows.h>

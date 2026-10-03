@@ -10,7 +10,6 @@
 
 #import "import-private.h"
 #import "NSFileManager+Windows.h"
-#import "NSString+Windows.h"
 
 // other files in this library
 #import "NSErrorWindows.h"

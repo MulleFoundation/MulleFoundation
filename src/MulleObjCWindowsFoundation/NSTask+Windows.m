@@ -51,7 +51,6 @@
 #import "import-private.h"
 
 #import <MulleObjCOSBaseFoundation/NSTask-Private.h>
-#import "NSString+Windows.h"
 
 // std-c and dependencies
 #include <windows.h>
