@@ -66,7 +66,7 @@ All signatures below are copied verbatim from the headers in `src/`.
 - Defines the library version:
 
 ```c
-#define MULLE_OBJC_ARCHIVER_FOUNDATION_VERSION   ((0UL << 20) | (22 << 8) | 6)
+#define MULLE_OBJC_ARCHIVER_FOUNDATION_VERSION   ((0UL << 20) | (23 << 8) | 0)
 ```
 
 - Imports the public header, the reflect-generated export header and an
