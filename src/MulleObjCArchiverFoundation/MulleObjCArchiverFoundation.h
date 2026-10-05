@@ -36,7 +36,7 @@
 #import "import.h"
 
 // keep this in sync with MULLE_OBJC_VERSION, else pain! (why ?)
-#define MULLE_OBJC_ARCHIVER_FOUNDATION_VERSION   ((0UL << 20) | (22 << 8) | 6)
+#define MULLE_OBJC_ARCHIVER_FOUNDATION_VERSION   ((0UL << 20) | (23 << 8) | 0)
 
 // we do it manually...
 

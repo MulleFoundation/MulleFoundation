@@ -301,7 +301,6 @@
       "src/MulleObjCWindowsFoundation/NSPipe+Windows.m",
       "src/MulleObjCWindowsFoundation/NSProcessInfo+Windows.m",
       "src/MulleObjCWindowsFoundation/NSRunLoop+Windows.m",
-      "src/MulleObjCWindowsFoundation/NSString+Windows.h",
       "src/MulleObjCWindowsFoundation/NSString+Windows.m",
       "src/MulleObjCWindowsFoundation/NSTask+Windows.h",
       "src/MulleObjCWindowsFoundation/NSTask+Windows.m",
