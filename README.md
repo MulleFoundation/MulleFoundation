@@ -45,15 +45,15 @@ Then edit `MulleFoundationBase.h` and add the envelope header to the others.
 | Constituent                                  | Description
 |----------------------------------------------|-----------------------
 | [MulleObjCArchiverFoundation](https://github.com/MulleFoundation/MulleObjCArchiverFoundation) | 🚪 NSCoding classes like NSArchiver/NSUnarchiver
-| [MulleObjCBSDFoundation](https://github.com/MulleFoundation/MulleObjCBSDFoundation) | This is a [mulle-sde](https://mulle-sde.github.io/) project.
+| [MulleObjCBSDFoundation](https://github.com/MulleFoundation/MulleObjCBSDFoundation) | 
 | [MulleObjCCalendarFoundation](https://github.com/MulleFoundation/MulleObjCCalendarFoundation) | 📆 Calendar class NSCalendar
-| [MulleObjCDarwinFoundation](https://github.com/MulleFoundation/MulleObjCDarwinFoundation) | This is a [mulle-sde](https://mulle-sde.github.io/) project.
-| [MulleObjCFreeBSDFoundation](https://github.com/MulleFoundation/MulleObjCFreeBSDFoundation) | This is a [mulle-sde](https://mulle-sde.github.io/) project.
-| [MulleObjCLinuxFoundation](https://github.com/MulleFoundation/MulleObjCLinuxFoundation) | This is a [mulle-sde](https://mulle-sde.github.io/) project.
+| [MulleObjCDarwinFoundation](https://github.com/MulleFoundation/MulleObjCDarwinFoundation) | 
+| [MulleObjCFreeBSDFoundation](https://github.com/MulleFoundation/MulleObjCFreeBSDFoundation) | 
+| [MulleObjCLinuxFoundation](https://github.com/MulleFoundation/MulleObjCLinuxFoundation) | 
 | [MulleObjCOSBaseFoundation](https://github.com/MulleFoundation/MulleObjCOSBaseFoundation) | 
 | [MulleObjCOSFoundation](https://github.com/MulleFoundation/MulleObjCOSFoundation) | 💻 Platform-dependent classes and categories like NSTask, NSPipe
-| [MulleObjCPosixFoundation](https://github.com/MulleFoundation/MulleObjCPosixFoundation) | This is a [mulle-sde](https://mulle-sde.github.io/) project.
-| [MulleObjCWindowsFoundation](https://github.com/MulleFoundation/MulleObjCWindowsFoundation) | This is the beginning... But nothing works!
+| [MulleObjCPosixFoundation](https://github.com/MulleFoundation/MulleObjCPosixFoundation) | 
+| [MulleObjCWindowsFoundation](https://github.com/MulleFoundation/MulleObjCWindowsFoundation) | 
 
 
 ## Add
@@ -81,7 +81,7 @@ mulle-sde install --prefix /usr/local \
    https://github.com/MulleFoundation/MulleFoundation/archive/latest.tar.gz
 ```
 
-### Legacy Installation
+### Manual Installation
 
 Install the requirements:
 
